@@ -150,8 +150,8 @@ func set_palette():
 			for i in range(palette.size()):
 				set_palette_color(palette[i], i, false)
 
-func set_palette_color(palette_color, palette_num, default):
-	global.set_material_palette_color(char_spr.material, palette_color, palette_num, default)
+func set_palette_color(palette_color, palette_num_, default):
+	global.set_material_palette_color(char_spr.material, palette_color, palette_num_, default)
 
 func set_at_target_x():
 	char_spr.position.x = target_x

@@ -9,8 +9,8 @@ func _ready():
 	effect_hit = preload("res://scenes/effect/goto/attack_hit.tscn")
 	effect_offset = Vector2(8, 0)
 
-func set_vert_speed(vert_speed):
-	self.vert_speed = vert_speed
+func set_vert_speed(vert_speed_):
+	self.vert_speed = vert_speed_
 	position.y += sign(vert_speed)
 
 func set_rot():

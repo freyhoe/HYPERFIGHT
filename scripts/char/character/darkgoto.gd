@@ -166,9 +166,9 @@ func process_anim():
 	.process_anim()
 
 func process_attack_anim():
-	if (anim_player.current_animation == "super_upwards" or anim_player.current_animation == "super_downwards") and \
-	   sprite.frame >= 1:
-		dash_while_attacking = true
+#	if (anim_player.current_animation == "super_upwards" or anim_player.current_animation == "super_downwards") and \
+#	   sprite.frame >= 1:
+#		dash_while_attacking = true
 	return .process_attack_anim()
 
 func parry(parry_effect_pos = Vector2()):

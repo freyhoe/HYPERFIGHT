@@ -24,7 +24,7 @@ enum P_TYPE { menu_lobby_owner, menu_lobby_joiner, \
 			  ss_highlight, ss_select, ss_confirmed, \
 			  game_input, game_menu, game_ping }
 
-const VERSION = "v3.1.1 custom"
+const VERSION = "v3.1.1"
 
 const CONFIG_FILE = "user://config.cfg"
 const PALETTE_FILE = "user://palette.cfg"
@@ -34,6 +34,7 @@ const CFG_PS_DTDASH = "dtdash"
 const CFG_PS_ASSUPER = "assuper"
 const CFG_OPTIONS = "options"
 const CFG_OPTIONS_CPUDIFF = "cpu_diff"
+const CFG_OPTIONS_HITBOXES = "hitboxes"
 const CFG_OPTIONS_SCREEN = "screen_type"
 const CFG_OPTIONS_VSYNC = "vsync"
 const CFG_OPTIONS_MUSVOL = "music_volume"
@@ -134,6 +135,8 @@ onready var char_darkgoto = preload("res://scenes/char/darkgoto.tscn")
 var window_size = Vector2(1024, 600)
 var viewport_size = Vector2(256, 150)
 
+var hitboxes = false
+
 var fps = 60
 var floor_y = 59
 var invalid_chars = 2
@@ -212,9 +215,9 @@ var arcade_continues = 0
 var arcade_time = 0
 var max_arcade_stage = char_count - 1
 var cpu_diff = CPU_DIFF.normal
-var music_volume = 7
+var music_volume = 4
 var music_volume_db = 0
-var sfx_volume = 8
+var sfx_volume = 5
 var sfx_volume_db = 0
 var screen_type = SCREEN.window4x
 
@@ -239,8 +242,8 @@ func create_info_text(text):
 
 func create_text(text):
 	var highest_y = 145
-	var debug_texts = get_tree().get_nodes_in_group("debug")
-	for t in debug_texts:
+	var debug_texts_ = get_tree().get_nodes_in_group("debug")
+	for t in debug_texts_:
 		if t.get_position().y < highest_y:
 			highest_y = t.get_position().y
 	
@@ -274,6 +277,7 @@ func load_config():
 	config.load(CONFIG_FILE)
 	
 	cpu_diff = get_config_value(config, CFG_OPTIONS, CFG_OPTIONS_CPUDIFF, cpu_diff)
+	hitboxes= get_config_value(config, CFG_OPTIONS, CFG_OPTIONS_HITBOXES, hitboxes)
 	screen_type = get_config_value(config, CFG_OPTIONS, CFG_OPTIONS_SCREEN, screen_type)
 	vsync = get_config_value(config, CFG_OPTIONS, CFG_OPTIONS_VSYNC, vsync)
 	
@@ -408,6 +412,9 @@ func get_config_value(config, section, key, value):
 
 func set_cpu_diff():
 	save_config_value(CFG_OPTIONS, CFG_OPTIONS_CPUDIFF, cpu_diff)
+
+func set_hitboxes():
+	save_config_value(CFG_OPTIONS, CFG_OPTIONS_HITBOXES, hitboxes)
 
 func set_music_volume():
 	if music_volume > 0:

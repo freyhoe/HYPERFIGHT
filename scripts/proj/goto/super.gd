@@ -9,9 +9,9 @@ func _ready():
 	effect_hit = preload("res://scenes/effect/goto/proj/super_hit.tscn")
 	effect_offset = Vector2(12, 0)
 
-func set_vert_speed(vert_speed):
-	self.vert_speed = vert_speed
-	position.y += sign(vert_speed)
+func set_vert_speed(vert_speed_):
+	self.vert_speed = vert_speed_
+	position.y += sign(vert_speed_)
 
 func set_rot():
 	var angle = Vector2(speed, vert_speed).angle()

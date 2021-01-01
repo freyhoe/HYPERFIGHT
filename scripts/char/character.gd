@@ -163,9 +163,9 @@ func _ready():
 	own_shadow.init(self, shadow_offset, 0)
 	get_parent().add_child(own_shadow)
 
-func init(player_num, other_player):
-	self.player_num = player_num
-	self.other_player = other_player
+func init(player_num_, other_player_):
+	self.player_num = player_num_
+	self.other_player = other_player_
 	if player_num == 1:
 		position = Vector2(-init_xoffset, init_yoffset)
 		cpu = global.player1_cpu
@@ -506,8 +506,8 @@ func process_curr_online_inputs():
 				i -= 1
 			i += 1
 
-func set_cpu_type(cpu_type):
-	self.cpu_type = cpu_type
+func set_cpu_type(cpu_type_):
+	self.cpu_type = cpu_type_
 	if cpu_type == global.CPU_TYPE.dummy_jump_attack:
 		cpu_mode = "idle"
 	release_all_actions()
@@ -976,8 +976,8 @@ func hitbox_parry_effect(hitbox_owner, effect, effect_pos):
 func hitbox_hit_effect(hitbox_owner, effect, effect_pos):
 	return null
 
-func preprocess_input(online_active):
-	self.online_active = online_active
+func preprocess_input(online_active_):
+	self.online_active = online_active_
 	if other_player != null and not cpu:
 		process_input()
 
@@ -1058,8 +1058,8 @@ func preprocess_frame():
 		   position.y + 32 >= other_player.position.y - other_player.size.y + 32:
 			correct_player_collisions()
 
-func preprocess(curr_frame, frame_delay):
-	self.curr_frame = curr_frame
+func preprocess(curr_frame_, frame_delay):
+	self.curr_frame = curr_frame_
 	if other_player != null:
 		if game.input_delay >= game.prev_delay:
 			send_delay = game.prev_delay
@@ -1095,7 +1095,7 @@ func process_frame():
 		sprite.get_material().set_shader_param(global.SHADERPARAM_WHITEAMOUNT, 0)
 		sprite.get_material().set_shader_param(global.SHADERPARAM_BLUEAMOUNT, 0)
 
-func process(curr_frame, frame_delay):
+func process(curr_frame_, frame_delay):
 	if other_player != null:
 		if curr_frame_delay <= 0 or ignore_frame_delay:
 			if prev_frame_delay > 0:
@@ -1152,14 +1152,14 @@ func create_dash_effect(effect_pos, scale_x, rot_deg):
 	play_audio_custom(dash_player, sfx_dash)
 	return e
 
-func create_afterimage(alpha = 0.5):
+func create_afterimage(alpha_ = 0.5):
 	var a = afterimage.instance()
 	a.position = position
 	a.texture = sprite.texture
 	a.hframes = sprite.hframes
 	a.frame = sprite.frame
 	a.scale = sprite.scale
-	a.alpha = alpha
+	a.alpha = alpha_
 	get_parent().add_child(a)
 	a.set_palette(player_num)
 	return a

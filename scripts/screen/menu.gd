@@ -85,7 +85,7 @@ var buttons_versus_max = 4
 var buttons_solomodes_max = 4
 var buttons_news_max = 1
 var buttons_options_max = 6
-var buttons_options_game_max = 2
+var buttons_options_game_max = 3
 var buttons_options_graphics_max = 3
 var buttons_options_audio_max = 3
 var buttons_options_controls_max = 3
@@ -814,7 +814,7 @@ func set_lobby_find_labels():
 	else:
 		find_rect.visible = false
 
-func send_packet_lobby_owner(other_member_id):
+func send_packet_lobby_owner(other_member_id_):
 	var packet = PoolByteArray()
 	packet.append(global.P_TYPE.menu_lobby_owner)
 	if global.online_char == global.CHAR.random:
@@ -825,9 +825,9 @@ func send_packet_lobby_owner(other_member_id):
 		packet.append(global.online_char)
 		packet.append(global.online_palette)
 	packet.append(global.online_stage)
-	Steam.sendP2PPacket(other_member_id, packet, 2, 0)
+	Steam.sendP2PPacket(other_member_id_, packet, 2, 0)
 
-func send_packet_lobby_joiner(other_member_id):
+func send_packet_lobby_joiner(other_member_id_):
 	var packet = PoolByteArray()
 	packet.append(global.P_TYPE.menu_lobby_joiner)
 	packet.append(global.input_delay)
@@ -838,7 +838,7 @@ func send_packet_lobby_joiner(other_member_id):
 	else:
 		packet.append(global.online_char)
 		packet.append(global.online_palette)
-	Steam.sendP2PPacket(other_member_id, packet, 2, 0)
+	Steam.sendP2PPacket(other_member_id_, packet, 2, 0)
 
 func start_match_search():
 	global.leave_lobby(false)

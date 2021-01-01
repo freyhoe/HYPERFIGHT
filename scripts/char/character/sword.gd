@@ -17,6 +17,8 @@ onready var hitbox_attack = get_node("hitbox_attack")
 onready var hitbox_attack_down = get_node("hitbox_attack_down")
 onready var effect_buffed = get_node("effect_buffed")
 onready var phantom = get_node("phantom")
+onready var front = get_node("teleports/indicator_right")
+onready var teleports = get_node("teleports")
 
 onready var effect_hit = preload("res://scenes/effect/sword/hit.tscn")
 onready var illusion = preload("res://scenes/effect/sword/char/illusion.tscn")
@@ -92,6 +94,7 @@ func process_attack():
 	effect_buffed.scale.x = sprite.scale.x
 	anim_player2.seek(anim_player2.current_animation_position + 1, true)
 	phantom.visible = false
+	teleports.visible = false
 	
 	if attacking:
 		if anim_player.current_animation == "special":
@@ -129,13 +132,26 @@ func process_attack():
 					linear_vel.y = 0
 			if not attacked and anim_player.current_animation == "attack_charge":
 				if buffed:
+					front.visible = false
 					phantom.visible = true
 					phantom.texture = sprite.texture
 					phantom.hframes = sprite.hframes
 					phantom.frame = sprite.frame
 					phantom.scale.x = sprite.scale.x
 					phantom.offset.x += 4
+				else:
+					front.visible = true
+				
+				teleports.scale.x = sprite.scale.x
+				for i in teleports.get_children():
+					i.texture = sprite.texture
+					i.hframes = sprite.hframes
+					i.frame = sprite.frame
+					
+			#		i.offset.x += 4
+				
 				if not teleported:
+					teleports.visible = true
 					teleported = true
 					var before_pos = position
 					if check_player_just_input(global.INPUT_ACTION_LEFT):
@@ -151,6 +167,7 @@ func process_attack():
 					else:
 						teleported = false
 					if teleported:
+						teleports.visible = false
 						create_inner_illusion(before_pos - position)
 						create_outer_illusion(Vector2.ZERO)
 				if sprite.frame >= 3 and not check_player_input(global.INPUT_ACTION_ATTACK):
@@ -164,6 +181,7 @@ func process_attack():
 						
 						create_outer_illusion(Vector2.ZERO)
 						phantom.visible = false
+						teleports.visible = false
 						linear_vel.x += 200 * sprite.scale.x
 						buffs -= 1
 						if buffs <= 0:

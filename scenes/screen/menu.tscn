@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://scripts/screen/menu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/ui/menu/logo/gradient.png" type="Texture" id=2]
@@ -36,6 +36,7 @@
 [ext_resource path="res://graphics/ui/load/studiojoh.png" type="Texture" id=34]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/controls/p2/assuper.gd" type="Script" id=35]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/controls/p1/assuper.gd" type="Script" id=36]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/game/button_hitboxes.gd" type="Script" id=37]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -754,10 +755,19 @@ color = Color( 0.309804, 0.635294, 0.65098, 1 )
 setting_slide = true
 layer = 2
 
+[node name="button_hitboxes" parent="buttons_options_game" instance=ExtResource( 9 )]
+position = Vector2( -67, -27 )
+script = ExtResource( 37 )
+text = "HITBOXES:off"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
 [node name="button_back" parent="buttons_options_game" instance=ExtResource( 9 )]
 position = Vector2( -67, 45 )
 text = "Back"
-option_num = 2
+option_num = 3
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 layer = 2
 

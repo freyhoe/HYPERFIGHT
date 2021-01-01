@@ -118,7 +118,7 @@ func can_destroy_on_proj_hit():
 func process_move():
 	move_and_collide(linear_vel)
 
-func move_and_collide(linear_vel):
+func move_and_collide(_linear_vel):
 	if linear_vel == Vector2.ZERO:
 		process_collisions()
 		return
@@ -149,16 +149,16 @@ func process_collisions():
 		if hitbox != other_hitbox and hitbox.intersects(other_hitbox):
 			process_hitbox_collision(other_hitbox, true)
 
-func process_hitbox_collision(hitbox, call_other):
-	var hitbox_owner = hitbox.get_hitbox_owner()
+func process_hitbox_collision(hitbox_, call_other):
+	var hitbox_owner = hitbox_.get_hitbox_owner()
 	if hitbox_owner.is_in_group(global.GROUP_CHARACTER) and collide_with_char:
-		process_hitbox_char_collision(hitbox, call_other)
+		process_hitbox_char_collision(hitbox_, call_other)
 	elif hitbox_owner.is_in_group(global.GROUP_PROJECTILE) and not hitbox_owner.is_in_group(global.GROUP_CHARACTER) and \
 		 player_num != hitbox_owner.player_num and collide_with_proj and hitbox_owner.can_collide_with_proj():
-		process_hitbox_proj_collision(hitbox, call_other)
+		process_hitbox_proj_collision(hitbox_, call_other)
 
-func process_hitbox_char_collision(hitbox, call_other):
-	var hitbox_owner = hitbox.get_hitbox_owner()
+func process_hitbox_char_collision(hitbox_, call_other):
+	var hitbox_owner = hitbox_.get_hitbox_owner()
 	var owner_can_kill = hitbox_owner.can_kill(player_num)
 	var owner_can_parry = hitbox_owner.can_parry(player_num)
 	if hitbox_owner.can_destroy_other(player_num) and \
@@ -173,6 +173,7 @@ func process_hitbox_char_collision(hitbox, call_other):
 			if is_in_group(global.GROUP_SUPERPROJ):
 				game.win(player_num)
 			else:
+
 				game.inc_score(player_num)
 		var knockback_x = knockback.x
 		if knockback_flip_with_scale:
@@ -197,7 +198,7 @@ func process_hitbox_char_collision(hitbox, call_other):
 			destroy_no_effect()
 		parry_effect()
 
-func process_hitbox_proj_collision(hitbox, call_other):
+func process_hitbox_proj_collision(_hitbox, call_other):
 	var hitbox_owner = hitbox.get_hitbox_owner()
 	if call_other:
 		hitbox_owner.process_hitbox_collision(self.hitbox, false)
@@ -327,12 +328,12 @@ func create_afterimage(alpha = 0.5):
 	a.set_palette(palette_player_num)
 	return a
 
-func set_player(player):
-	self.player = player
+func set_player(player_):
+	self.player = player_
 	player_num = player.player_num
 
-func set_palette_player_num(palette_player_num):
-	self.palette_player_num = palette_player_num
+func set_palette_player_num(palette_player_num_):
+	self.palette_player_num = palette_player_num_
 
 func set_palette():
 	if palette_player_num <= 0:

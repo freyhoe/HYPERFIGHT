@@ -55,25 +55,25 @@ func get_transform_owner():
 func is_monitoring():
 	return monitoring
 
-func set_hitbox_owner(hitbox_owner):
-	self.hitbox_owner = hitbox_owner
+func set_hitbox_owner(hitbox_owner_):
+	self.hitbox_owner = hitbox_owner_
 	for child in get_children():
-		child.set_hitbox_owner(hitbox_owner)
+		child.set_hitbox_owner(hitbox_owner_)
 
-func set_transform_owner(transform_owner):
-	self.transform_owner = transform_owner
+func set_transform_owner(transform_owner_):
+	self.transform_owner = transform_owner_
 	for child in get_children():
-		child.set_transform_owner(transform_owner)
+		child.set_transform_owner(transform_owner_)
 
-func set_monitoring(monitoring):
-	self.monitoring = monitoring
+func set_monitoring(monitoring_):
+	self.monitoring = monitoring_
 	for child in get_children():
-		child.set_monitoring(monitoring)
+		child.set_monitoring(monitoring_)
 
-func set_attacking(attacking):
-	self.attacking = attacking
+func set_attacking(attacking_):
+	self.attacking = attacking_
 	for child in get_children():
-		child.set_attacking(attacking)
+		child.set_attacking(attacking_)
 
 func _draw():
 	if global.show_hitboxes and monitoring:

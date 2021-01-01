@@ -190,6 +190,7 @@ func _ready():
 	
 	if global.turbo_mode:
 		Engine.iterations_per_second = 75
+#	Engine.iterations_per_second = 60*10
 	
 	if global.online:
 		if global.mode == global.MODE.online_quickmatch:
@@ -226,7 +227,7 @@ func _ready():
 			player1.stop_act()
 			player2.cpu_type = global.CPU_TYPE.dummy
 	
-	global.show_hitboxes = false
+	global.show_hitboxes = global.hitboxes
 	global.clear_input_files()
 	
 	if global.online:
@@ -396,8 +397,8 @@ func set_p2_cpu_type(cpu_type):
 func get_reset_pos():
 	return reset_pos
 
-func set_reset_pos(reset_pos):
-	self.reset_pos = reset_pos
+func set_reset_pos(reset_pos_):
+	self.reset_pos = reset_pos_
 
 func check_menu_input(player2_enabled):
 	if Input.is_action_just_pressed(global.INPUT_PLAYER1 + global.INPUT_ACTION_UP) or \
@@ -498,9 +499,9 @@ func _physics_process(delta):
 						player1.add_online_input(packet[1], copy_map, copy_frame, copy_delay, false)
 						player2.add_online_input(packet[1], copy_map, copy_frame, copy_delay, false)
 					global.P_TYPE.game_menu:
-						var player1 = (packet[1] == 1)
+						var player1_ = (packet[1] == 1)
 						var info_text
-						if player1 and global.lobby_member_ids.size() > 0:
+						if player1_ and global.lobby_member_ids.size() > 0:
 							info_text = Steam.getFriendPersonaName(global.lobby_member_ids[0]) + STR_INFO
 						elif player2 and global.lobby_member_ids.size() > 1:
 							info_text = Steam.getFriendPersonaName(global.lobby_member_ids[1]) + STR_INFO
