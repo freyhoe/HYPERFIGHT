@@ -813,6 +813,9 @@ margin_top = -14.0
 margin_right = 6.0
 margin_bottom = 32.0
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="hitbox_attack_down" type="ReferenceRect" parent="."]
 script = ExtResource( 14 )

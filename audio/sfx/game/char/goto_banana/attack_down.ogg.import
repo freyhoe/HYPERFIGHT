@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack_down.ogg-ca37d6fdf00d7be944a7c621f93a7f93.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/goto_banana/attack_down.ogg"
+dest_files=[ "res://.import/attack_down.ogg-ca37d6fdf00d7be944a7c621f93a7f93.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

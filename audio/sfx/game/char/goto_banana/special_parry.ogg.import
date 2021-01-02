@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special_parry.ogg-1357b52ab52e9f38c0bbc159794da666.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/goto_banana/special_parry.ogg"
+dest_files=[ "res://.import/special_parry.ogg-1357b52ab52e9f38c0bbc159794da666.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/p2win.ogg-cf3e37d85ead62ac370ba9e29b4fbc3f.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_verno/p2win.ogg"
+dest_files=[ "res://.import/p2win.ogg-cf3e37d85ead62ac370ba9e29b4fbc3f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

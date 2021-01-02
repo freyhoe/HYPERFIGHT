@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hit.ogg-a39b0d34a63bab4a041f5d9258f7433b.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/goto_banana/hit.ogg"
+dest_files=[ "res://.import/hit.ogg-a39b0d34a63bab4a041f5d9258f7433b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scripts/screen/menu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/ui/menu/logo/gradient.png" type="Texture" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://scripts/ui/menu/button/menu/options/controls/p2/assuper.gd" type="Script" id=35]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/controls/p1/assuper.gd" type="Script" id=36]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/game/button_hitboxes.gd" type="Script" id=37]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_custom_announcer.gd" type="Script" id=38]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -194,10 +195,16 @@ text = "Options"
 option_num = 5
 color = Color( 0.501961, 0.501961, 0.501961, 1 )
 
-[node name="button_quit" parent="buttons" instance=ExtResource( 9 )]
+[node name="button_credits" parent="buttons" instance=ExtResource( 9 )]
 position = Vector2( -67, 45 )
-text = "Quit"
+text = "Credits"
 option_num = 6
+color = Color( 0.439216, 0.439216, 0.439216, 1 )
+
+[node name="button_quit" parent="buttons" instance=ExtResource( 9 )]
+position = Vector2( -67, 63 )
+text = "Quit"
+option_num = 7
 color = Color( 0.376471, 0.376471, 0.376471, 1 )
 
 [node name="buttons_online" type="Node2D" parent="."]
@@ -728,9 +735,9 @@ option_num = 4
 color = Color( 0.439216, 0.439216, 0.439216, 1 )
 layer = 1
 
-[node name="button_credits" parent="buttons_options" instance=ExtResource( 9 )]
+[node name="button_customize" parent="buttons_options" instance=ExtResource( 9 )]
 position = Vector2( -67, 27 )
-text = "Credits"
+text = "Customizations"
 option_num = 5
 color = Color( 0.439216, 0.439216, 0.439216, 1 )
 layer = 1
@@ -768,6 +775,73 @@ layer = 2
 position = Vector2( -67, 45 )
 text = "Back"
 option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_options_customize" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_custom_announcer" parent="buttons_options_customize" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 38 )
+text = "Announcer: bananaberry"
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_custom_characters" parent="buttons_options_customize" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Characters"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_custom_music" parent="buttons_options_customize" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Music"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_back" parent="buttons_options_customize" instance=ExtResource( 9 )]
+position = Vector2( -67, 63 )
+text = "Back"
+option_num = 4
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_custom_characters" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_custom_announcer" parent="buttons_custom_characters" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 38 )
+text = "Announcer: bananaberry"
+setting_slide = true
+layer = 2
+
+[node name="button_custom_characters" parent="buttons_custom_characters" instance=ExtResource( 9 )]
+position = Vector2( -67, -27 )
+text = "Characters"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_custom_music" parent="buttons_custom_characters" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Music"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_back" parent="buttons_custom_characters" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 4
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 layer = 2
 
@@ -1327,19 +1401,19 @@ color = Color( 0.45098, 0.45098, 0.666667, 1 )
 inactive_y = 180
 layer = 3
 
-[node name="buttons_options_credits" type="Node2D" parent="."]
+[node name="buttons_credits" type="Node2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="button_back" parent="buttons_options_credits" instance=ExtResource( 9 )]
+[node name="button_back" parent="buttons_credits" instance=ExtResource( 9 )]
 position = Vector2( 74, 42 )
 text = "Back"
 color = Color( 0.25098, 0.25098, 0.25098, 1 )
 inactive_y = 180
 layer = 2
 
-[node name="label_credits_joh" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_joh" type="Label" parent="buttons_credits/button_back"]
 margin_left = -191.0
 margin_top = -109.0
 margin_right = -11.0
@@ -1356,7 +1430,7 @@ Gotos, Vince Volt,
 and Slime Bros.
 "
 
-[node name="label_credits_joh2" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_joh2" type="Label" parent="buttons_credits/button_back"]
 margin_left = -238.0
 margin_top = -79.0
 margin_right = -58.0
@@ -1369,7 +1443,7 @@ custom_constants/line_spacing = -3
 text = "joh"
 align = 2
 
-[node name="label_credits_quack" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_quack" type="Label" parent="buttons_credits/button_back"]
 margin_left = -191.0
 margin_top = -63.0
 margin_right = 10.0
@@ -1383,7 +1457,7 @@ text = "Voice of Dr. Kero
 and Don McRon,
 Alt. Color Design"
 
-[node name="label_credits_quack2" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_quack2" type="Label" parent="buttons_credits/button_back"]
 margin_left = -238.0
 margin_top = -43.0
 margin_right = -58.0
@@ -1396,7 +1470,7 @@ custom_constants/line_spacing = -3
 text = "quack"
 align = 2
 
-[node name="label_credits_yoyo" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_yoyo" type="Label" parent="buttons_credits/button_back"]
 margin_left = -191.0
 margin_top = -27.0
 margin_right = 10.0
@@ -1409,7 +1483,7 @@ custom_constants/line_spacing = -3
 custom_constants/shadow_offset_y = 1
 text = "Voice of Yo-Yona"
 
-[node name="label_credits_yoyo2" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_yoyo2" type="Label" parent="buttons_credits/button_back"]
 margin_left = -238.0
 margin_top = -17.0
 margin_right = -58.0
@@ -1422,7 +1496,7 @@ custom_constants/line_spacing = -3
 text = "konpeitocorner"
 align = 2
 
-[node name="label_credits_scythe" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_scythe" type="Label" parent="buttons_credits/button_back"]
 margin_left = -191.0
 margin_top = -1.0
 margin_right = 10.0
@@ -1435,7 +1509,7 @@ custom_constants/line_spacing = -3
 custom_constants/shadow_offset_y = 1
 text = "Voice of Reaper Angel"
 
-[node name="label_credits_scythe2" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_scythe2" type="Label" parent="buttons_credits/button_back"]
 margin_left = -238.0
 margin_top = 9.0
 margin_right = -58.0
@@ -1448,7 +1522,7 @@ custom_constants/line_spacing = -3
 text = "Gabrielle \"Bambi\" Phillips"
 align = 2
 
-[node name="label_credits_studio" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_studio" type="Label" parent="buttons_credits/button_back"]
 margin_left = -104.0
 margin_top = -92.0
 margin_right = 97.0
@@ -1461,7 +1535,7 @@ custom_constants/shadow_offset_y = 1
 text = "presented by"
 align = 1
 
-[node name="label_credits_studio2" type="Label" parent="buttons_options_credits/button_back"]
+[node name="label_credits_studio2" type="Label" parent="buttons_credits/button_back"]
 margin_left = -104.0
 margin_top = -40.0
 margin_right = 97.0
@@ -1475,7 +1549,7 @@ text = "studio joh
 (C) 2019-2020"
 align = 1
 
-[node name="logo" type="Sprite" parent="buttons_options_credits/button_back"]
+[node name="logo" type="Sprite" parent="buttons_credits/button_back"]
 position = Vector2( -4, -60 )
 texture = ExtResource( 34 )
 

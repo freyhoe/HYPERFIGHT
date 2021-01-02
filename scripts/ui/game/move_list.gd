@@ -6,7 +6,7 @@ var max_pages = 4
 var curr_page = 1
 
 onready var char_spr = get_node("char_spr")
-onready var label_char = get_node("label_char")
+onready var label_frame = get_node("label_frame")
 onready var label_move = get_node("label_move")
 onready var label_desc = get_node("label_desc")
 onready var label_command = get_node("label_command")
@@ -80,7 +80,7 @@ func _ready():
 	if not player1:
 		player_char = global.player2_char
 		texture = p2_texture
-		label_char.add_color_override("font_color", Color(0, 0.5, 1))
+		label_frame.add_color_override("font_color", Color(0, 0.5, 1))
 		label_move.add_color_override("font_color", Color(0.5, 0.75, 1))
 		label_command.add_color_override("font_color", Color(0.5, 0.75, 1))
 		arrow_left.set_modulate(Color(0.5, 0.75, 1))
@@ -135,6 +135,7 @@ func set_page():
 	var move_text = ""
 	var desc_text = ""
 	var command_text = ""
+	var frame_text = ""
 	arrow_left.visible = true
 	arrow_right.visible = true
 	if curr_page == 1:
@@ -147,21 +148,25 @@ func set_page():
 			match curr_page:
 				1:
 					char_spr.texture = goto_attack
+					frame_text = "7/-/38"
 					move_text = "Blazing Sun"
 					desc_text = "Can be angled by holding UP/DOWN before shot."
 					command_text = "ATTACK"
 				2:
 					char_spr.texture = goto_attack_down
+					frame_text = "5/14/-"
 					move_text = "Rising Fist"
 					desc_text = "Close uppercut. Can perform in air."
 					command_text = "DOWN + ATK"
 				3:
 					char_spr.texture = goto_special
+					frame_text = " 1/18/0"
 					move_text = "Parry"
 					desc_text = "Gain point back and red point if landed."
 					command_text = "SPECIAL"
 				4:
 					char_spr.texture = goto_super
+					frame_text = "13/-/36"
 					move_text = "Super Shoto Attack"
 					desc_text = "Large fireball.\nCan be angled UP/DOWN."
 					command_text = "SUPER"
@@ -169,26 +174,31 @@ func set_page():
 			match curr_page:
 				1:
 					char_spr.texture = yoyo_attack
+					frame_text = "3/-/0"
 					move_text = "Yo-yo Attack"
 					desc_text = "Can angle in any dir. Stuns you on contact with proj."
 					command_text = "ATTACK"
 				2:
 					char_spr.texture = yoyo_attack_hold
+					frame_text = "0/-/0"
 					move_text = "Yo-yo Reel"
 					desc_text = "When anchored: reel in towards yo-yo."
 					command_text = "ATTACK"
 				3:
 					char_spr.texture = yoyo_special
+					frame_text = "0/-/0"
 					move_text = "Yo-yo Anchor"
 					desc_text = "No points needed. Anchor yo-yo in place."
 					command_text = "SPECIAL"
 				4:
 					char_spr.texture = yoyo_special_hold
+					frame_text = "1/30/0"
 					move_text = "Remote Blast"
 					desc_text = "When anchored: explodes yo-yo in small blast."
 					command_text = "SPECIAL"
 				5:
 					char_spr.texture = yoyo_super
+					frame_text = "14/143/24"
 					move_text = "Super Yo-yo"
 					desc_text = "Large yo-yo. Can be angled\nin any direction."
 					command_text = "SUPER"
@@ -196,41 +206,49 @@ func set_page():
 			match curr_page:
 				1:
 					char_spr.texture = kero_attack
+					frame_text = "16/-/-"
 					move_text = "Flying Kick (Grnd)"
 					desc_text = "Kick forward til object or edge of stage is hit."
 					command_text = "ATTACK"
 				2:
 					char_spr.texture = kero_attack_air
+					frame_text = "10/-/-"
 					move_text = "Flying Kick (Air)"
 					desc_text = "Kick diagonally downward til object or floor is hit."
 					command_text = "ATTACK"
 				3:
 					char_spr.texture = kero_attack_down
+					frame_text = "16/-/21"
 					move_text = "Gravity Ball"
 					desc_text = "Stays btwn rounds, can kick. Re-\ncharge 1/sec."
 					command_text = "DOWN + ATK"
 				4:
 					char_spr.texture = kero_special
+					frame_text = "7/33/0"
 					move_text = "Tongue Shot"
 					desc_text = "No hitbox. Sucks in most proj. including supers."
 					command_text = "SPECIAL"
 				5:
 					char_spr.texture = kero_special_swallow
+					frame_text = "1/-/30"
 					move_text = "Swallow"
 					desc_text = "W/ suck: gain 1 red pt. (2 for supers). No pts needed."
 					command_text = "SPECIAL"
 				6:
 					char_spr.texture = kero_special_spit
+					frame_text = "16/-/21"
 					move_text = "Spit Back"
 					desc_text = "W/ suck: spit out proj. at opposite velocity."
 					command_text = "DOWN + SPC"
 				7:
 					char_spr.texture = kero_super
+					frame_text = "25/-/21"
 					move_text = "Trap Ball"
 					desc_text = "No gravity, bounces along walls. Can be kicked."
 					command_text = "SUPER"
 				8:
 					char_spr.texture = kero_special_swallow
+					frame_text = "1/-/30"
 					move_text = "Super Swallow"
 					desc_text = "W/ suck: gain 2 red pts. (3 for supers). 1 pt. used."
 					command_text = "SUPER"
@@ -238,26 +256,31 @@ func set_page():
 			match curr_page:
 				1:
 					char_spr.texture = time_attack_short
+					frame_text = "10-27/-/19"
 					move_text = "Taste Ketchup"
 					desc_text = "Change trajectory with LEFT/RIGHT."
 					command_text = "ATTACK"
 				2:
 					char_spr.texture = time_attack
+					frame_text = "25/-/24"
 					move_text = "Taste Fries"
 					desc_text = "Fast projectile. Angle with UP/DOWN."
 					command_text = "ATK (HOLD)"
 				3:
 					char_spr.texture = time_attack_down
+					frame_text = "4/12/18"
 					move_text = "Slider"
 					desc_text = "Only works grounded. Forward slide\nattack."
 					command_text = "DOWN + ATK"
 				4:
 					char_spr.texture = time_special
+					frame_text = "10/-18/0"
 					move_text = "Slamburger"
 					desc_text = "Teleports up, slams down. Keeps horiz. momentum."
 					command_text = "SPECIAL"
 				5:
 					char_spr.texture = time_super
+					frame_text = "49-91/20,230/0"
 					move_text = "Clock Out"
 					desc_text = "Stop time (hold for longer).\nNot an instant win."
 					command_text = "SUPER"
@@ -265,41 +288,49 @@ func set_page():
 			match curr_page:
 				1:
 					char_spr.texture = sword_attack
+					frame_text = "9-37/18/18"
 					move_text = "Piercing Stab"
 					desc_text = "Time button release to extend distance."
 					command_text = "ATTACK"
 				2:
 					char_spr.texture = sword_attack_buffed
+					frame_text = "9-37/10/18"
 					move_text = "Piercing Stab+"
 					desc_text = "When buffed: teleports and creates trail hitbox."
 					command_text = "ATTACK"
 				3:
 					char_spr.texture = sword_teleport
+					frame_text = "0/-/0"
 					move_text = "Teleport"
 					desc_text = "Can do\nonce while charging Piercing Stab."
 					command_text = "ANY DIR."
 				4:
 					char_spr.texture = sword_attack_down
+					frame_text = "16/-/6"
 					move_text = "Rolling Slice"
 					desc_text = "Only works grounded. LEFT/RIGHT changes momentum."
 					command_text = "DOWN + ATK"
 				5:
 					char_spr.texture = sword_attack_down_buffed
+					frame_text = "16/-/6"
 					move_text = "Rolling Slice+"
 					desc_text = "When buffed: move further, destroy projectiles."
 					command_text = "DOWN + ATK"
 				6:
 					char_spr.texture = sword_special
+					frame_text = "25/-/16"
 					move_text = "Volt Charge"
 					desc_text = "Buffs Piercing Stab or Rolling Slice once."
 					command_text = "SPECIAL"
 				7:
 					char_spr.texture = sword_super
+					frame_text = "19/12/5"
 					move_text = "Thunderbolt-V"
 					desc_text = "Three fast vertical bolts that span stage height."
 					command_text = "SUPER"
 				8:
 					char_spr.texture = sword_super_buffed
+					frame_text = "19/8/12"
 					move_text = "Thunderbolt-H"
 					desc_text = "When buffed: horizontal bolt that spans stage width."
 					command_text = "SUPER"
@@ -307,36 +338,43 @@ func set_page():
 			match curr_page:
 				1:
 					char_spr.texture = slime_attack
+					frame_text = "16/18/-"
 					move_text = "Tackle"
 					desc_text = "Lunge forward with a full-body attack."
 					command_text = "ATTACK"
 				2:
 					char_spr.texture = slime_attack_down
+					frame_text = "16/-/9"
 					move_text = "Hammer Fist"
 					desc_text = "Fused/Pink only. Hitbox lasts until landing."
 					command_text = "DOWN + ATK"
 				3:
 					char_spr.texture = slime_blue_attack_down
+					frame_text = "13/-/-"
 					move_text = "Jelly Cannon"
 					desc_text = "Blue only. Throw a slow arcing projectile."
 					command_text = "DOWN + ATK"
 				4:
 					char_spr.texture = slime_special
+					frame_text = "16/18/-"
 					move_text = "Split Shot"
 					desc_text = "Fused only. Split into Pink/Blue with a tackle."
 					command_text = "SPECIAL"
 				5:
 					char_spr.texture = slime_special_switch
+					frame_text = "0/-/0"
 					move_text = "Control Switch"
 					desc_text = "Pink/Blue only if Blue is alive. No pts needed."
 					command_text = "SPECIAL"
 				6:
 					char_spr.texture = slime_special_revive
-					move_text = "Revive"
+					frame_text = "1/-/30"
+					move_text = "Revive "
 					desc_text = "Pink only if Blue is dead. Revives Blue."
 					command_text = "SPECIAL"
 				7:
 					char_spr.texture = slime_super
+					frame_text = "19/12/3"
 					move_text = "Fuse Crash"
 					desc_text = "Creates explosion. If split, create on both and refuse."
 					command_text = "SUPER"
@@ -344,46 +382,55 @@ func set_page():
 			match curr_page:
 				1:
 					char_spr.texture = scythe_ability_meter
+					frame_text = "-/-/-"
 					move_text = "Soul Meter"
 					desc_text = "Gain meter from KOs, destroying projs., or Overdrive."
 					command_text = "ABILITY"
 				2:
 					char_spr.texture = scythe_ability_cancel
+					frame_text = "0/-/0"
 					move_text = "Force Cancel"
 					desc_text = "Use 1 meter to cancel into any attack."
 					command_text = "ABILITY"
 				3:
 					char_spr.texture = scythe_attack
+					frame_text = "13/6/18"
 					move_text = "Soul Slice"
 					desc_text = "Forward slash. Can destroy normal prjs. for meter."
 					command_text = "ATTACK"
 				4:
 					char_spr.texture = scythe_attack_down
+					frame_text = "19/4/-"
 					move_text = "Crescent Moon"
 					desc_text = "Hold ATK to delay. Can destroy normal prjs. for meter."
 					command_text = "DOWN + ATK"
 				5:
 					char_spr.texture = scythe_attack_back
+					frame_text = "1/-/18"
 					move_text = "Backstep"
 					desc_text = "Quickly move backwards."
 					command_text = "BACK + ATK"
 				6:
 					char_spr.texture = scythe_special
+					frame_text = "5/-/16"
 					move_text = "Place Portal"
 					desc_text = "Can consume normal prjs. for meter and remain."
 					command_text = "SPECIAL"
 				7:
 					char_spr.texture = scythe_special_teleport
+					frame_text = "0/-/0"
 					move_text = "Vanish"
 					desc_text = "W/ portal: teleport to portal. No pts needed."
 					command_text = "SPECIAL"
 				8:
 					char_spr.texture = scythe_super
+					frame_text = "16/-/21"
 					move_text = "Overdrive"
 					desc_text = "Completely fill Soul Meter if not full."
 					command_text = "SUPER"
 				9:
 					char_spr.texture = scythe_super_charged
+					frame_text = "16/-/21"
 					move_text = "Heavenrend"
 					desc_text = "When Soul Meter full: create slash with inc. speed."
 					command_text = "SUPER"
@@ -391,31 +438,37 @@ func set_page():
 			match curr_page:
 				1:
 					char_spr.texture = darkgoto_ability
+					frame_text = "-/-/-"
 					move_text = "Double Air Dash"
 					desc_text = "Can dash twice in the air."
 					command_text = "ABILITY"
 				2:
 					char_spr.texture = darkgoto_attack
+					frame_text = "13/-/24"
 					move_text = "Dark Sun"
 					desc_text = "Diagonally upwards on ground, downwards in air."
 					command_text = "ATTACK"
 				3:
 					char_spr.texture = darkgoto_attack_down
+					frame_text = "5/14/-"
 					move_text = "Vengeful Fist"
 					desc_text = "Can perform in air. Further than Rising Fist."
 					command_text = "DOWN + ATK"
 				4:
 					char_spr.texture = darkgoto_special
+					frame_text = "1/18/0"
 					move_text = "Reflect"
 					desc_text = "Reflect non-super atks, gain point back + red point."
 					command_text = "SPECIAL"
 				5:
 					char_spr.texture = darkgoto_super
+					frame_text = "7/-/0-30"
 					move_text = "Super Evil Attack"
 					desc_text = "Trajectory like Dark Sun. Can dash cancel recovery."
 					command_text = "SUPER"
 	
-	label_char.text = global.get_char_short_name(curr_char)
+#	label_char.text = global.get_char_short_name(curr_char)
+	label_frame.text = frame_text
 	label_move.text = move_text
 	label_desc.text = desc_text
 	label_command.text = command_text

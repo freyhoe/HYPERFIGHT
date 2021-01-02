@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super.ogg-e5ea431175d7ac663bce015951c0f004.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/goto_banana/super.ogg"
+dest_files=[ "res://.import/super.ogg-e5ea431175d7ac663bce015951c0f004.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

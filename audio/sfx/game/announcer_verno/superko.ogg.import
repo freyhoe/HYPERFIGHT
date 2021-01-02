@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/superko.ogg-de7150e62a9b75da1c679c983dd7d0f1.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_verno/superko.ogg"
+dest_files=[ "res://.import/superko.ogg-de7150e62a9b75da1c679c983dd7d0f1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

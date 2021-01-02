@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special_parry.ogg-d40612369e89bdeb2b8f9f6f4d0f8574.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/darkgoto_banana/special_parry.ogg"
+dest_files=[ "res://.import/special_parry.ogg-d40612369e89bdeb2b8f9f6f4d0f8574.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

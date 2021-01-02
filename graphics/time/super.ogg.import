@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super.ogg-08d024ad1e291b8f06824e7dc44c8a96.oggstr"
+
+[deps]
+
+source_file="res://graphics/time/super.ogg"
+dest_files=[ "res://.import/super.ogg-08d024ad1e291b8f06824e7dc44c8a96.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

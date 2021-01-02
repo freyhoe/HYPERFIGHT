@@ -72,7 +72,7 @@ var credits_logo_pos = Vector2(300, -10)
 var rebinding = false
 var editing = false
 var active_buttons
-var buttons_max = 6
+var buttons_max = 7
 var buttons_online_max = 3
 var buttons_online_findlobby_max = 3
 var buttons_online_findlobby_find_max = 1
@@ -84,13 +84,14 @@ var buttons_online_hostlobby_max = 6
 var buttons_versus_max = 4
 var buttons_solomodes_max = 4
 var buttons_news_max = 1
+var buttons_options_customize_max = 4
 var buttons_options_max = 6
 var buttons_options_game_max = 3
 var buttons_options_graphics_max = 3
 var buttons_options_audio_max = 3
 var buttons_options_controls_max = 3
 var buttons_options_controls_rebind_max = 13
-var buttons_options_credits_max = 1
+var buttons_credits_max = 1
 var option = 1
 var max_option = buttons_max
 var last_option = 1
@@ -133,6 +134,7 @@ onready var buttons_options = get_node("buttons_options")
 onready var buttons_options_game = get_node("buttons_options_game")
 onready var buttons_options_graphics = get_node("buttons_options_graphics")
 onready var buttons_options_audio = get_node("buttons_options_audio")
+onready var buttons_options_customize = get_node("buttons_options_customize")
 onready var buttons_options_controls = get_node("buttons_options_controls")
 onready var buttons_options_controls_p1 = get_node("buttons_options_controls_p1")
 onready var buttons_options_controls_p2 = get_node("buttons_options_controls_p2")
@@ -140,7 +142,7 @@ onready var button_options_controls_p1_dtdash = get_node("buttons_options_contro
 onready var button_options_controls_p2_dtdash = get_node("buttons_options_controls_p2/button_dtdash")
 onready var button_options_controls_p1_assuper = get_node("buttons_options_controls_p1/button_assuper")
 onready var button_options_controls_p2_assuper = get_node("buttons_options_controls_p2/button_assuper")
-onready var buttons_options_credits = get_node("buttons_options_credits")
+onready var buttons_credits = get_node("buttons_credits")
 onready var menu_banner = get_node("menu_banner")
 onready var menu_pattern = get_node("menu_pattern")
 onready var menu_pattern2 = get_node("menu_pattern2")
@@ -228,7 +230,7 @@ func _ready():
 func no_menu_buttons():
 	return active_buttons == buttons_online_findlobby_find or active_buttons == buttons_online_findlobby_join or \
 	   active_buttons == buttons_online_quickmatch_find or \
-	   active_buttons == buttons_options_credits or active_buttons == buttons_news or \
+	   active_buttons == buttons_credits or active_buttons == buttons_news or \
 	   active_buttons == buttons_options_controls_p1 or active_buttons == buttons_options_controls_p2
 
 func _process(delta):
@@ -370,7 +372,7 @@ func _process(delta):
 				menu_banner.activate()
 				news.set_active(false)
 				if active_buttons == buttons_online or active_buttons == buttons_versus or \
-				   active_buttons == buttons_solomodes or active_buttons == buttons_news or active_buttons == buttons_options:
+				   active_buttons == buttons_solomodes or active_buttons == buttons_news or active_buttons == buttons_options or active_buttons == buttons_credits:
 					change_buttons(buttons, buttons_max)
 				elif active_buttons == buttons_online_findlobby or active_buttons == buttons_online_hostlobby or \
 					 active_buttons == buttons_online_quickmatch:
@@ -383,7 +385,7 @@ func _process(delta):
 					change_buttons(buttons_online_quickmatch, buttons_online_quickmatch_max)
 					global.leave_lobby(false)
 				elif active_buttons == buttons_options_game or active_buttons == buttons_options_graphics or active_buttons == buttons_options_audio or \
-					 active_buttons == buttons_options_controls or active_buttons == buttons_options_credits:
+					 active_buttons == buttons_options_controls or active_buttons == buttons_options_customize:
 					change_buttons(buttons_options, buttons_options_max)
 				elif active_buttons == buttons_options_controls_p1 or active_buttons == buttons_options_controls_p2:
 					change_buttons(buttons_options_controls, buttons_options_controls_max)
@@ -402,7 +404,8 @@ func _process(delta):
 		   (active_buttons == buttons_versus and global.menu_option == buttons_versus_max) or \
 		   (active_buttons == buttons_solomodes and global.menu_option == buttons_solomodes_max) or \
 		   (active_buttons == buttons_news and global.menu_option == buttons_news_max) or \
-		   (active_buttons == buttons_options and global.menu_option == buttons_options_max):
+		   (active_buttons == buttons_options and global.menu_option == buttons_options_max) or\
+		   (active_buttons == buttons_credits and global.menu_option == buttons_credits_max):
 			change_buttons(buttons, buttons_max)
 		elif (active_buttons == buttons and global.menu_option == 1) or \
 		   (active_buttons == buttons_online_findlobby and global.menu_option == buttons_online_findlobby_max) or \
@@ -459,7 +462,7 @@ func _process(delta):
 			 (active_buttons == buttons_options_graphics and global.menu_option == buttons_options_graphics_max) or \
 			 (active_buttons == buttons_options_audio and global.menu_option == buttons_options_audio_max) or \
 			 (active_buttons == buttons_options_controls and global.menu_option == buttons_options_controls_max) or \
-			 (active_buttons == buttons_options_credits and global.menu_option == buttons_options_credits_max):
+			 (active_buttons == buttons_options_customize and global.menu_option == buttons_options_customize_max):
 			change_buttons(buttons_options, buttons_options_max)
 		elif active_buttons == buttons_options and global.menu_option == 1:
 			change_buttons(buttons_options_game, buttons_options_game_max)
@@ -476,6 +479,9 @@ func _process(delta):
 			 (active_buttons == buttons_options_controls_p1 and global.menu_option == buttons_options_controls_rebind_max) or \
 			 (active_buttons == buttons_options_controls_p2 and global.menu_option == buttons_options_controls_rebind_max):
 			change_buttons(buttons_options_controls, buttons_options_controls_max)
+		elif active_buttons == buttons_options and global.menu_option == 5:
+			change_buttons(buttons_options_customize, buttons_options_customize_max)
+	#		menu_banner.deactivate()
 		elif active_buttons == buttons_options_controls and global.menu_option == 1:
 			change_buttons(buttons_options_controls_p1, buttons_options_controls_rebind_max)
 			menu_banner.deactivate()
@@ -496,8 +502,9 @@ func _process(delta):
 			button_options_controls_p2_assuper.set_label_text()
 			state = MENU_STATE.menu
 			menu_banner.deactivate()
-		elif active_buttons == buttons_options and global.menu_option == 5:
-			change_buttons(buttons_options_credits, buttons_options_credits_max)
+
+		elif active_buttons == buttons and global.menu_option == 6:
+			change_buttons(buttons_credits, buttons_credits_max)
 			menu_banner.deactivate()
 		elif press_timer > 0:
 			press_timer -= 1 * (global.fps * delta)
@@ -591,7 +598,7 @@ func change_buttons(new_buttons, new_max_option):
 		option = last_option
 	elif (new_buttons == buttons_online or new_buttons == buttons_versus or \
 		  new_buttons == buttons_solomodes or new_buttons == buttons_news or \
-		  new_buttons == buttons_options) and active_buttons == buttons:
+		  new_buttons == buttons_options or new_buttons == buttons_credits) and active_buttons == buttons:
 		last_option = option
 		option = 1
 	elif new_buttons == buttons_online and active_buttons != buttons:
@@ -650,7 +657,8 @@ func deactivate_all_buttons(next_layer):
 	deactivate_buttons(buttons_options_controls, next_layer)
 	deactivate_buttons(buttons_options_controls_p1, next_layer)
 	deactivate_buttons(buttons_options_controls_p2, next_layer)
-	deactivate_buttons(buttons_options_credits, next_layer)
+	deactivate_buttons(buttons_credits, next_layer)
+	deactivate_buttons(buttons_options_customize, next_layer)
 
 func play_audio(snd):
 	audio.volume_db = global.sfx_volume_db

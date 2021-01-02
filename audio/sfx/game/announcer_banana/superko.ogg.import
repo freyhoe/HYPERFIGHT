@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/superko.ogg-bc81b95b6dc3230f446cb3567db56186.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_banana/superko.ogg"
+dest_files=[ "res://.import/superko.ogg-bc81b95b6dc3230f446cb3567db56186.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

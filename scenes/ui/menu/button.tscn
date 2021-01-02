@@ -281,6 +281,7 @@ tracks/1/keys = {
 [node name="menu_button" type="Sprite"]
 texture = ExtResource( 1 )
 hframes = 4
+frame = 3
 script = ExtResource( 2 )
 
 [node name="label_text" type="Label" parent="."]

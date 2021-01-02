@@ -1,6 +1,7 @@
 extends Node
 
 enum SCREEN { window, window2x, window3x, window4x, full }
+enum ANNOUNCER{ default, bananaberry, vernomere, none }
 enum INPUT_TYPE { key, pad, stick }
 enum MODE { versus_player, versus_cpu, online_lobby, online_quickmatch, arcade, training, tutorial }
 enum CHAR { goto, yoyo, kero, time, sword, slime, scythe, darkgoto, random, locked }
@@ -33,9 +34,11 @@ const CFG_P2S = "player2_setting"
 const CFG_PS_DTDASH = "dtdash"
 const CFG_PS_ASSUPER = "assuper"
 const CFG_OPTIONS = "options"
+const CFG_CUSTOMIZE = "custom"
 const CFG_OPTIONS_CPUDIFF = "cpu_diff"
 const CFG_OPTIONS_HITBOXES = "hitboxes"
 const CFG_OPTIONS_SCREEN = "screen_type"
+const CFG_CUSTOMIZE_ANNOUNCER = "announcer"
 const CFG_OPTIONS_VSYNC = "vsync"
 const CFG_OPTIONS_MUSVOL = "music_volume"
 const CFG_OPTIONS_SFXVOL = "sfx_volume"
@@ -198,12 +201,12 @@ var menu_option = 1
 var player1_char = CHAR.goto
 var player1_palette = -1
 var player1_cpu = false
-var player1_dtdash = true
+var player1_dtdash = false
 var player1_assuper = true
 var player2_char = CHAR.goto
 var player2_palette = 0
 var player2_cpu = false
-var player2_dtdash = true
+var player2_dtdash = false
 var player2_assuper = true
 var stage = STAGE.dojo
 var mode = MODE.versus_player
@@ -220,10 +223,11 @@ var music_volume_db = 0
 var sfx_volume = 5
 var sfx_volume_db = 0
 var screen_type = SCREEN.window4x
+var announcer_type = ANNOUNCER.default
 
 var unlock_color4 = []
-var unlock_char_darkgoto = false
-var unlock_stage_blackhole = false
+var unlock_char_darkgoto = true
+var unlock_stage_blackhole = true
 
 var record_arcade = []
 
@@ -280,6 +284,7 @@ func load_config():
 	hitboxes= get_config_value(config, CFG_OPTIONS, CFG_OPTIONS_HITBOXES, hitboxes)
 	screen_type = get_config_value(config, CFG_OPTIONS, CFG_OPTIONS_SCREEN, screen_type)
 	vsync = get_config_value(config, CFG_OPTIONS, CFG_OPTIONS_VSYNC, vsync)
+	announcer_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOMIZE_ANNOUNCER, announcer_type)
 	
 	unlock_color4.resize(char_count)
 	if html5_ver:
@@ -304,12 +309,14 @@ func load_config():
 		var save_str = CFG_RECORD_ARCADE + "_" + get_char_debug_name(i)
 		record_arcade[i] = get_config_value(config, CFG_RECORD, save_str, -1)
 	
+	
 	config.save(CONFIG_FILE)
 	load_input(config)
 	
 	set_music_volume()
 	set_sfx_volume()
 	set_screen_type()
+	set_announcer_type()
 	set_vsync()
 	
 	config = ConfigFile.new()
@@ -445,6 +452,9 @@ func set_screen_type():
 	if screen_type != SCREEN.full:
 		OS.set_window_size(window_size)
 	save_config_value(CFG_OPTIONS, CFG_OPTIONS_SCREEN, screen_type)
+
+func set_announcer_type():
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOMIZE_ANNOUNCER, announcer_type)
 
 func set_vsync():
 	OS.set_use_vsync(vsync)
