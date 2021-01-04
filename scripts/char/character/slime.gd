@@ -19,18 +19,66 @@ onready var proj_pink_super = preload("res://scenes/proj/slime/pink/super.tscn")
 onready var effect_hit = preload("res://scenes/effect/slime/char/attack_hit.tscn")
 onready var effect_pink_hit = preload("res://scenes/effect/slime/pink/char/attack_hit.tscn")
 
-onready var sfx_attack = preload("res://audio/sfx/game/char/slime/pink/attack.ogg")
-onready var sfx_blue_attack = preload("res://audio/sfx/game/char/slime/blue/attack.ogg")
-onready var sfx_attack_down = preload("res://audio/sfx/game/char/slime/pink/attack_down.ogg")
-onready var sfx_blue_attack_down = preload("res://audio/sfx/game/char/slime/blue/attack_down_fused.ogg")
-onready var sfx_special = preload("res://audio/sfx/game/char/slime/pink/special.ogg")
-onready var sfx_special_revive = preload("res://audio/sfx/game/char/slime/pink/special_revive.ogg")
-onready var sfx_super = preload("res://audio/sfx/game/char/slime/pink/super.ogg")
-onready var sfx_blue_super = preload("res://audio/sfx/game/char/slime/blue/super.ogg")
-onready var sfx_hit = preload("res://audio/sfx/game/char/slime/pink/hit.ogg")
-onready var sfx_blue_hit = preload("res://audio/sfx/game/char/slime/blue/hit.ogg")
+onready var sfx_attack_default = preload("res://audio/sfx/game/char/slime/pink/attack.ogg")
+onready var sfx_blue_attack_default = preload("res://audio/sfx/game/char/slime/blue/attack.ogg")
+onready var sfx_attack_down_default = preload("res://audio/sfx/game/char/slime/pink/attack_down.ogg")
+onready var sfx_blue_attack_down_default = preload("res://audio/sfx/game/char/slime/blue/attack_down_fused.ogg")
+onready var sfx_special_default = preload("res://audio/sfx/game/char/slime/pink/special.ogg")
+onready var sfx_special_revive_default = preload("res://audio/sfx/game/char/slime/pink/special_revive.ogg")
+onready var sfx_super_default = preload("res://audio/sfx/game/char/slime/pink/super.ogg")
+onready var sfx_blue_super_default = preload("res://audio/sfx/game/char/slime/blue/super.ogg")
+onready var sfx_hit_default= preload("res://audio/sfx/game/char/slime/pink/hit.ogg")
+onready var sfx_blue_hit_default = preload("res://audio/sfx/game/char/slime/blue/hit.ogg")
+
+onready var sfx_attack_retro = preload("res://audio/sfx/game/char/slime_retro/pink/attack.ogg")
+onready var sfx_blue_attack_retro = preload("res://audio/sfx/game/char/slime_retro/blue/attack.ogg")
+onready var sfx_attack_down_retro = preload("res://audio/sfx/game/char/slime_retro/pink/attack_down.ogg")
+onready var sfx_blue_attack_down_retro = preload("res://audio/sfx/game/char/slime_retro/blue/attack_down_fused.ogg")
+onready var sfx_special_retro = preload("res://audio/sfx/game/char/slime_retro/pink/special.ogg")
+onready var sfx_special_revive_retro = preload("res://audio/sfx/game/char/slime_retro/pink/special_revive.ogg")
+onready var sfx_super_retro = preload("res://audio/sfx/game/char/slime_retro/pink/super.ogg")
+onready var sfx_blue_super_retro = preload("res://audio/sfx/game/char/slime_retro/blue/super.ogg")
+onready var sfx_hit_retro= preload("res://audio/sfx/game/char/slime_retro/pink/hit.ogg")
+onready var sfx_blue_hit_retro = preload("res://audio/sfx/game/char/slime_retro/blue/hit.ogg")
+
+var sfx_attack = sfx_attack_default
+var sfx_blue_attack = sfx_blue_attack_default
+var sfx_attack_down = sfx_attack_down_default
+var sfx_blue_attack_down= sfx_blue_attack_down_default
+var sfx_special_revive= sfx_special_revive_default
+var sfx_special = sfx_special_default
+var sfx_blue_super = sfx_blue_super_default
+var sfx_super = sfx_super_default
+var sfx_blue_hit = sfx_blue_hit_default
+var sfx_hit = sfx_hit_default
+
+onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	match global.slime_voice_type:
+		global.CUSTOM_SLIME_VOICE.none:
+			sfx_attack = sfx_silence
+			sfx_blue_attack = sfx_silence
+			sfx_attack_down = sfx_silence
+			sfx_blue_attack_down= sfx_silence
+			sfx_special_revive= sfx_silence
+			sfx_special = sfx_silence
+			sfx_blue_super = sfx_silence
+			sfx_super = sfx_silence
+			sfx_blue_hit = sfx_silence
+			sfx_hit = sfx_silence
+		global.CUSTOM_SLIME_VOICE.retro:
+			sfx_attack = sfx_attack_retro
+			sfx_blue_attack = sfx_blue_attack_retro
+			sfx_attack_down = sfx_attack_down_retro
+			sfx_blue_attack_down= sfx_blue_attack_down_retro
+			sfx_special_revive= sfx_special_revive_retro
+			sfx_special = sfx_special_retro
+			sfx_blue_super = sfx_blue_super_retro
+			sfx_super = sfx_super_retro
+			sfx_blue_hit = sfx_blue_hit_retro
+			sfx_hit = sfx_hit_retro
+
 	add_to_group(global.GROUP_CHAR_SLIME)
 	size = Vector2(12, 22)
 	walk_speed = 90

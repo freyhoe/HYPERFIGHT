@@ -25,16 +25,73 @@ onready var illusion = preload("res://scenes/effect/sword/char/illusion.tscn")
 onready var proj_special_trail = preload("res://scenes/proj/sword/special_trail.tscn")
 onready var proj_super_trail = preload("res://scenes/proj/sword/super_trail.tscn")
 
-onready var sfx_attack = preload("res://audio/sfx/game/char/sword/attack.ogg")
-onready var sfx_attack_charge = preload("res://audio/sfx/game/char/sword/attack_charge.ogg")
-onready var sfx_attack_buffed = preload("res://audio/sfx/game/char/sword/attack_buffed.ogg")
-onready var sfx_attack_down = preload("res://audio/sfx/game/char/sword/attack_down.ogg")
-onready var sfx_attack_down_buffed = preload("res://audio/sfx/game/char/sword/attack_down_buffed.ogg")
-onready var sfx_special = preload("res://audio/sfx/game/char/sword/special.ogg")
-onready var sfx_super = preload("res://audio/sfx/game/char/sword/super.ogg")
-onready var sfx_hit = preload("res://audio/sfx/game/char/sword/hit.ogg")
+onready var sfx_attack_default = preload("res://audio/sfx/game/char/sword/attack.ogg")
+onready var sfx_attack_charge_default = preload("res://audio/sfx/game/char/sword/attack_charge.ogg")
+onready var sfx_attack_buffed_default = preload("res://audio/sfx/game/char/sword/attack_buffed.ogg")
+onready var sfx_attack_down_default = preload("res://audio/sfx/game/char/sword/attack_down.ogg")
+onready var sfx_attack_down_buffed_default = preload("res://audio/sfx/game/char/sword/attack_down_buffed.ogg")
+onready var sfx_special_default = preload("res://audio/sfx/game/char/sword/special.ogg")
+onready var sfx_super_default = preload("res://audio/sfx/game/char/sword/super.ogg")
+onready var sfx_hit_default = preload("res://audio/sfx/game/char/sword/hit.ogg")
+
+onready var sfx_attack_petris = preload("res://audio/sfx/game/char/sword_petris/attack.ogg")
+onready var sfx_attack_charge_petris = preload("res://audio/sfx/game/char/sword_petris/attack_charge.ogg")
+onready var sfx_attack_buffed_petris = preload("res://audio/sfx/game/char/sword_petris/attack_buffed.ogg")
+onready var sfx_attack_down_petris = preload("res://audio/sfx/game/char/sword_petris/attack_down.ogg")
+onready var sfx_attack_down_buffed_petris = preload("res://audio/sfx/game/char/sword_petris/attack_down_buffed.ogg")
+onready var sfx_special_petris = preload("res://audio/sfx/game/char/sword_petris/special.ogg")
+onready var sfx_super_petris = preload("res://audio/sfx/game/char/sword_petris/super.ogg")
+onready var sfx_hit_petris = preload("res://audio/sfx/game/char/sword_petris/hit.ogg")
+
+onready var sfx_attack_retro = preload("res://audio/sfx/game/char/sword_retro/attack.ogg")
+onready var sfx_attack_charge_retro = preload("res://audio/sfx/game/char/sword_retro/attack_charge.ogg")
+onready var sfx_attack_buffed_retro = preload("res://audio/sfx/game/char/sword_retro/attack_buffed.ogg")
+onready var sfx_attack_down_retro = preload("res://audio/sfx/game/char/sword_retro/attack_down.ogg")
+onready var sfx_attack_down_buffed_retro = preload("res://audio/sfx/game/char/sword_retro/attack_down_buffed.ogg")
+onready var sfx_special_retro = preload("res://audio/sfx/game/char/sword_retro/special.ogg")
+onready var sfx_super_retro = preload("res://audio/sfx/game/char/sword_retro/super.ogg")
+onready var sfx_hit_retro = preload("res://audio/sfx/game/char/sword_retro/hit.ogg")
+
+var sfx_attack = sfx_attack_default
+var sfx_attack_down = sfx_attack_down_default
+var sfx_attack_charge = sfx_attack_charge_default
+var sfx_special = sfx_special_default
+var sfx_attack_buffed = sfx_attack_buffed_default
+var sfx_attack_down_buffed = sfx_attack_down_buffed_default
+var sfx_super = sfx_super_default
+var sfx_hit = sfx_hit_default
+
+onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	match global.sword_voice_type:
+		global.CUSTOM_SWORD_VOICE.petris:
+			sfx_attack = sfx_attack_petris
+			sfx_attack_charge = sfx_attack_charge_petris
+			sfx_attack_buffed =  sfx_attack_buffed_petris
+			sfx_attack_down = sfx_attack_down_petris
+			sfx_attack_down_buffed =sfx_attack_down_buffed_petris
+			sfx_special = sfx_special_petris
+			sfx_super =sfx_super_petris
+			sfx_hit = sfx_hit_petris
+		global.CUSTOM_SWORD_VOICE.none:
+			sfx_attack = sfx_silence
+			sfx_attack_charge =sfx_silence
+			sfx_attack_buffed = sfx_silence
+			sfx_attack_down = sfx_silence
+			sfx_attack_down_buffed =sfx_silence
+			sfx_special = sfx_silence
+			sfx_super =sfx_silence
+			sfx_hit = sfx_silence
+		global.CUSTOM_SWORD_VOICE.retro:
+			sfx_attack = sfx_attack_retro
+			sfx_attack_charge = sfx_attack_charge_retro
+			sfx_attack_buffed =  sfx_attack_buffed_retro
+			sfx_attack_down = sfx_attack_down_retro
+			sfx_attack_down_buffed =sfx_attack_down_buffed_retro
+			sfx_special = sfx_special_retro
+			sfx_super =sfx_super_retro
+			sfx_hit = sfx_hit_retro
 	shadow_offset = -1
 	h_dash_speed = 140
 	attack_gravity = 10

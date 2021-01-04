@@ -16,15 +16,83 @@ onready var effect_hit_down = preload("res://scenes/effect/time/char/attack_down
 onready var effect_super = preload("res://scenes/effect/time/char/super.tscn")
 onready var effect_super_end = preload("res://scenes/effect/time/char/super_end.tscn")
 
-onready var sfx_attack = preload("res://audio/sfx/game/char/time/attack.ogg")
-onready var sfx_attack_down = preload("res://audio/sfx/game/char/time/attack_down.ogg")
-onready var sfx_special = preload("res://audio/sfx/game/char/time/special.ogg")
-onready var sfx_super = preload("res://audio/sfx/game/char/time/super.ogg")
-onready var sfx_super_boom = preload("res://audio/sfx/game/char/time/super_boom.ogg")
-onready var sfx_super_boom_end = preload("res://audio/sfx/game/char/time/super_boom_end.ogg")
-onready var sfx_hit = preload("res://audio/sfx/game/char/time/hit.ogg")
+onready var sfx_attack_default = preload("res://audio/sfx/game/char/time/attack.ogg")
+onready var sfx_attack_down_default = preload("res://audio/sfx/game/char/time/attack_down.ogg")
+onready var sfx_special_default = preload("res://audio/sfx/game/char/time/special.ogg")
+onready var sfx_super_default = preload("res://audio/sfx/game/char/time/super.ogg")
+onready var sfx_super_boom_default = preload("res://audio/sfx/game/char/time/super_boom.ogg")
+onready var sfx_super_boom_end_default = preload("res://audio/sfx/game/char/time/super_boom_end.ogg")
+onready var sfx_hit_default = preload("res://audio/sfx/game/char/time/hit.ogg")
+
+onready var sfx_attack_banana = preload("res://audio/sfx/game/char/time_banana/attack.ogg")
+onready var sfx_attack_down_banana = preload("res://audio/sfx/game/char/time_banana/attack_down.ogg")
+onready var sfx_special_banana = preload("res://audio/sfx/game/char/time_banana/special.ogg")
+onready var sfx_super_banana = preload("res://audio/sfx/game/char/time_banana/super.ogg")
+#onready var sfx_super_boom_banana = preload("res://audio/sfx/game/char/time_banana/super_boom.ogg")
+#onready var sfx_super_boom_end_banana = preload("res://audio/sfx/game/char/time_banana/super_boom_end.ogg")
+onready var sfx_hit_banana = preload("res://audio/sfx/game/char/time_banana/hit.ogg")
+
+onready var sfx_attack_fez = preload("res://audio/sfx/game/char/time_fez/attack.ogg")
+onready var sfx_attack_down_fez  = preload("res://audio/sfx/game/char/time_fez/attack_down.ogg")
+onready var sfx_special_fez  = preload("res://audio/sfx/game/char/time_fez/special.ogg")
+onready var sfx_super_fez  = preload("res://audio/sfx/game/char/time_fez/super.ogg")
+onready var sfx_super_boom_fez  = preload("res://audio/sfx/game/char/time_fez/super_boom.ogg")
+onready var sfx_super_boom_end_fez  = preload("res://audio/sfx/game/char/time_fez/super_boom_end.ogg")
+onready var sfx_hit_fez  = preload("res://audio/sfx/game/char/time_fez/hit.ogg")
+
+onready var sfx_attack_retro = preload("res://audio/sfx/game/char/time_retro/attack.ogg")
+onready var sfx_attack_down_retro = preload("res://audio/sfx/game/char/time_retro/attack_down.ogg")
+onready var sfx_special_retro  = preload("res://audio/sfx/game/char/time_retro/special.ogg")
+onready var sfx_super_retro  = preload("res://audio/sfx/game/char/time_retro/super.ogg")
+onready var sfx_super_boom_retro  = preload("res://audio/sfx/game/char/time_retro/super_boom.ogg")
+onready var sfx_super_boom_end_retro  = preload("res://audio/sfx/game/char/time_retro/super_boom_end.ogg")
+onready var sfx_hit_retro  = preload("res://audio/sfx/game/char/time_retro/hit.ogg")
+
+var sfx_attack = sfx_attack_default
+var sfx_attack_down = sfx_attack_down_default
+var sfx_special = sfx_special_default
+var sfx_super_boom = sfx_super_boom_default
+var sfx_super_boom_end = sfx_super_boom_end_default
+var sfx_super = sfx_super_default
+var sfx_hit = sfx_hit_default
+
+onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	match global.time_voice_type:
+		global.CUSTOM_TIME_VOICE.bananaberry:
+			sfx_attack = sfx_attack_banana
+			sfx_attack_down = sfx_attack_down_banana
+			sfx_special = sfx_special_banana
+		#	sfx_super_boom = sfx_super_boom_banana
+		#	sfx_super_boom_end = sfx_super_boom_end_banana
+			sfx_super = sfx_super_banana
+			sfx_hit = sfx_hit_banana
+		global.CUSTOM_TIME_VOICE.fez:
+			sfx_attack = sfx_attack_fez
+			sfx_attack_down = sfx_attack_down_fez
+			sfx_special = sfx_special_fez
+			sfx_super_boom = sfx_super_boom_fez
+			sfx_super_boom_end = sfx_super_boom_end_fez
+			sfx_super = sfx_super_fez
+			sfx_hit = sfx_hit_fez
+		global.CUSTOM_TIME_VOICE.none:
+			sfx_attack = sfx_silence
+			sfx_attack_down = sfx_silence
+			sfx_special = sfx_silence
+			sfx_super_boom = sfx_silence
+			sfx_super_boom_end = sfx_silence
+			sfx_super = sfx_silence
+			sfx_hit = sfx_silence
+		global.CUSTOM_TIME_VOICE.retro:
+			sfx_attack = sfx_attack_retro
+			sfx_attack_down = sfx_attack_down_retro
+			sfx_special = sfx_special_retro
+			sfx_super_boom = sfx_super_boom_retro
+			sfx_super_boom_end = sfx_super_boom_end_retro
+			sfx_super = sfx_super_retro
+			sfx_hit = sfx_hit_retro
+
 	size = Vector2(12, 50)
 	walk_speed = 55
 	h_dash_speed = 150

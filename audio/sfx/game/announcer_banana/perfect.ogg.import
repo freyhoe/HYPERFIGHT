@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/perfect.ogg-e130cf426f734b76f3f65a6870024a86.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_banana/perfect.ogg"
+dest_files=[ "res://.import/perfect.ogg-e130cf426f734b76f3f65a6870024a86.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

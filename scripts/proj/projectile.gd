@@ -198,8 +198,8 @@ func process_hitbox_char_collision(hitbox_, call_other):
 			destroy_no_effect()
 		parry_effect()
 
-func process_hitbox_proj_collision(_hitbox, call_other):
-	var hitbox_owner = hitbox.get_hitbox_owner()
+func process_hitbox_proj_collision(hitbox_, call_other):
+	var hitbox_owner = hitbox_.get_hitbox_owner()
 	if call_other:
 		hitbox_owner.process_hitbox_collision(self.hitbox, false)
 	if not collided_nodes.has(hitbox_owner.get_instance_id()):

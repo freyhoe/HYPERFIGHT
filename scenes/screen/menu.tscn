@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scripts/screen/menu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/ui/menu/logo/gradient.png" type="Texture" id=2]
@@ -38,6 +38,14 @@
 [ext_resource path="res://scripts/ui/menu/button/menu/options/controls/p1/assuper.gd" type="Script" id=36]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/game/button_hitboxes.gd" type="Script" id=37]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_custom_announcer.gd" type="Script" id=38]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_yoyo_voice.gd" type="Script" id=39]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_goto_voice.gd" type="Script" id=40]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_darkgoto_voice.gd" type="Script" id=41]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_kero_voice.gd" type="Script" id=42]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_scythe_voice.gd" type="Script" id=43]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_slime_voice.gd" type="Script" id=44]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_sword_voice.gd" type="Script" id=45]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_time_voice.gd" type="Script" id=46]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -778,6 +786,226 @@ option_num = 3
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 layer = 2
 
+[node name="buttons_goto" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_voice" parent="buttons_goto" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 40 )
+text = "Voice: DEFAULT"
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_skin" parent="buttons_goto" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Skin: DEFAULT"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_back" parent="buttons_goto" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_kero" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_voice" parent="buttons_kero" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 42 )
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_skin" parent="buttons_kero" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Skin: DEFAULT"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_back" parent="buttons_kero" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_yoyo" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_voice" parent="buttons_yoyo" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 39 )
+text = "Voice: DEFAULT"
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_skin" parent="buttons_yoyo" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Skin: DEFAULT"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_back" parent="buttons_yoyo" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_time" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_voice" parent="buttons_time" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 46 )
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_skin" parent="buttons_time" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Skin: DEFAULT"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_back" parent="buttons_time" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_sword" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_voice" parent="buttons_sword" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 45 )
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_skin" parent="buttons_sword" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Skin: DEFAULT"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_back" parent="buttons_sword" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_scythe" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_voice" parent="buttons_scythe" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 43 )
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_skin" parent="buttons_scythe" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Skin: DEFAULT"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_back" parent="buttons_scythe" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_slime" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_voice" parent="buttons_slime" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 44 )
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_skin" parent="buttons_slime" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Skin: DEFAULT"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_back" parent="buttons_slime" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_darkgoto" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_voice" parent="buttons_darkgoto" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 41 )
+text = "Voice:/nBASHER"
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+page = 2
+
+[node name="button_skin" parent="buttons_darkgoto" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Skin: DEFAULT"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_back" parent="buttons_darkgoto" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
 [node name="buttons_options_customize" type="Node2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
@@ -799,7 +1027,7 @@ color = Color( 0.309804, 0.635294, 0.65098, 1 )
 layer = 2
 
 [node name="button_custom_music" parent="buttons_options_customize" instance=ExtResource( 9 )]
-position = Vector2( -67, 45 )
+position = Vector2( -67, 9 )
 text = "Music"
 option_num = 3
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
@@ -817,31 +1045,90 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="button_custom_announcer" parent="buttons_custom_characters" instance=ExtResource( 9 )]
+[node name="button_custom_goto" parent="buttons_custom_characters" instance=ExtResource( 9 )]
 position = Vector2( -67, -45 )
-script = ExtResource( 38 )
-text = "Announcer: bananaberry"
-setting_slide = true
+text = "Shoto Goto"
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
 layer = 2
 
-[node name="button_custom_characters" parent="buttons_custom_characters" instance=ExtResource( 9 )]
+[node name="button_custom_yoyo" parent="buttons_custom_characters" instance=ExtResource( 9 )]
 position = Vector2( -67, -27 )
-text = "Characters"
+text = "Yo-Yona"
 option_num = 2
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 layer = 2
 
-[node name="button_custom_music" parent="buttons_custom_characters" instance=ExtResource( 9 )]
+[node name="button_custom_kero" parent="buttons_custom_characters" instance=ExtResource( 9 )]
 position = Vector2( -67, -9 )
-text = "Music"
+text = "Dr Kero"
 option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_custom_time" parent="buttons_custom_characters" instance=ExtResource( 9 )]
+position = Vector2( -67, 9 )
+text = "Don McRon"
+option_num = 4
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_custom_page" parent="buttons_custom_characters" instance=ExtResource( 9 )]
+position = Vector2( -67, 27 )
+text = "Page 1/2"
+option_num = 5
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 layer = 2
 
 [node name="button_back" parent="buttons_custom_characters" instance=ExtResource( 9 )]
 position = Vector2( -67, 45 )
 text = "Back"
+option_num = 6
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_custom_characters2" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_custom_sword" parent="buttons_custom_characters2" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+text = "Vince Volt"
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_custom_slime" parent="buttons_custom_characters2" instance=ExtResource( 9 )]
+position = Vector2( -67, -27 )
+text = "Slime Bros"
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_custom_scythe" parent="buttons_custom_characters2" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+text = "Reaper Angel"
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_custom_darkgoto" parent="buttons_custom_characters2" instance=ExtResource( 9 )]
+position = Vector2( -67, 9 )
+text = "Dark Goto"
 option_num = 4
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_custom_page" parent="buttons_custom_characters2" instance=ExtResource( 9 )]
+position = Vector2( -67, 27 )
+text = "Page 2/2"
+option_num = 5
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_back" parent="buttons_custom_characters2" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 6
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 layer = 2
 
@@ -1495,6 +1782,9 @@ custom_constants/shadow_offset_x = -1
 custom_constants/line_spacing = -3
 text = "konpeitocorner"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label_credits_scythe" type="Label" parent="buttons_credits/button_back"]
 margin_left = -191.0

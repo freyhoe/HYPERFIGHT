@@ -13,19 +13,82 @@ onready var effect_hit = preload("res://scenes/effect/darkgoto/attack_hit.tscn")
 onready var effect_attack = preload("res://scenes/effect/darkgoto/char/attack.tscn")
 onready var effect_super = preload("res://scenes/effect/darkgoto/char/super.tscn")
 
-onready var sfx_attack = preload("res://audio/sfx/game/char/darkgoto/attack.ogg")
-onready var sfx_attack_down = preload("res://audio/sfx/game/char/darkgoto/attack_down.ogg")
-onready var sfx_special = preload("res://audio/sfx/game/char/darkgoto/special.ogg")
-onready var sfx_special_reflect = preload("res://audio/sfx/game/char/darkgoto/special_reflect.ogg")
-onready var sfx_super = preload("res://audio/sfx/game/char/darkgoto/super.ogg")
-onready var sfx_hit = preload("res://audio/sfx/game/char/darkgoto/hit.ogg")
+onready var sfx_attack_default = preload("res://audio/sfx/game/char/darkgoto/attack.ogg")
+onready var sfx_attack_down_default = preload("res://audio/sfx/game/char/darkgoto/attack_down.ogg")
+onready var sfx_special_default = preload("res://audio/sfx/game/char/darkgoto/special.ogg")
+onready var sfx_special_reflect_default = preload("res://audio/sfx/game/char/darkgoto/special_reflect.ogg")
+onready var sfx_super_default = preload("res://audio/sfx/game/char/darkgoto/super.ogg")
+onready var sfx_hit_default = preload("res://audio/sfx/game/char/darkgoto/hit.ogg")
+
+onready var sfx_attack_basher = preload("res://audio/sfx/game/char/darkgoto_basher/attack.ogg")
+onready var sfx_attack_down_basher = preload("res://audio/sfx/game/char/darkgoto_basher/attack_down.ogg")
+onready var sfx_special_basher = preload("res://audio/sfx/game/char/darkgoto_basher/special.ogg")
+onready var sfx_special_reflect_basher = preload("res://audio/sfx/game/char/darkgoto_basher/special_reflect.ogg")
+onready var sfx_super_basher = preload("res://audio/sfx/game/char/darkgoto_basher/super.ogg")
+onready var sfx_hit_basher = preload("res://audio/sfx/game/char/darkgoto_basher/hit.ogg")
+
+onready var sfx_attack_banana= preload("res://audio/sfx/game/char/darkgoto_banana/attack.ogg")
+onready var sfx_attack_down_banana = preload("res://audio/sfx/game/char/darkgoto_banana/attack_down.ogg")
+onready var sfx_special_banana = preload("res://audio/sfx/game/char/darkgoto_banana/special.ogg")
+onready var sfx_special_reflect_banana = preload("res://audio/sfx/game/char/darkgoto_banana/special_reflect.ogg")
+onready var sfx_super_banana = preload("res://audio/sfx/game/char/darkgoto_banana/super.ogg")
+onready var sfx_hit_banana = preload("res://audio/sfx/game/char/darkgoto_banana/hit.ogg")
+
+onready var sfx_attack_retro= preload("res://audio/sfx/game/char/darkgoto_retro/attack.ogg")
+onready var sfx_attack_down_retro = preload("res://audio/sfx/game/char/darkgoto_retro/attack_down.ogg")
+onready var sfx_special_retro = preload("res://audio/sfx/game/char/darkgoto_retro/special.ogg")
+onready var sfx_special_reflect_retro = preload("res://audio/sfx/game/char/darkgoto_retro/special_reflect.ogg")
+onready var sfx_super_retro = preload("res://audio/sfx/game/char/darkgoto_retro/super.ogg")
+onready var sfx_hit_retro = preload("res://audio/sfx/game/char/darkgoto_retro/hit.ogg")
+
+var sfx_attack = sfx_attack_default
+var sfx_attack_down = sfx_attack_down_default
+var sfx_special = sfx_special_default
+var sfx_special_reflect = sfx_special_reflect_default
+var sfx_super = sfx_super_default
+var sfx_hit = sfx_hit_default
 
 onready var sfx_attack_old = preload("res://audio/sfx/game/char/darkgoto/old/attack.ogg")
 onready var sfx_attack_down_old = preload("res://audio/sfx/game/char/darkgoto/old/attack_down.ogg")
 onready var sfx_super_old = preload("res://audio/sfx/game/char/darkgoto/old/super.ogg")
 onready var sfx_hit_old = preload("res://audio/sfx/game/char/darkgoto/old/hit.ogg")
+onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	match global.darkgoto_voice_type:
+		global.CUSTOM_DARKGOTO_VOICE.basher:
+			sfx_attack = sfx_attack_basher
+			sfx_attack_down = sfx_attack_down_basher
+			sfx_special = sfx_special_basher
+			sfx_special_reflect = sfx_special_reflect_basher
+			sfx_super = sfx_super_basher
+			sfx_hit = sfx_hit_basher
+		global.CUSTOM_DARKGOTO_VOICE.old:
+			sfx_attack = sfx_attack_old 
+			sfx_attack_down = sfx_attack_down_old 
+			sfx_super = sfx_super_old
+			sfx_hit = sfx_hit_old
+		global.CUSTOM_DARKGOTO_VOICE.none:
+			sfx_attack = sfx_silence
+			sfx_attack_down = sfx_silence
+			sfx_special = sfx_silence
+			sfx_special_reflect = sfx_silence
+			sfx_super = sfx_silence
+			sfx_hit = sfx_silence
+		global.CUSTOM_DARKGOTO_VOICE.bananaberry:
+			sfx_attack = sfx_attack_banana
+			sfx_attack_down = sfx_attack_down_banana
+			sfx_special = sfx_special_banana
+			sfx_special_reflect = sfx_special_reflect_banana
+			sfx_super = sfx_super_banana
+			sfx_hit = sfx_hit_banana
+		global.CUSTOM_DARKGOTO_VOICE.retro:
+			sfx_attack = sfx_attack_retro
+			sfx_attack_down = sfx_attack_down_retro
+			sfx_special = sfx_special_retro
+			sfx_special_reflect = sfx_special_reflect_retro
+			sfx_super = sfx_super_retro
+			sfx_hit = sfx_hit_retro
 	add_to_group(global.GROUP_CAN_REFLECT)
 	shadow_offset = 1
 	if global.mode == global.MODE.arcade and global.arcade_stage == global.max_arcade_stage and player_num == 2:

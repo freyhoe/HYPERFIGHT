@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/p2win.ogg-c7267083fdb23b2ebc9b355d5f66572b.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_retro/p2win.ogg"
+dest_files=[ "res://.import/p2win.ogg-c7267083fdb23b2ebc9b355d5f66572b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

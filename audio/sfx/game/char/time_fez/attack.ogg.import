@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack.ogg-d3f4d3602b3c0d59b5ec2d4bd7b630cf.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/time_fez/attack.ogg"
+dest_files=[ "res://.import/attack.ogg-d3f4d3602b3c0d59b5ec2d4bd7b630cf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

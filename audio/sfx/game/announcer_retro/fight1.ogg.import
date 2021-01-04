@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fight1.ogg-646320747407ea59de07ccf8ea3a2141.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_retro/fight1.ogg"
+dest_files=[ "res://.import/fight1.ogg-646320747407ea59de07ccf8ea3a2141.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

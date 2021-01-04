@@ -21,13 +21,52 @@ onready var proj_attack = preload("res://scenes/proj/yoyo/attack.tscn")
 onready var proj_super = preload("res://scenes/proj/yoyo/super.tscn")
 onready var effect_hit = preload("res://scenes/effect/yoyo/proj/attack_hit.tscn")
 
-onready var sfx_attack = preload("res://audio/sfx/game/char/yoyo/attack.ogg")
-onready var sfx_special = preload("res://audio/sfx/game/char/yoyo/special.ogg")
-onready var sfx_special_boom = preload("res://audio/sfx/game/char/yoyo/special_boom.ogg")
-onready var sfx_super = preload("res://audio/sfx/game/char/yoyo/super.ogg")
-onready var sfx_hit = preload("res://audio/sfx/game/char/yoyo/hit.ogg")
+onready var sfx_attack_default = preload("res://audio/sfx/game/char/yoyo/attack.ogg")
+onready var sfx_special_default = preload("res://audio/sfx/game/char/yoyo/special.ogg")
+onready var sfx_special_boom_default = preload("res://audio/sfx/game/char/yoyo/special_boom.ogg")
+onready var sfx_super_default = preload("res://audio/sfx/game/char/yoyo/super.ogg")
+onready var sfx_hit_default = preload("res://audio/sfx/game/char/yoyo/hit.ogg")
+
+onready var sfx_attack_retro= preload("res://audio/sfx/game/char/yoyo_retro/attack.ogg")
+onready var sfx_special_retro = preload("res://audio/sfx/game/char/yoyo_retro/special.ogg")
+onready var sfx_special_boom_retro = preload("res://audio/sfx/game/char/yoyo_retro/special_boom.ogg")
+onready var sfx_super_retro = preload("res://audio/sfx/game/char/yoyo_retro/super.ogg")
+onready var sfx_hit_retro = preload("res://audio/sfx/game/char/yoyo_retro/hit.ogg")
+
+onready var sfx_attack_banana = preload("res://audio/sfx/game/char/yoyo_banana/attack.ogg")
+onready var sfx_special_banana = preload("res://audio/sfx/game/char/yoyo_banana/special.ogg")
+#onready var sfx_special_boom_banana = preload("res://audio/sfx/game/char/yoyo_banana/special_boom.ogg")
+onready var sfx_super_banana = preload("res://audio/sfx/game/char/yoyo_banana/super.ogg")
+onready var sfx_hit_banana = preload("res://audio/sfx/game/char/yoyo_banana/hit.ogg")
+
+var sfx_attack = sfx_attack_default
+var sfx_special = sfx_special_default
+var sfx_special_boom = sfx_special_boom
+var sfx_super = sfx_super_default
+var sfx_hit = sfx_hit_default
+
+onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	match global.yoyo_voice_type:
+		global.CUSTOM_YOYO_VOICE.bananaberry:
+			sfx_attack = sfx_attack_banana
+			sfx_special = sfx_special_banana
+	#		sfx_special_boom = sfx_special_boom_banana
+			sfx_super = sfx_super_banana
+			sfx_hit = sfx_hit_banana
+		global.CUSTOM_YOYO_VOICE.none:
+			sfx_attack = sfx_silence
+			sfx_special = sfx_silence
+			sfx_special_boom = sfx_silence
+			sfx_super = sfx_silence
+			sfx_hit = sfx_silence
+		global.CUSTOM_YOYO_VOICE.retro:
+			sfx_attack = sfx_attack_retro
+			sfx_special = sfx_special_retro
+			sfx_special_boom = sfx_special_boom_retro
+			sfx_super = sfx_super_retro
+			sfx_hit = sfx_hit_retro
 	size = Vector2(12, 39)
 	effect_y_offset = 8
 	h_dash_speed = 135

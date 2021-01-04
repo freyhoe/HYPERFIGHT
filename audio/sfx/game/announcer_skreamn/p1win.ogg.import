@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/p1win.ogg-560ac806e3ae9e2e223e67f1f8dfaf80.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_skreamn/p1win.ogg"
+dest_files=[ "res://.import/p1win.ogg-560ac806e3ae9e2e223e67f1f8dfaf80.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

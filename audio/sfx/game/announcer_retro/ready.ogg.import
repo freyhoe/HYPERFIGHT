@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ready.ogg-f340e53eea21893c5a6e5051dd3210ac.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_retro/ready.ogg"
+dest_files=[ "res://.import/ready.ogg-f340e53eea21893c5a6e5051dd3210ac.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack.ogg-057258843a52f066b3412869c58663fc.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/kero_esvee/attack.ogg"
+dest_files=[ "res://.import/attack.ogg-057258843a52f066b3412869c58663fc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

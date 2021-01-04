@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super.ogg-e204b72db5aaade0de381aff3534749f.oggstr"
+
+[deps]
+
+source_file="res://scenes/screen/shoto/super.ogg"
+dest_files=[ "res://.import/super.ogg-e204b72db5aaade0de381aff3534749f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

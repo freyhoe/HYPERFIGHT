@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special_reflect.ogg-c7dbf79a5e875563ebcbd5b6575bfb1e.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/darkgoto_banana/special_reflect.ogg"
+dest_files=[ "res://.import/special_reflect.ogg-c7dbf79a5e875563ebcbd5b6575bfb1e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -30,5 +30,9 @@ func set_label_text():
 			label.text = "Announcer:\nBANANABERRY"
 		global.ANNOUNCER.none:
 			label.text = "Announcer:\nNONE"
+		global.ANNOUNCER.skreamnredskull:
+			label.text = "Announcer:\nSKREAMNREDSKULL"
 		global.ANNOUNCER.vernomere:
 			label.text = "Announcer:\nVERNO"
+		global.ANNOUNCER.retro:
+			label.text = "Announcer:\nRETRO"

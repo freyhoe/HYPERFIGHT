@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fight3.ogg-0c159b344e31e69a139e7373e6139d1f.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_skreamn/fight3.ogg"
+dest_files=[ "res://.import/fight3.ogg-0c159b344e31e69a139e7373e6139d1f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

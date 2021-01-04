@@ -21,18 +21,66 @@ onready var effect_special = preload("res://scenes/effect/scythe/char/special.ts
 onready var effect_cancel = preload("res://scenes/effect/scythe/char/cancel.tscn")
 onready var illusion = preload("res://scenes/effect/scythe/char/illusion.tscn")
 
-onready var sfx_attack = preload("res://audio/sfx/game/char/scythe/attack.ogg")
-onready var sfx_attack_down = preload("res://audio/sfx/game/char/scythe/attack_down.ogg")
-onready var sfx_attack_down_start = preload("res://audio/sfx/game/char/scythe/attack_down_start.ogg")
-onready var sfx_attack_down_end = preload("res://audio/sfx/game/char/scythe/attack_down_end.ogg")
-onready var sfx_attack_back = preload("res://audio/sfx/game/char/scythe/attack_back.ogg")
-onready var sfx_special = preload("res://audio/sfx/game/char/scythe/special.ogg")
-onready var sfx_special_teleport = preload("res://audio/sfx/game/char/scythe/special_teleport.ogg")
-onready var sfx_super = preload("res://audio/sfx/game/char/scythe/super.ogg")
-onready var sfx_super_charged = preload("res://audio/sfx/game/char/scythe/super_charged.ogg")
-onready var sfx_hit = preload("res://audio/sfx/game/char/scythe/hit.ogg")
+onready var sfx_attack_default= preload("res://audio/sfx/game/char/scythe/attack.ogg")
+onready var sfx_attack_down_default = preload("res://audio/sfx/game/char/scythe/attack_down.ogg")
+onready var sfx_attack_down_start_default = preload("res://audio/sfx/game/char/scythe/attack_down_start.ogg")
+onready var sfx_attack_down_end_default = preload("res://audio/sfx/game/char/scythe/attack_down_end.ogg")
+onready var sfx_attack_back_default = preload("res://audio/sfx/game/char/scythe/attack_back.ogg")
+onready var sfx_special_default = preload("res://audio/sfx/game/char/scythe/special.ogg")
+onready var sfx_special_teleport_default = preload("res://audio/sfx/game/char/scythe/special_teleport.ogg")
+onready var sfx_super_default = preload("res://audio/sfx/game/char/scythe/super.ogg")
+onready var sfx_super_charged_default = preload("res://audio/sfx/game/char/scythe/super_charged.ogg")
+onready var sfx_hit_default = preload("res://audio/sfx/game/char/scythe/hit.ogg")
+
+onready var sfx_attack_retro= preload("res://audio/sfx/game/char/scythe_retro/attack.ogg")
+onready var sfx_attack_down_retro = preload("res://audio/sfx/game/char/scythe_retro/attack_down.ogg")
+onready var sfx_attack_down_start_retro = preload("res://audio/sfx/game/char/scythe_retro/attack_down_start.ogg")
+onready var sfx_attack_down_end_retro = preload("res://audio/sfx/game/char/scythe_retro/attack_down_end.ogg")
+onready var sfx_attack_back_retro = preload("res://audio/sfx/game/char/scythe_retro/attack_back.ogg")
+onready var sfx_special_retro = preload("res://audio/sfx/game/char/scythe_retro/special.ogg")
+onready var sfx_special_teleport_retro = preload("res://audio/sfx/game/char/scythe_retro/special_teleport.ogg")
+onready var sfx_super_retro = preload("res://audio/sfx/game/char/scythe_retro/super.ogg")
+onready var sfx_super_charged_retro = preload("res://audio/sfx/game/char/scythe_retro/super_charged.ogg")
+onready var sfx_hit_retro = preload("res://audio/sfx/game/char/scythe_retro/hit.ogg")
+
+var sfx_attack = sfx_attack_default
+var sfx_attack_down = sfx_attack_down_default
+var sfx_attack_down_start = sfx_attack_down_start_default
+var sfx_attack_down_end = sfx_attack_down_end_default
+var sfx_attack_back = sfx_attack_back_default
+var sfx_special = sfx_special_default
+var sfx_special_teleport = sfx_special_teleport_default
+var sfx_super = sfx_super_default
+var sfx_super_charged = sfx_super_default
+var sfx_hit = sfx_hit_default
+
+onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	match global.scythe_voice_type:
+		global.CUSTOM_SCYTHE_VOICE.none:
+			sfx_attack = sfx_silence
+			sfx_attack_down = sfx_silence
+			sfx_attack_down_start = sfx_silence
+			sfx_attack_down_end = sfx_silence
+			sfx_attack_back = sfx_silence
+			sfx_special = sfx_silence
+			sfx_special_teleport = sfx_silence
+			sfx_super = sfx_silence
+			sfx_super_charged = sfx_silence
+			sfx_hit = sfx_silence
+		global.CUSTOM_SCYTHE_VOICE.retro:
+			sfx_attack = sfx_attack_retro
+			sfx_attack_down = sfx_attack_down_retro
+			sfx_attack_down_start = sfx_attack_down_start_retro
+			sfx_attack_down_end = sfx_attack_down_end_retro
+			sfx_attack_back = sfx_attack_back_retro
+			sfx_special = sfx_special_retro
+			sfx_special_teleport = sfx_special_teleport_retro
+			sfx_super = sfx_super_retro
+			sfx_super_charged = sfx_super_charged_retro
+			sfx_hit = sfx_hit_retro
+
 	add_to_group(global.GROUP_CHAR_SCYTHE)
 	shadow_offset = -1
 	set_attacking_on_attack = false

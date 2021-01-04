@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special.ogg-12d73169e950ccf90b23830bba94382b.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/sword_retro/special.ogg"
+dest_files=[ "res://.import/special.ogg-12d73169e950ccf90b23830bba94382b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

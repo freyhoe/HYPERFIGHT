@@ -1,7 +1,18 @@
 extends Node
 
 enum SCREEN { window, window2x, window3x, window4x, full }
-enum ANNOUNCER{ default, bananaberry, vernomere, none }
+enum ANNOUNCER{ default, bananaberry, vernomere, skreamnredskull, retro, none }
+
+enum CUSTOM_GOTO_VOICE{ default, old, bananaberry, luc, retro, none }
+enum CUSTOM_YOYO_VOICE{ default, bananaberry, retro, none }
+enum CUSTOM_KERO_VOICE{ default, bananaberry, esvee, retro, none }
+enum CUSTOM_TIME_VOICE{ default, bananaberry, fez, retro, none }
+enum CUSTOM_SWORD_VOICE{ default, petris, retro, none }
+enum CUSTOM_SLIME_VOICE{ default, retro, none }
+enum CUSTOM_SCYTHE_VOICE{ default, retro, none }
+enum CUSTOM_DARKGOTO_VOICE{ default, old, bananaberry, basher, retro, none }
+
+
 enum INPUT_TYPE { key, pad, stick }
 enum MODE { versus_player, versus_cpu, online_lobby, online_quickmatch, arcade, training, tutorial }
 enum CHAR { goto, yoyo, kero, time, sword, slime, scythe, darkgoto, random, locked }
@@ -39,6 +50,14 @@ const CFG_OPTIONS_CPUDIFF = "cpu_diff"
 const CFG_OPTIONS_HITBOXES = "hitboxes"
 const CFG_OPTIONS_SCREEN = "screen_type"
 const CFG_CUSTOMIZE_ANNOUNCER = "announcer"
+const CFG_CUSTOM_GOTO_VOICE = "goto_voice"
+const CFG_CUSTOM_YOYO_VOICE = "yoyo_voice"
+const CFG_CUSTOM_KERO_VOICE = "kero_voice"
+const CFG_CUSTOM_TIME_VOICE = "time_voice"
+const CFG_CUSTOM_SWORD_VOICE = "sword_voice"
+const CFG_CUSTOM_SLIME_VOICE = "slime_voice"
+const CFG_CUSTOM_SCYTHE_VOICE = "scythe_voice"
+const CFG_CUSTOM_DARKGOTO_VOICE = "darkgoto_voice"
 const CFG_OPTIONS_VSYNC = "vsync"
 const CFG_OPTIONS_MUSVOL = "music_volume"
 const CFG_OPTIONS_SFXVOL = "sfx_volume"
@@ -139,6 +158,16 @@ var window_size = Vector2(1024, 600)
 var viewport_size = Vector2(256, 150)
 
 var hitboxes = false
+var announcer_type = ANNOUNCER.default
+var goto_voice_type = CUSTOM_GOTO_VOICE.default
+var yoyo_voice_type = CUSTOM_YOYO_VOICE.default
+var kero_voice_type = CUSTOM_KERO_VOICE.default
+var time_voice_type = CUSTOM_TIME_VOICE.default
+var sword_voice_type = CUSTOM_SWORD_VOICE.default
+var slime_voice_type = CUSTOM_SLIME_VOICE.default
+var scythe_voice_type = CUSTOM_SCYTHE_VOICE.default
+var darkgoto_voice_type = CUSTOM_DARKGOTO_VOICE.default
+
 
 var fps = 60
 var floor_y = 59
@@ -223,7 +252,7 @@ var music_volume_db = 0
 var sfx_volume = 5
 var sfx_volume_db = 0
 var screen_type = SCREEN.window4x
-var announcer_type = ANNOUNCER.default
+
 
 var unlock_color4 = []
 var unlock_char_darkgoto = true
@@ -285,6 +314,15 @@ func load_config():
 	screen_type = get_config_value(config, CFG_OPTIONS, CFG_OPTIONS_SCREEN, screen_type)
 	vsync = get_config_value(config, CFG_OPTIONS, CFG_OPTIONS_VSYNC, vsync)
 	announcer_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOMIZE_ANNOUNCER, announcer_type)
+	goto_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_GOTO_VOICE, goto_voice_type)
+	yoyo_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_YOYO_VOICE, yoyo_voice_type)
+	kero_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_KERO_VOICE, kero_voice_type)
+	time_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_TIME_VOICE, time_voice_type)
+	sword_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SWORD_VOICE, sword_voice_type)
+	slime_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SLIME_VOICE, slime_voice_type)
+	scythe_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SCYTHE_VOICE, scythe_voice_type)
+	darkgoto_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_DARKGOTO_VOICE, darkgoto_voice_type)
+
 	
 	unlock_color4.resize(char_count)
 	if html5_ver:
@@ -317,6 +355,7 @@ func load_config():
 	set_sfx_volume()
 	set_screen_type()
 	set_announcer_type()
+	set_voice_type()
 	set_vsync()
 	
 	config = ConfigFile.new()
@@ -455,6 +494,16 @@ func set_screen_type():
 
 func set_announcer_type():
 	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOMIZE_ANNOUNCER, announcer_type)
+
+func set_voice_type():
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_GOTO_VOICE, goto_voice_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_YOYO_VOICE, yoyo_voice_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_KERO_VOICE, kero_voice_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_TIME_VOICE, time_voice_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SWORD_VOICE, sword_voice_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SLIME_VOICE, slime_voice_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SCYTHE_VOICE, scythe_voice_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_DARKGOTO_VOICE, darkgoto_voice_type)
 
 func set_vsync():
 	OS.set_use_vsync(vsync)

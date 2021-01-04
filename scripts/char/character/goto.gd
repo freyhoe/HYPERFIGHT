@@ -13,19 +13,93 @@ onready var effect_hit = preload("res://scenes/effect/goto/attack_hit.tscn")
 onready var effect_attack = preload("res://scenes/effect/goto/char/attack.tscn")
 onready var effect_super = preload("res://scenes/effect/goto/char/super.tscn")
 
-onready var sfx_attack = preload("res://audio/sfx/game/char/goto/attack.ogg")
-onready var sfx_attack_down = preload("res://audio/sfx/game/char/goto/attack_down.ogg")
-onready var sfx_special = preload("res://audio/sfx/game/char/goto/special.ogg")
-onready var sfx_special_parry = preload("res://audio/sfx/game/char/goto/special_parry.ogg")
-onready var sfx_super = preload("res://audio/sfx/game/char/goto/super.ogg")
-onready var sfx_hit = preload("res://audio/sfx/game/char/goto/hit.ogg")
+onready var sfx_attack_default = preload("res://audio/sfx/game/char/goto/attack.ogg")
+onready var sfx_attack_down_default = preload("res://audio/sfx/game/char/goto/attack_down.ogg")
+onready var sfx_special_default = preload("res://audio/sfx/game/char/goto/special.ogg")
+onready var sfx_special_parry_default = preload("res://audio/sfx/game/char/goto/special_parry.ogg")
+onready var sfx_super_default = preload("res://audio/sfx/game/char/goto/super.ogg")
+onready var sfx_hit_default = preload("res://audio/sfx/game/char/goto/hit.ogg")
+
+onready var sfx_attack_banana = preload("res://audio/sfx/game/char/goto_banana/attack.ogg")
+onready var sfx_attack_down_banana = preload("res://audio/sfx/game/char/goto_banana/attack_down.ogg")
+onready var sfx_special_banana = preload("res://audio/sfx/game/char/goto_banana/special.ogg")
+onready var sfx_special_parry_banana = preload("res://audio/sfx/game/char/goto_banana/special_parry.ogg")
+onready var sfx_super_banana = preload("res://audio/sfx/game/char/goto_banana/super.ogg")
+onready var sfx_hit_banana = preload("res://audio/sfx/game/char/goto_banana/hit.ogg")
 
 onready var sfx_attack_old = preload("res://audio/sfx/game/char/goto/old/attack.ogg")
 onready var sfx_attack_down_old = preload("res://audio/sfx/game/char/goto/old/attack_down.ogg")
 onready var sfx_super_old = preload("res://audio/sfx/game/char/goto/old/super.ogg")
 onready var sfx_hit_old = preload("res://audio/sfx/game/char/goto/old/hit.ogg")
 
+onready var sfx_attack_luc = preload("res://audio/sfx/game/char/goto_luc/attack.ogg")
+onready var sfx_attack_down_luc = preload("res://audio/sfx/game/char/goto_luc/attack_down.ogg")
+onready var sfx_super_luc = preload("res://audio/sfx/game/char/goto_luc/super.ogg")
+onready var sfx_hit_luc = preload("res://audio/sfx/game/char/goto_luc/hit.ogg")
+onready var sfx_special_luc = preload("res://audio/sfx/game/char/goto_luc/special.ogg")
+onready var sfx_special_parry_luc = preload("res://audio/sfx/game/char/goto_luc/special_parry.ogg")
+
+onready var sfx_attack_retro = preload("res://audio/sfx/game/char/goto_retro/attack.ogg")
+onready var sfx_attack_down_retro = preload("res://audio/sfx/game/char/goto_retro/attack_down.ogg")
+onready var sfx_super_retro = preload("res://audio/sfx/game/char/goto_retro/super.ogg")
+onready var sfx_hit_retro = preload("res://audio/sfx/game/char/goto_retro/hit.ogg")
+onready var sfx_special_retro = preload("res://audio/sfx/game/char/goto_retro/special.ogg")
+onready var sfx_special_parry_retro = preload("res://audio/sfx/game/char/goto_retro/special_parry.ogg")
+
+onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
+
+onready var sfx_attack = sfx_attack_default
+onready var sfx_attack_down = sfx_attack_down_default
+onready var sfx_special = sfx_special_default
+onready var sfx_special_parry = sfx_special_parry_default
+onready var sfx_super = sfx_super_default
+onready var sfx_hit = sfx_hit_default
+
 func _ready():
+	match global.goto_voice_type:
+		global.CUSTOM_GOTO_VOICE.default:
+			sfx_attack = sfx_attack
+			sfx_attack_down = sfx_attack_down
+			sfx_special = sfx_special
+			sfx_special_parry = sfx_special_parry 
+			sfx_super = sfx_super
+			sfx_hit = sfx_hit
+		global.CUSTOM_GOTO_VOICE.bananaberry:
+			sfx_attack = sfx_attack_banana
+			sfx_attack_down = sfx_attack_down_banana
+			sfx_special = sfx_special_banana
+			sfx_special_parry = sfx_special_parry_banana
+			sfx_super = sfx_super_banana
+			sfx_hit = sfx_hit_banana
+		global.CUSTOM_GOTO_VOICE.none:
+			sfx_attack = sfx_silence
+			sfx_attack_down = sfx_silence
+			sfx_special = sfx_silence
+			sfx_special_parry = sfx_silence
+			sfx_super = sfx_silence
+			sfx_hit = sfx_silence
+		global.CUSTOM_GOTO_VOICE.luc:
+			sfx_attack = sfx_attack_luc
+			sfx_attack_down = sfx_attack_down_luc
+			sfx_special = sfx_special_luc
+			sfx_special_parry = sfx_special_parry_luc
+			sfx_super = sfx_super_luc
+			sfx_hit = sfx_hit_luc
+		global.CUSTOM_GOTO_VOICE.old:
+			sfx_attack = sfx_attack_old
+			sfx_attack_down = sfx_attack_down_old
+			sfx_special = sfx_special
+			sfx_special_parry = sfx_special_parry 
+			sfx_super = sfx_super_old
+			sfx_hit = sfx_hit_old
+		global.CUSTOM_GOTO_VOICE.retro:
+			sfx_attack = sfx_attack_retro
+			sfx_attack_down = sfx_attack_down_retro
+			sfx_special = sfx_special_retro
+			sfx_special_parry = sfx_special_parry_retro
+			sfx_super = sfx_super_retro
+			sfx_hit = sfx_hit_retro
+	
 	if global.mode == global.MODE.arcade and global.arcade_stage == global.max_arcade_stage and player_num == 2:
 		walk_speed = 90
 		air_speed = 160

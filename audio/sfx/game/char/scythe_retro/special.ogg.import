@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special.ogg-7a8f9e895dc456ec18dd82668c7facff.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/scythe_retro/special.ogg"
+dest_files=[ "res://.import/special.ogg-7a8f9e895dc456ec18dd82668c7facff.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

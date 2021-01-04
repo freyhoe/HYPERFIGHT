@@ -173,7 +173,6 @@ onready var snd_ko_default = preload("res://audio/sfx/game/announcer/ko.ogg")
 onready var snd_superko_default = preload("res://audio/sfx/game/announcer/superko.ogg")
 onready var snd_perfect_default = preload("res://audio/sfx/game/announcer/perfect.ogg")
 
-
 onready var snd_ready_banana = preload("res://audio/sfx/game/announcer_banana/ready.ogg")
 onready var snd_fight_banana = preload("res://audio/sfx/game/announcer_banana/fight1.ogg")
 onready var snd_fight2_banana = preload("res://audio/sfx/game/announcer_banana/fight2.ogg")
@@ -182,7 +181,17 @@ onready var snd_player1win_banana = preload("res://audio/sfx/game/announcer_bana
 onready var snd_player2win_banana = preload("res://audio/sfx/game/announcer_banana/p2win.ogg")
 onready var snd_ko_banana = preload("res://audio/sfx/game/announcer_banana/ko.ogg")
 onready var snd_superko_banana = preload("res://audio/sfx/game/announcer_banana/superko.ogg")
-#onready var snd_perfect_banana = preload("res://audio/sfx/game/announcer_banana/perfect.ogg")
+onready var snd_perfect_banana = preload("res://audio/sfx/game/announcer_banana/perfect.ogg")
+
+onready var snd_ready_skreamn = preload("res://audio/sfx/game/announcer_skreamn/ready.ogg")
+onready var snd_fight_skreamn = preload("res://audio/sfx/game/announcer_skreamn/fight1.ogg")
+onready var snd_fight2_skreamn = preload("res://audio/sfx/game/announcer_skreamn/fight2.ogg")
+onready var snd_fight3_skreamn = preload("res://audio/sfx/game/announcer_skreamn/fight3.ogg")
+onready var snd_player1win_skreamn = preload("res://audio/sfx/game/announcer_skreamn/p1win.ogg")
+onready var snd_player2win_skreamn = preload("res://audio/sfx/game/announcer_skreamn/p2win.ogg")
+onready var snd_ko_skreamn = preload("res://audio/sfx/game/announcer_skreamn/ko.ogg")
+onready var snd_superko_skreamn = preload("res://audio/sfx/game/announcer_skreamn/superko.ogg")
+onready var snd_perfect_skreamn = preload("res://audio/sfx/game/announcer_skreamn/perfect.ogg")
 
 onready var snd_ready_verno = preload("res://audio/sfx/game/announcer_verno/ready.ogg")
 onready var snd_fight_verno = preload("res://audio/sfx/game/announcer_verno/fight1.ogg")
@@ -193,6 +202,16 @@ onready var snd_player2win_verno = preload("res://audio/sfx/game/announcer_verno
 onready var snd_ko_verno = preload("res://audio/sfx/game/announcer_verno/ko.ogg")
 onready var snd_superko_verno = preload("res://audio/sfx/game/announcer_verno/superko.ogg")
 onready var snd_perfect_verno = preload("res://audio/sfx/game/announcer_verno/perfect.ogg")
+
+onready var snd_ready_retro = preload("res://audio/sfx/game/announcer_retro/ready.ogg")
+onready var snd_fight_retro = preload("res://audio/sfx/game/announcer_retro/fight1.ogg")
+onready var snd_fight2_retro = preload("res://audio/sfx/game/announcer_retro/fight2.ogg")
+onready var snd_fight3_retro = preload("res://audio/sfx/game/announcer_retro/fight3.ogg")
+onready var snd_player1win_retro = preload("res://audio/sfx/game/announcer_retro/p1win.ogg")
+onready var snd_player2win_retro = preload("res://audio/sfx/game/announcer_retro/p2win.ogg")
+onready var snd_ko_retro = preload("res://audio/sfx/game/announcer_retro/ko.ogg")
+onready var snd_superko_retro = preload("res://audio/sfx/game/announcer_retro/superko.ogg")
+onready var snd_perfect_retro = preload("res://audio/sfx/game/announcer_retro/perfect.ogg")
 
 onready var snd_stronghit = preload("res://audio/sfx/game/char/hit.ogg")
 onready var msc_theme_goto = preload("res://audio/music/game/dojo.ogg")
@@ -236,7 +255,7 @@ func _ready():
 		snd_player2win = snd_player2win_banana
 		snd_ko = snd_ko_banana
 		snd_superko = snd_superko_banana
-#		snd_perfect = snd_perfect_banana
+		snd_perfect = snd_perfect_banana
 	elif global.announcer_type == global.ANNOUNCER.none:
 		snd_ready = snd_silence
 		snd_fight = snd_silence
@@ -257,6 +276,26 @@ func _ready():
 		snd_ko = snd_ko_verno
 		snd_superko = snd_superko_verno
 		snd_perfect = snd_perfect_verno
+	elif global.announcer_type == global.ANNOUNCER.skreamnredskull:
+		snd_ready = snd_ready_skreamn
+		snd_fight = snd_fight_skreamn
+		snd_fight2 = snd_fight2_skreamn
+		snd_fight3 = snd_fight3_skreamn
+		snd_player1win = snd_player1win_skreamn
+		snd_player2win = snd_player2win_skreamn
+		snd_ko = snd_ko_skreamn
+		snd_superko = snd_superko_skreamn
+		snd_perfect = snd_perfect_skreamn
+	elif global.announcer_type == global.ANNOUNCER.retro:
+		snd_ready = snd_ready_retro
+		snd_fight = snd_fight_retro
+		snd_fight2 = snd_fight2_retro
+		snd_fight3 = snd_fight3_retro
+		snd_player1win = snd_player1win_retro
+		snd_player2win = snd_player2win_retro
+		snd_ko = snd_ko_retro
+		snd_superko = snd_superko_retro
+		snd_perfect = snd_perfect_retro
 	
 	label_center.text = STR_READY
 	label_delay.visible = global.online and global.lobby_state != global.LOBBY_STATE.spectate

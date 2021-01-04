@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super.ogg-9277f31ae85ae82fadd3553dcbe9937c.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/time_fez/super.ogg"
+dest_files=[ "res://.import/super.ogg-9277f31ae85ae82fadd3553dcbe9937c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

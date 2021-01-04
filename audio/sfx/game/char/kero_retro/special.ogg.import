@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special.ogg-f59b8e584675fa21f34631a0bb6f5436.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/kero_retro/special.ogg"
+dest_files=[ "res://.import/special.ogg-f59b8e584675fa21f34631a0bb6f5436.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super.ogg-e2b341de237831d54fe2e0d5e32b4ace.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/kero_esvee/super.ogg"
+dest_files=[ "res://.import/super.ogg-e2b341de237831d54fe2e0d5e32b4ace.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

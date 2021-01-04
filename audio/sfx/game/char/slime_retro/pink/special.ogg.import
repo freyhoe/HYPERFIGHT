@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special.ogg-0fdcee47cf3e956a90c310a3d8bc8c58.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/slime_retro/pink/special.ogg"
+dest_files=[ "res://.import/special.ogg-0fdcee47cf3e956a90c310a3d8bc8c58.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

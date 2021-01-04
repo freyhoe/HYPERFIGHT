@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super.ogg-4846b112ec660e72440a996253c6cc00.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/sword_petris/super.ogg"
+dest_files=[ "res://.import/super.ogg-4846b112ec660e72440a996253c6cc00.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

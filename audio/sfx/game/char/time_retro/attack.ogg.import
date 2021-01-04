@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack.ogg-1d6c3ca7286fa8072c2c7202bbe14406.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/time_retro/attack.ogg"
+dest_files=[ "res://.import/attack.ogg-1d6c3ca7286fa8072c2c7202bbe14406.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

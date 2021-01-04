@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super_boom.ogg-898df6961224cc093e0fd41b7d4a5e11.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/time_retro/super_boom.ogg"
+dest_files=[ "res://.import/super_boom.ogg-898df6961224cc093e0fd41b7d4a5e11.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

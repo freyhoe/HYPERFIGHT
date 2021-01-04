@@ -91,6 +91,8 @@ var buttons_options_graphics_max = 3
 var buttons_options_audio_max = 3
 var buttons_options_controls_max = 3
 var buttons_options_controls_rebind_max = 13
+var buttons_custom_characters_max = 6
+var buttons_custom_characters2_max = 6
 var buttons_credits_max = 1
 var option = 1
 var max_option = buttons_max
@@ -99,6 +101,7 @@ var last_online_option = 1
 var last_online_find_list_option = 1
 var last_options_option = 1
 var last_options_controls_option = 1
+var last_custom_option = 1
 var ignore_first_delta = true
 
 var curr_lobbies = []
@@ -138,6 +141,8 @@ onready var buttons_options_customize = get_node("buttons_options_customize")
 onready var buttons_options_controls = get_node("buttons_options_controls")
 onready var buttons_options_controls_p1 = get_node("buttons_options_controls_p1")
 onready var buttons_options_controls_p2 = get_node("buttons_options_controls_p2")
+onready var buttons_custom_characters = get_node("buttons_custom_characters")
+onready var buttons_custom_characters2 = get_node("buttons_custom_characters2")
 onready var button_options_controls_p1_dtdash = get_node("buttons_options_controls_p1/button_dtdash")
 onready var button_options_controls_p2_dtdash = get_node("buttons_options_controls_p2/button_dtdash")
 onready var button_options_controls_p1_assuper = get_node("buttons_options_controls_p1/button_assuper")
@@ -149,6 +154,17 @@ onready var menu_pattern2 = get_node("menu_pattern2")
 onready var menu_ok = get_node("menu_ok")
 onready var lobby_find_timer = get_node("lobby_find_timer")
 onready var match_make_timer = get_node("match_make_timer")
+
+
+var buttons_goto_max = 3
+onready var buttons_goto = get_node("buttons_goto")
+onready var buttons_yoyo = get_node("buttons_yoyo")
+onready var buttons_kero = get_node("buttons_kero")
+onready var buttons_time = get_node("buttons_time")
+onready var buttons_sword = get_node("buttons_sword")
+onready var buttons_slime = get_node("buttons_slime")
+onready var buttons_scythe = get_node("buttons_scythe")
+onready var buttons_darkgoto = get_node("buttons_darkgoto")
 
 onready var find_rect = get_node("buttons_online_findlobby_list/button_back/find_rect")
 onready var button_lobby1 = get_node("buttons_online_findlobby_list/button_lobby1")
@@ -389,6 +405,8 @@ func _process(delta):
 					change_buttons(buttons_options, buttons_options_max)
 				elif active_buttons == buttons_options_controls_p1 or active_buttons == buttons_options_controls_p2:
 					change_buttons(buttons_options_controls, buttons_options_controls_max)
+				elif active_buttons == buttons_custom_characters or buttons_custom_characters2:
+					change_buttons(buttons_options_customize, buttons_options_customize_max)
 		elif editing:
 			if Input.is_action_just_pressed(global.INPUT_PLAYER1 + global.INPUT_ACTION_START) or Input.is_action_just_pressed(global.INPUT_PLAYER2 + global.INPUT_ACTION_START):
 				for button in active_buttons.get_children():
@@ -461,7 +479,7 @@ func _process(delta):
 			 (active_buttons == buttons_options_game and global.menu_option == buttons_options_game_max) or \
 			 (active_buttons == buttons_options_graphics and global.menu_option == buttons_options_graphics_max) or \
 			 (active_buttons == buttons_options_audio and global.menu_option == buttons_options_audio_max) or \
-			 (active_buttons == buttons_options_controls and global.menu_option == buttons_options_controls_max) or \
+			 (active_buttons == buttons_options_controls and global.menu_option == buttons_options_controls_max) or\
 			 (active_buttons == buttons_options_customize and global.menu_option == buttons_options_customize_max):
 			change_buttons(buttons_options, buttons_options_max)
 		elif active_buttons == buttons_options and global.menu_option == 1:
@@ -479,9 +497,24 @@ func _process(delta):
 			 (active_buttons == buttons_options_controls_p1 and global.menu_option == buttons_options_controls_rebind_max) or \
 			 (active_buttons == buttons_options_controls_p2 and global.menu_option == buttons_options_controls_rebind_max):
 			change_buttons(buttons_options_controls, buttons_options_controls_max)
-		elif active_buttons == buttons_options and global.menu_option == 5:
-			change_buttons(buttons_options_customize, buttons_options_customize_max)
-	#		menu_banner.deactivate()
+		elif (active_buttons == buttons_options and global.menu_option == 5) or \
+			  active_buttons == buttons_custom_characters and global.menu_option == buttons_custom_characters_max or\
+			  active_buttons == buttons_custom_characters2 and global.menu_option == buttons_custom_characters2_max:
+				#active_buttons == buttons_custom_music and global.menu_option == buttons_custom_music
+				change_buttons(buttons_options_customize, buttons_options_customize_max)
+		elif (active_buttons == buttons_options_customize and global.menu_option == 2) or\
+			  active_buttons == buttons_goto and global.menu_option == buttons_goto_max or\
+			  active_buttons == buttons_yoyo and global.menu_option == buttons_goto_max or\
+			  active_buttons == buttons_kero and global.menu_option == buttons_goto_max or\
+			  active_buttons == buttons_time and global.menu_option == buttons_goto_max or\
+			(active_buttons == buttons_custom_characters2 and global.menu_option == 5):
+				change_buttons(buttons_custom_characters, buttons_custom_characters_max)
+		elif (active_buttons == buttons_custom_characters and global.menu_option == 5) or\
+			  active_buttons == buttons_sword and global.menu_option == buttons_goto_max or\
+			  active_buttons == buttons_slime and global.menu_option == buttons_goto_max or\
+			  active_buttons == buttons_scythe and global.menu_option == buttons_goto_max or\
+			  active_buttons == buttons_darkgoto and global.menu_option == buttons_goto_max:
+				change_buttons(buttons_custom_characters2, buttons_custom_characters2_max)
 		elif active_buttons == buttons_options_controls and global.menu_option == 1:
 			change_buttons(buttons_options_controls_p1, buttons_options_controls_rebind_max)
 			menu_banner.deactivate()
@@ -502,10 +535,29 @@ func _process(delta):
 			button_options_controls_p2_assuper.set_label_text()
 			state = MENU_STATE.menu
 			menu_banner.deactivate()
-
 		elif active_buttons == buttons and global.menu_option == 6:
 			change_buttons(buttons_credits, buttons_credits_max)
 			menu_banner.deactivate()
+		elif active_buttons == buttons_custom_characters and global.menu_option <= 4:
+			match global.menu_option:
+				1:
+					change_buttons(buttons_goto, buttons_goto_max)
+				2:
+					change_buttons(buttons_yoyo, buttons_goto_max)
+				3:
+					change_buttons(buttons_kero, buttons_goto_max)
+				4:
+					change_buttons(buttons_time, buttons_goto_max)
+		elif active_buttons == buttons_custom_characters2 and global.menu_option <= 4:
+			match global.menu_option:
+				1:
+					change_buttons(buttons_sword, buttons_goto_max)
+				2:
+					change_buttons(buttons_slime, buttons_goto_max)
+				3:
+					change_buttons(buttons_scythe, buttons_goto_max)
+				4:
+					change_buttons(buttons_darkgoto, buttons_goto_max)
 		elif press_timer > 0:
 			press_timer -= 1 * (global.fps * delta)
 			if press_timer < max_press_timer / 2 and transition_alpha < 1:
@@ -621,6 +673,14 @@ func change_buttons(new_buttons, new_max_option):
 	elif new_buttons != buttons_options and active_buttons == buttons_options_controls:
 		last_options_controls_option = option
 		option = 1
+	elif (active_buttons == buttons_custom_characters or active_buttons == buttons_custom_characters2) and new_buttons == buttons_options_customize:
+	#	last_customs_option = option
+		option = 2
+	elif (new_buttons == buttons_custom_characters and active_buttons != buttons_custom_characters2 or new_buttons == buttons_custom_characters2 and active_buttons != buttons_custom_characters) and active_buttons != buttons_options_customize :
+		option = last_custom_option
+	elif (active_buttons == buttons_custom_characters or active_buttons == buttons_custom_characters2) and new_buttons != buttons_options_customize:
+		last_custom_option = option
+		option = 1
 	else:
 		option = 1
 	var prev_layer
@@ -659,6 +719,16 @@ func deactivate_all_buttons(next_layer):
 	deactivate_buttons(buttons_options_controls_p2, next_layer)
 	deactivate_buttons(buttons_credits, next_layer)
 	deactivate_buttons(buttons_options_customize, next_layer)
+	deactivate_buttons(buttons_custom_characters,next_layer)
+	deactivate_buttons(buttons_custom_characters2,next_layer)
+	deactivate_buttons(buttons_goto,next_layer)
+	deactivate_buttons(buttons_yoyo,next_layer)
+	deactivate_buttons(buttons_kero,next_layer)
+	deactivate_buttons(buttons_time,next_layer)
+	deactivate_buttons(buttons_darkgoto,next_layer)
+	deactivate_buttons(buttons_sword,next_layer)
+	deactivate_buttons(buttons_slime,next_layer)
+	deactivate_buttons(buttons_scythe,next_layer)
 
 func play_audio(snd):
 	audio.volume_db = global.sfx_volume_db
@@ -822,7 +892,7 @@ func set_lobby_find_labels():
 	else:
 		find_rect.visible = false
 
-func send_packet_lobby_owner(other_member_id_):
+func send_packet_lobby_owner(other_member_id):
 	var packet = PoolByteArray()
 	packet.append(global.P_TYPE.menu_lobby_owner)
 	if global.online_char == global.CHAR.random:
@@ -833,9 +903,9 @@ func send_packet_lobby_owner(other_member_id_):
 		packet.append(global.online_char)
 		packet.append(global.online_palette)
 	packet.append(global.online_stage)
-	Steam.sendP2PPacket(other_member_id_, packet, 2, 0)
+	Steam.sendP2PPacket(other_member_id, packet, 2, 0)
 
-func send_packet_lobby_joiner(other_member_id_):
+func send_packet_lobby_joiner(other_member_id):
 	var packet = PoolByteArray()
 	packet.append(global.P_TYPE.menu_lobby_joiner)
 	packet.append(global.input_delay)
@@ -846,7 +916,7 @@ func send_packet_lobby_joiner(other_member_id_):
 	else:
 		packet.append(global.online_char)
 		packet.append(global.online_palette)
-	Steam.sendP2PPacket(other_member_id_, packet, 2, 0)
+	Steam.sendP2PPacket(other_member_id, packet, 2, 0)
 
 func start_match_search():
 	global.leave_lobby(false)
