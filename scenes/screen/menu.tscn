@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://scripts/screen/menu.gd" type="Script" id=1]
 [ext_resource path="res://graphics/ui/menu/logo/gradient.png" type="Texture" id=2]
@@ -33,7 +33,7 @@
 [ext_resource path="res://scripts/ui/menu/button/menu/options/audio/sfxvol.gd" type="Script" id=31]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/controls/p1/dtdash.gd" type="Script" id=32]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/controls/p2/dtdash.gd" type="Script" id=33]
-[ext_resource path="res://graphics/ui/load/studiojoh.png" type="Texture" id=34]
+[ext_resource path="res://scenes/ui/menu/buttons_credits.tscn" type="PackedScene" id=34]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/controls/p2/assuper.gd" type="Script" id=35]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/controls/p1/assuper.gd" type="Script" id=36]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/game/button_hitboxes.gd" type="Script" id=37]
@@ -46,6 +46,22 @@
 [ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_slime_voice.gd" type="Script" id=44]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_sword_voice.gd" type="Script" id=45]
 [ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_time_voice.gd" type="Script" id=46]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_scythe_music.gd" type="Script" id=47]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_goto_music.gd" type="Script" id=48]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_time_music.gd" type="Script" id=49]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_yoyo_music.gd" type="Script" id=50]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_kero_music.gd" type="Script" id=51]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_sword_music.gd" type="Script" id=52]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_slime_music.gd" type="Script" id=53]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_darkgoto_music.gd" type="Script" id=54]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_goto_skin.gd" type="Script" id=55]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_time_skin.gd" type="Script" id=56]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_kero_skin.gd" type="Script" id=57]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_darkgoto_skin.gd" type="Script" id=58]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_sword_skin.gd" type="Script" id=59]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_scythe_skin.gd" type="Script" id=60]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_yoyo_skin.gd" type="Script" id=61]
+[ext_resource path="res://scripts/ui/menu/button/menu/options/customize/button_slime_skin.gd" type="Script" id=62]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -786,6 +802,106 @@ option_num = 3
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 layer = 2
 
+[node name="buttons_music" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_dojo" parent="buttons_music" instance=ExtResource( 9 )]
+position = Vector2( -67, -45 )
+script = ExtResource( 48 )
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_rooftop" parent="buttons_music" instance=ExtResource( 9 )]
+position = Vector2( -67, -27 )
+script = ExtResource( 50 )
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_lab" parent="buttons_music" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+script = ExtResource( 51 )
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_company" parent="buttons_music" instance=ExtResource( 9 )]
+position = Vector2( -67, 9 )
+script = ExtResource( 49 )
+option_num = 4
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_custom_page" parent="buttons_music" instance=ExtResource( 9 )]
+position = Vector2( -67, 27 )
+text = "Page 1/2"
+option_num = 5
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_back" parent="buttons_music" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 6
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="buttons_music2" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_bridge" parent="buttons_music2" instance=ExtResource( 9 )]
+position = Vector2( -67, -49 )
+script = ExtResource( 52 )
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_factory" parent="buttons_music2" instance=ExtResource( 9 )]
+position = Vector2( -67, -27 )
+script = ExtResource( 53 )
+option_num = 2
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_sanctuary" parent="buttons_music2" instance=ExtResource( 9 )]
+position = Vector2( -67, -9 )
+script = ExtResource( 47 )
+option_num = 3
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_blackhole" parent="buttons_music2" instance=ExtResource( 9 )]
+position = Vector2( -67, 9 )
+script = ExtResource( 54 )
+option_num = 4
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+setting_slide = true
+layer = 2
+
+[node name="button_custom_page" parent="buttons_music2" instance=ExtResource( 9 )]
+position = Vector2( -67, 27 )
+text = "Page 2/2"
+option_num = 5
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
+[node name="button_back" parent="buttons_music2" instance=ExtResource( 9 )]
+position = Vector2( -67, 45 )
+text = "Back"
+option_num = 6
+color = Color( 0.309804, 0.635294, 0.65098, 1 )
+layer = 2
+
 [node name="buttons_goto" type="Node2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
@@ -801,7 +917,7 @@ layer = 2
 
 [node name="button_skin" parent="buttons_goto" instance=ExtResource( 9 )]
 position = Vector2( -67, -9 )
-text = "Skin: DEFAULT"
+script = ExtResource( 55 )
 option_num = 2
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 setting_slide = true
@@ -828,7 +944,7 @@ layer = 2
 
 [node name="button_skin" parent="buttons_kero" instance=ExtResource( 9 )]
 position = Vector2( -67, -9 )
-text = "Skin: DEFAULT"
+script = ExtResource( 57 )
 option_num = 2
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 setting_slide = true
@@ -856,7 +972,7 @@ layer = 2
 
 [node name="button_skin" parent="buttons_yoyo" instance=ExtResource( 9 )]
 position = Vector2( -67, -9 )
-text = "Skin: DEFAULT"
+script = ExtResource( 61 )
 option_num = 2
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 setting_slide = true
@@ -883,7 +999,7 @@ layer = 2
 
 [node name="button_skin" parent="buttons_time" instance=ExtResource( 9 )]
 position = Vector2( -67, -9 )
-text = "Skin: DEFAULT"
+script = ExtResource( 56 )
 option_num = 2
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 setting_slide = true
@@ -910,7 +1026,7 @@ layer = 2
 
 [node name="button_skin" parent="buttons_sword" instance=ExtResource( 9 )]
 position = Vector2( -67, -9 )
-text = "Skin: DEFAULT"
+script = ExtResource( 59 )
 option_num = 2
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 setting_slide = true
@@ -937,7 +1053,7 @@ layer = 2
 
 [node name="button_skin" parent="buttons_scythe" instance=ExtResource( 9 )]
 position = Vector2( -67, -9 )
-text = "Skin: DEFAULT"
+script = ExtResource( 60 )
 option_num = 2
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 setting_slide = true
@@ -964,7 +1080,7 @@ layer = 2
 
 [node name="button_skin" parent="buttons_slime" instance=ExtResource( 9 )]
 position = Vector2( -67, -9 )
-text = "Skin: DEFAULT"
+script = ExtResource( 62 )
 option_num = 2
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 setting_slide = true
@@ -993,7 +1109,7 @@ page = 2
 
 [node name="button_skin" parent="buttons_darkgoto" instance=ExtResource( 9 )]
 position = Vector2( -67, -9 )
-text = "Skin: DEFAULT"
+script = ExtResource( 58 )
 option_num = 2
 color = Color( 0.309804, 0.635294, 0.65098, 1 )
 setting_slide = true
@@ -1688,161 +1804,6 @@ color = Color( 0.45098, 0.45098, 0.666667, 1 )
 inactive_y = 180
 layer = 3
 
-[node name="buttons_credits" type="Node2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="button_back" parent="buttons_credits" instance=ExtResource( 9 )]
-position = Vector2( 74, 42 )
-text = "Back"
-color = Color( 0.25098, 0.25098, 0.25098, 1 )
-inactive_y = 180
-layer = 2
-
-[node name="label_credits_joh" type="Label" parent="buttons_credits/button_back"]
-margin_left = -191.0
-margin_top = -109.0
-margin_right = -11.0
-margin_bottom = -46.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.709804, 0.972549, 0.654902, 1 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-custom_constants/shadow_offset_y = 1
-text = "Programming, Design, Art, 
-Music, Voice of Announcer, 
-Gotos, Vince Volt, 
-and Slime Bros.
-"
-
-[node name="label_credits_joh2" type="Label" parent="buttons_credits/button_back"]
-margin_left = -238.0
-margin_top = -79.0
-margin_right = -58.0
-margin_bottom = -26.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.501961, 1, 0.501961, 1 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.501961 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-text = "joh"
-align = 2
-
-[node name="label_credits_quack" type="Label" parent="buttons_credits/button_back"]
-margin_left = -191.0
-margin_top = -63.0
-margin_right = 10.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.941176, 0.768627, 1, 1 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-custom_constants/shadow_offset_y = 1
-text = "Voice of Dr. Kero 
-and Don McRon,
-Alt. Color Design"
-
-[node name="label_credits_quack2" type="Label" parent="buttons_credits/button_back"]
-margin_left = -238.0
-margin_top = -43.0
-margin_right = -58.0
-margin_bottom = 10.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 1, 0.632813, 1, 1 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.501961 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-text = "quack"
-align = 2
-
-[node name="label_credits_yoyo" type="Label" parent="buttons_credits/button_back"]
-margin_left = -191.0
-margin_top = -27.0
-margin_right = 10.0
-margin_bottom = 36.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.764706, 0.905882, 1, 1 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-custom_constants/shadow_offset_y = 1
-text = "Voice of Yo-Yona"
-
-[node name="label_credits_yoyo2" type="Label" parent="buttons_credits/button_back"]
-margin_left = -238.0
-margin_top = -17.0
-margin_right = -58.0
-margin_bottom = 36.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.501961 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-text = "konpeitocorner"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="label_credits_scythe" type="Label" parent="buttons_credits/button_back"]
-margin_left = -191.0
-margin_top = -1.0
-margin_right = 10.0
-margin_bottom = 62.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 1, 0.843137, 0.764706, 1 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-custom_constants/shadow_offset_y = 1
-text = "Voice of Reaper Angel"
-
-[node name="label_credits_scythe2" type="Label" parent="buttons_credits/button_back"]
-margin_left = -238.0
-margin_top = 9.0
-margin_right = -58.0
-margin_bottom = 62.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 0.972549, 0.576471, 0.360784, 1 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.501961 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-text = "Gabrielle \"Bambi\" Phillips"
-align = 2
-
-[node name="label_credits_studio" type="Label" parent="buttons_credits/button_back"]
-margin_left = -104.0
-margin_top = -92.0
-margin_right = 97.0
-margin_bottom = -29.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-custom_constants/shadow_offset_y = 1
-text = "presented by"
-align = 1
-
-[node name="label_credits_studio2" type="Label" parent="buttons_credits/button_back"]
-margin_left = -104.0
-margin_top = -40.0
-margin_right = 97.0
-margin_bottom = 23.0
-custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-custom_constants/shadow_offset_y = 1
-text = "studio joh
-(C) 2019-2020"
-align = 1
-
-[node name="logo" type="Sprite" parent="buttons_credits/button_back"]
-position = Vector2( -4, -60 )
-texture = ExtResource( 34 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="lobby_find_timer" type="Timer" parent="."]
@@ -1851,5 +1812,7 @@ wait_time = 5.0
 [node name="match_make_timer" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
+
+[node name="buttons_credits" parent="." instance=ExtResource( 34 )]
 [connection signal="timeout" from="lobby_find_timer" to="." method="_on_lobby_find_timer_timeout"]
 [connection signal="timeout" from="match_make_timer" to="." method="_on_match_make_timer_timeout"]

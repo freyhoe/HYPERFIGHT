@@ -214,14 +214,23 @@ onready var snd_superko_retro = preload("res://audio/sfx/game/announcer_retro/su
 onready var snd_perfect_retro = preload("res://audio/sfx/game/announcer_retro/perfect.ogg")
 
 onready var snd_stronghit = preload("res://audio/sfx/game/char/hit.ogg")
-onready var msc_theme_goto = preload("res://audio/music/game/dojo.ogg")
-onready var msc_theme_yoyo = preload("res://audio/music/game/rooftop.ogg")
-onready var msc_theme_kero = preload("res://audio/music/game/lab.ogg")
-onready var msc_theme_time = preload("res://audio/music/game/company.ogg")
-onready var msc_theme_sword = preload("res://audio/music/game/bridge.ogg")
-onready var msc_theme_slime = preload("res://audio/music/game/factory.ogg")
-onready var msc_theme_scythe = preload("res://audio/music/game/sanctuary.ogg")
-onready var msc_theme_darkgoto = preload("res://audio/music/game/blackhole.ogg")
+onready var msc_theme_goto_default = preload("res://audio/music/game/dojo.ogg")
+onready var msc_theme_yoyo_default = preload("res://audio/music/game/rooftop.ogg")
+onready var msc_theme_kero_default = preload("res://audio/music/game/lab.ogg")
+onready var msc_theme_time_default = preload("res://audio/music/game/company.ogg")
+onready var msc_theme_sword_default = preload("res://audio/music/game/bridge.ogg")
+onready var msc_theme_slime_default = preload("res://audio/music/game/factory.ogg")
+onready var msc_theme_scythe_default = preload("res://audio/music/game/sanctuary.ogg")
+onready var msc_theme_darkgoto_default = preload("res://audio/music/game/blackhole.ogg")
+
+onready var msc_theme_goto_fez = preload("res://audio/music/game/dojo-fez.ogg")
+onready var msc_theme_yoyo_fez = preload("res://audio/music/game/rooftop-fez.ogg")
+onready var msc_theme_kero_fez = preload("res://audio/music/game/lab-fez.ogg")
+onready var msc_theme_time_fez = preload("res://audio/music/game/company-fez.ogg")
+onready var msc_theme_sword_fez = preload("res://audio/music/game/bridge-fez.ogg")
+onready var msc_theme_slime_fez = preload("res://audio/music/game/factory-fez.ogg")
+onready var msc_theme_scythe_fez = preload("res://audio/music/game/sanctuary-fez.ogg")
+onready var msc_theme_darkgoto_fez = preload("res://audio/music/game/blackhole-fez.ogg")
 
 onready var snd_silence = preload("res://audio/sfx/Silence.ogg")
 
@@ -234,6 +243,15 @@ var snd_player2win = snd_player2win_default
 var snd_ko = snd_ko_default
 var snd_superko = snd_superko_default
 var snd_perfect = snd_perfect_default
+
+var msc_theme_goto = msc_theme_goto_default
+var msc_theme_yoyo = msc_theme_yoyo_default
+var msc_theme_kero = msc_theme_kero_default
+var msc_theme_time = msc_theme_time_default
+var msc_theme_sword = msc_theme_sword_default
+var msc_theme_slime = msc_theme_slime_default
+var msc_theme_scythe = msc_theme_scythe_default
+var msc_theme_darkgoto = msc_theme_darkgoto_default
 
 func _ready():
 	if global.announcer_type == global.ANNOUNCER.default:
@@ -296,6 +314,47 @@ func _ready():
 		snd_ko = snd_ko_retro
 		snd_superko = snd_superko_retro
 		snd_perfect = snd_perfect_retro
+		
+	match global.goto_music_type:
+		global.CUSTOM_GOTO_MUSIC.fez:
+			msc_theme_goto = msc_theme_goto_fez
+		global.CUSTOM_GOTO_MUSIC.none:
+			msc_theme_goto = snd_silence
+	match global.yoyo_music_type:
+		global.CUSTOM_YOYO_MUSIC.fez:
+			msc_theme_yoyo = msc_theme_yoyo_fez
+		global.CUSTOM_YOYO_MUSIC.none:
+			msc_theme_yoyo = snd_silence
+	match global.kero_music_type:
+		global.CUSTOM_KERO_MUSIC.fez:
+			msc_theme_kero = msc_theme_kero_fez
+		global.CUSTOM_KERO_MUSIC.none:
+			msc_theme_kero = snd_silence
+	match global.time_music_type:
+		global.CUSTOM_TIME_MUSIC.fez:
+			msc_theme_time = msc_theme_time_fez
+		global.CUSTOM_TIME_MUSIC.none:
+			msc_theme_time = snd_silence
+	match global.sword_music_type:
+		global.CUSTOM_SWORD_MUSIC.fez:
+			msc_theme_sword = msc_theme_sword_fez
+		global.CUSTOM_TIME_MUSIC.none:
+			msc_theme_sword = snd_silence
+	match global.slime_music_type:
+		global.CUSTOM_SLIME_MUSIC.fez:
+			msc_theme_slime = msc_theme_slime_fez
+		global.CUSTOM_SLIME_MUSIC.none:
+			msc_theme_slime = snd_silence
+	match global.scythe_music_type:
+		global.CUSTOM_SCYTHE_MUSIC.fez:
+			msc_theme_scythe = msc_theme_scythe_fez
+		global.CUSTOM_SCYTHE_MUSIC.none:
+			msc_theme_scythe = snd_silence
+	match global.darkgoto_music_type:
+		global.CUSTOM_DARKGOTO_MUSIC.fez:
+			msc_theme_darkgoto = msc_theme_darkgoto_fez
+		global.CUSTOM_DARKGOTO_MUSIC.none:
+			msc_theme_darkgoto = snd_silence
 	
 	label_center.text = STR_READY
 	label_delay.visible = global.online and global.lobby_state != global.LOBBY_STATE.spectate
@@ -306,7 +365,6 @@ func _ready():
 	if global.turbo_mode:
 		Engine.iterations_per_second = 75
 #	Engine.iterations_per_second = 60*10
-	
 	if global.online:
 		if global.mode == global.MODE.online_quickmatch:
 			max_option = buttons_quickmatch_max
@@ -341,8 +399,10 @@ func _ready():
 			tutorial_timer = max_tutorial_timer
 			player1.stop_act()
 			player2.cpu_type = global.CPU_TYPE.dummy
-	
-	global.show_hitboxes = global.hitboxes
+	if global.lobby_state != global.LOBBY_STATE.spectate:
+		global.show_hitboxes = false
+	else:
+		global.show_hitboxes = global.hitboxes
 	global.clear_input_files()
 	
 	if global.online:
@@ -826,7 +886,7 @@ func _physics_process(delta):
 			GAME_STATE.continue_select, GAME_STATE.restart_select:
 				label_timer.visible = false
 				if press_timer > 0:
-					press_timer -= 1
+					press_timer -= 1.0
 					set_transition_in()
 					if press_timer < max_press_timer / 2 and transition_alpha < 1.5:
 						active_buttons.visible = false
@@ -887,7 +947,7 @@ func _physics_process(delta):
 					queue_free()
 			GAME_STATE.pause_select:
 				if press_timer > 0:
-					press_timer -= 1
+					press_timer -= 1.0
 					set_transition_in()
 					if press_timer < max_press_timer / 2 and transition_alpha < 1.5:
 						if ((option != 1 and global.mode != global.MODE.training) or option > 2):

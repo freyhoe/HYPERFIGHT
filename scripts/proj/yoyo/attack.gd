@@ -27,7 +27,22 @@ func _ready():
 	can_suck = false
 
 func _draw():
-	draw_line(Vector2(0, 0), player.get_yoyo_pos() - position, Color(1, 1, 1))
+	if global.yoyo_skin_type == global.CUSTOM_YOYO_SKIN.lightning:
+		var points = [Vector2(0, 0)]
+		var dots = int(get_position().distance_to(player.get_yoyo_pos())/4)+1
+		for i in range(dots):
+			points.append((player.get_yoyo_pos() - get_position())/dots*(i+1)+Vector2(rand_range(-3,3),rand_range(-3,3)))
+			draw_line(points[i],points[i-1],Color8(255,255,255))
+		points = []
+		for i in range(dots):
+			points.append((player.get_yoyo_pos() - get_position())/dots*(i+1)+Vector2(rand_range(-3,3),rand_range(-3,3)))
+			draw_line(points[i],points[i-1],Color8(253,244,178))
+		points = []
+		for i in range(dots):
+			points.append((player.get_yoyo_pos() - get_position())/dots*(i+1)+Vector2(rand_range(-3,3),rand_range(-3,3)))
+			draw_line(points[i],points[i-1],Color8(248,207,73))
+	else:
+		draw_line(Vector2(0, 0), player.get_yoyo_pos() - position, Color(1, 1, 1))
 
 func can_hold():
 	return position.x >= left_hold_bound and position.x <= right_hold_bound and \

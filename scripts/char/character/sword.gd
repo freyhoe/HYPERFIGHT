@@ -52,18 +52,26 @@ onready var sfx_special_retro = preload("res://audio/sfx/game/char/sword_retro/s
 onready var sfx_super_retro = preload("res://audio/sfx/game/char/sword_retro/super.ogg")
 onready var sfx_hit_retro = preload("res://audio/sfx/game/char/sword_retro/hit.ogg")
 
-var sfx_attack = sfx_attack_default
-var sfx_attack_down = sfx_attack_down_default
-var sfx_attack_charge = sfx_attack_charge_default
-var sfx_special = sfx_special_default
-var sfx_attack_buffed = sfx_attack_buffed_default
+var sfx_attack
+var sfx_attack_down 
+var sfx_attack_charge 
+var sfx_special 
+var sfx_attack_buffed
 var sfx_attack_down_buffed = sfx_attack_down_buffed_default
-var sfx_super = sfx_super_default
-var sfx_hit = sfx_hit_default
+var sfx_super 
+var sfx_hit
 
 onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	sfx_attack = sfx_attack_default
+	sfx_attack_down = sfx_attack_down_default
+	sfx_attack_charge = sfx_attack_charge_default
+	sfx_special = sfx_special_default
+	sfx_attack_buffed = sfx_attack_buffed_default
+	sfx_attack_down_buffed = sfx_attack_down_buffed_default
+	sfx_super = sfx_super_default
+	sfx_hit = sfx_hit_default
 	match global.sword_voice_type:
 		global.CUSTOM_SWORD_VOICE.petris:
 			sfx_attack = sfx_attack_petris
@@ -92,6 +100,10 @@ func _ready():
 			sfx_special = sfx_special_retro
 			sfx_super =sfx_super_retro
 			sfx_hit = sfx_hit_retro
+	match global.sword_skin_type:
+		global.CUSTOM_SWORD_SKIN.none:
+			sprite.visible = false
+			own_shadow.kill()
 	shadow_offset = -1
 	h_dash_speed = 140
 	attack_gravity = 10
@@ -208,7 +220,7 @@ func process_attack():
 			#		i.offset.x += 4
 				
 				if not teleported:
-					teleports.visible = true
+		#			teleports.visible = true
 					teleported = true
 					var before_pos = position
 					if check_player_just_input(global.INPUT_ACTION_LEFT):

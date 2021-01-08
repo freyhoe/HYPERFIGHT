@@ -48,17 +48,24 @@ onready var sfx_super_boom_retro  = preload("res://audio/sfx/game/char/time_retr
 onready var sfx_super_boom_end_retro  = preload("res://audio/sfx/game/char/time_retro/super_boom_end.ogg")
 onready var sfx_hit_retro  = preload("res://audio/sfx/game/char/time_retro/hit.ogg")
 
-var sfx_attack = sfx_attack_default
-var sfx_attack_down = sfx_attack_down_default
-var sfx_special = sfx_special_default
-var sfx_super_boom = sfx_super_boom_default
-var sfx_super_boom_end = sfx_super_boom_end_default
-var sfx_super = sfx_super_default
-var sfx_hit = sfx_hit_default
+var sfx_attack 
+var sfx_attack_down 
+var sfx_special 
+var sfx_super_boom 
+var sfx_super_boom_end
+var sfx_super
+var sfx_hit
 
 onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	sfx_attack = sfx_attack_default
+	sfx_attack_down = sfx_attack_down_default
+	sfx_special = sfx_special_default
+	sfx_super_boom = sfx_super_boom_default
+	sfx_super_boom_end = sfx_super_boom_end_default
+	sfx_super = sfx_super_default
+	sfx_hit = sfx_hit_default
 	match global.time_voice_type:
 		global.CUSTOM_TIME_VOICE.bananaberry:
 			sfx_attack = sfx_attack_banana
@@ -92,7 +99,10 @@ func _ready():
 			sfx_super_boom_end = sfx_super_boom_end_retro
 			sfx_super = sfx_super_retro
 			sfx_hit = sfx_hit_retro
-
+	match global.time_skin_type:
+		global.CUSTOM_TIME_SKIN.none:
+			sprite.visible = false
+			own_shadow.kill()
 	size = Vector2(12, 50)
 	walk_speed = 55
 	h_dash_speed = 150
@@ -110,7 +120,7 @@ func attack():
 		play_anim_this_frame("attack_down")
 		play_audio(sfx_attack_down)
 	else:
-		if is_christmas:
+		if is_christmas or global.time_skin_type == global.CUSTOM_TIME_SKIN.xmas:
 			play_anim_this_frame("attack_chr")
 		else:
 			play_anim_this_frame("attack")
@@ -119,7 +129,7 @@ func attack():
 func special():
 	.special()
 	attacked = false
-	if is_christmas:
+	if is_christmas or global.time_skin_type == global.CUSTOM_TIME_SKIN.xmas:
 		play_anim_this_frame("special_chr")
 	else:
 		play_anim_this_frame("special")
@@ -221,7 +231,7 @@ func process_attack():
 				linear_vel.y = attack_gravity
 			if not attacked:
 				if not check_player_input(global.INPUT_ACTION_ATTACK) and sprite.frame <= 3:
-					if is_christmas:
+					if is_christmas or global.time_skin_type == global.CUSTOM_TIME_SKIN.xmas:
 						play_anim_this_frame("attack_short_chr", 13)
 					else:
 						play_anim_this_frame("attack_short", 13)

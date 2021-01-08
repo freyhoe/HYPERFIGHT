@@ -13,3 +13,6 @@ func init(new_follow_object, new_x_offset, size):
 func process(curr_frame, frame_delay):
 	position = Vector2(follow_object.position.x + x_offset * follow_object.sprite.scale.x, y_offset)
 	visible = follow_object.position.y < y_offset
+
+func kill():
+	queue_free()

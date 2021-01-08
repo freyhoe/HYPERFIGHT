@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/company-fez.ogg-4efc40e05744058a516a1b51ef1b1ad6.oggstr"
+
+[deps]
+
+source_file="res://audio/music/game/company-fez.ogg"
+dest_files=[ "res://.import/company-fez.ogg-4efc40e05744058a516a1b51ef1b1ad6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bridge-fez.ogg-3e107c8a401535477f3afb47c2d1f8c4.oggstr"
+
+[deps]
+
+source_file="res://audio/music/game/bridge-fez.ogg"
+dest_files=[ "res://.import/bridge-fez.ogg-3e107c8a401535477f3afb47c2d1f8c4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

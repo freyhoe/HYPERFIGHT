@@ -13,44 +13,6 @@
 [ext_resource path="res://scenes/ui/lobby/banner/chat.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/ui/menu/popup/yesno.tscn" type="PackedScene" id=12]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
@@ -142,7 +104,6 @@ __meta__ = {
 }
 
 [node name="labels" type="Node2D" parent="."]
-editor/display_folded = true
 visible = false
 modulate = Color( 1, 1, 1, 0.501961 )
 
@@ -215,7 +176,6 @@ left_border = -221
 right_border = 151
 
 [node name="online_labels" type="Node2D" parent="."]
-editor/display_folded = true
 visible = false
 
 [node name="label_name_player1" type="Label" parent="online_labels"]
@@ -248,7 +208,6 @@ position = Vector2( -160, -64 )
 position = Vector2( -160, -48 )
 
 [node name="player_banners" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="lobby_player_banner_player1" parent="player_banners" instance=ExtResource( 10 )]

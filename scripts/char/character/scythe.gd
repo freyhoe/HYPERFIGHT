@@ -43,20 +43,30 @@ onready var sfx_super_retro = preload("res://audio/sfx/game/char/scythe_retro/su
 onready var sfx_super_charged_retro = preload("res://audio/sfx/game/char/scythe_retro/super_charged.ogg")
 onready var sfx_hit_retro = preload("res://audio/sfx/game/char/scythe_retro/hit.ogg")
 
-var sfx_attack = sfx_attack_default
-var sfx_attack_down = sfx_attack_down_default
-var sfx_attack_down_start = sfx_attack_down_start_default
-var sfx_attack_down_end = sfx_attack_down_end_default
-var sfx_attack_back = sfx_attack_back_default
-var sfx_special = sfx_special_default
-var sfx_special_teleport = sfx_special_teleport_default
-var sfx_super = sfx_super_default
-var sfx_super_charged = sfx_super_default
-var sfx_hit = sfx_hit_default
+var sfx_attack
+var sfx_attack_down 
+var sfx_attack_down_start 
+var sfx_attack_down_end 
+var sfx_attack_back 
+var sfx_special
+var sfx_special_teleport 
+var sfx_super 
+var sfx_super_charged 
+var sfx_hit 
 
 onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	sfx_attack = sfx_attack_default
+	sfx_attack_down = sfx_attack_down_default
+	sfx_attack_down_start = sfx_attack_down_start_default
+	sfx_attack_down_end = sfx_attack_down_end_default
+	sfx_attack_back = sfx_attack_back_default
+	sfx_special = sfx_special_default
+	sfx_special_teleport = sfx_special_teleport_default
+	sfx_super = sfx_super_default
+	sfx_super_charged = sfx_super_default
+	sfx_hit = sfx_hit_default
 	match global.scythe_voice_type:
 		global.CUSTOM_SCYTHE_VOICE.none:
 			sfx_attack = sfx_silence
@@ -80,7 +90,10 @@ func _ready():
 			sfx_super = sfx_super_retro
 			sfx_super_charged = sfx_super_charged_retro
 			sfx_hit = sfx_hit_retro
-
+	match global.scythe_skin_type:
+		global.CUSTOM_SCYTHE_SKIN.none:
+			sprite.visible = false
+			own_shadow.kill()
 	add_to_group(global.GROUP_CHAR_SCYTHE)
 	shadow_offset = -1
 	set_attacking_on_attack = false

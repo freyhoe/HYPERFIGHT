@@ -54,17 +54,24 @@ onready var sfx_super_swallow_retro = preload("res://audio/sfx/game/char/kero_re
 onready var sfx_super_retro = preload("res://audio/sfx/game/char/kero_retro/super.ogg")
 onready var sfx_hit_retro = preload("res://audio/sfx/game/char/kero_retro/hit.ogg")
 
-var sfx_attack = sfx_attack_default
-var sfx_attack_down = sfx_attack_down_default
-var sfx_special = sfx_special_default
-var sfx_special_swallow = sfx_special_swallow_default
-var sfx_super_swallow = sfx_super_swallow_default
-var sfx_super = sfx_super_default
-var sfx_hit = sfx_hit_default
+var sfx_attack 
+var sfx_attack_down 
+var sfx_special 
+var sfx_special_swallow 
+var sfx_super_swallow 
+var sfx_super 
+var sfx_hit
 
 onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	sfx_attack = sfx_attack_default
+	sfx_attack_down = sfx_attack_down_default
+	sfx_special = sfx_special_default
+	sfx_special_swallow = sfx_special_swallow_default
+	sfx_super_swallow = sfx_super_swallow_default
+	sfx_super = sfx_super_default
+	sfx_hit = sfx_hit_default
 	match global.kero_voice_type:
 		global.CUSTOM_KERO_VOICE.esvee:
 			sfx_attack = sfx_attack_esvee
@@ -98,6 +105,10 @@ func _ready():
 			sfx_super_swallow = sfx_super_swallow_retro
 			sfx_super = sfx_super_retro
 			sfx_hit = sfx_hit_retro
+	match global.kero_skin_type:
+		global.CUSTOM_KERO_SKIN.none:
+			sprite.visible = false
+			own_shadow.kill()
 	add_to_group(global.GROUP_CHAR_KERO)
 	size = Vector2(12, 22)
 	shadow_offset = -1

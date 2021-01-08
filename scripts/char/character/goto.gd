@@ -48,14 +48,21 @@ onready var sfx_special_parry_retro = preload("res://audio/sfx/game/char/goto_re
 
 onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
-onready var sfx_attack = sfx_attack_default
-onready var sfx_attack_down = sfx_attack_down_default
-onready var sfx_special = sfx_special_default
-onready var sfx_special_parry = sfx_special_parry_default
-onready var sfx_super = sfx_super_default
-onready var sfx_hit = sfx_hit_default
+onready var sfx_attack
+onready var sfx_attack_down
+onready var sfx_special
+onready var sfx_special_parry
+onready var sfx_super
+onready var sfx_hit
 
 func _ready():
+	sfx_attack = sfx_attack_default
+	sfx_attack_down = sfx_attack_down_default
+	sfx_special = sfx_special_default
+	sfx_special_parry = sfx_special_parry_default
+	sfx_super = sfx_super_default
+	sfx_hit = sfx_hit_default
+	shadow_offset = 1
 	match global.goto_voice_type:
 		global.CUSTOM_GOTO_VOICE.default:
 			sfx_attack = sfx_attack
@@ -99,11 +106,14 @@ func _ready():
 			sfx_special_parry = sfx_special_parry_retro
 			sfx_super = sfx_super_retro
 			sfx_hit = sfx_hit_retro
-	
+	match global.goto_skin_type:
+		global.CUSTOM_GOTO_SKIN.none:
+			sprite.visible = false
+			own_shadow.kill()
 	if global.mode == global.MODE.arcade and global.arcade_stage == global.max_arcade_stage and player_num == 2:
 		walk_speed = 90
 		air_speed = 160
-	shadow_offset = 1
+	
 
 func attack():
 	attacked = false

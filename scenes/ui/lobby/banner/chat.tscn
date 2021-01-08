@@ -4,21 +4,6 @@
 [ext_resource path="res://scripts/ui/lobby/banner/chat.gd" type="Script" id=2]
 [ext_resource path="res://resources/font/savior1.tres" type="DynamicFont" id=3]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [node name="lobby_chat_banner" type="Sprite"]
 texture = ExtResource( 1 )
 centered = false
@@ -36,6 +21,9 @@ valign = 2
 autowrap = true
 clip_text = true
 max_lines_visible = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="info_label" type="Label" parent="."]
 margin_left = 2.0
@@ -55,3 +43,6 @@ margin_right = 111.0
 margin_bottom = 100.0
 custom_fonts/font = ExtResource( 3 )
 max_length = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}

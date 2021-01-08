@@ -39,15 +39,19 @@ onready var sfx_special_banana = preload("res://audio/sfx/game/char/yoyo_banana/
 onready var sfx_super_banana = preload("res://audio/sfx/game/char/yoyo_banana/super.ogg")
 onready var sfx_hit_banana = preload("res://audio/sfx/game/char/yoyo_banana/hit.ogg")
 
-var sfx_attack = sfx_attack_default
-var sfx_special = sfx_special_default
-var sfx_special_boom = sfx_special_boom
-var sfx_super = sfx_super_default
-var sfx_hit = sfx_hit_default
-
+var sfx_attack
+var sfx_special 
+var sfx_special_boom 
+var sfx_super 
+var sfx_hit 
 onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	sfx_attack = sfx_attack_default
+	sfx_special = sfx_special_default
+	sfx_special_boom = sfx_special_boom
+	sfx_super = sfx_super_default
+	sfx_hit = sfx_hit_default
 	match global.yoyo_voice_type:
 		global.CUSTOM_YOYO_VOICE.bananaberry:
 			sfx_attack = sfx_attack_banana
@@ -67,6 +71,10 @@ func _ready():
 			sfx_special_boom = sfx_special_boom_retro
 			sfx_super = sfx_super_retro
 			sfx_hit = sfx_hit_retro
+	match global.yoyo_skin_type:
+		global.CUSTOM_YOYO_SKIN.none:
+			sprite.visible = false
+			own_shadow.kill()
 	size = Vector2(12, 39)
 	effect_y_offset = 8
 	h_dash_speed = 135

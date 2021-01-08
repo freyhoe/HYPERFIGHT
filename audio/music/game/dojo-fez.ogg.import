@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dojo-fez.ogg-e2e3025c25cb2078faf6afc7d9017d4f.oggstr"
+
+[deps]
+
+source_file="res://audio/music/game/dojo-fez.ogg"
+dest_files=[ "res://.import/dojo-fez.ogg-e2e3025c25cb2078faf6afc7d9017d4f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

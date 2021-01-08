@@ -41,12 +41,12 @@ onready var sfx_special_reflect_retro = preload("res://audio/sfx/game/char/darkg
 onready var sfx_super_retro = preload("res://audio/sfx/game/char/darkgoto_retro/super.ogg")
 onready var sfx_hit_retro = preload("res://audio/sfx/game/char/darkgoto_retro/hit.ogg")
 
-var sfx_attack = sfx_attack_default
-var sfx_attack_down = sfx_attack_down_default
-var sfx_special = sfx_special_default
+var sfx_attack 
+var sfx_attack_down 
+var sfx_special 
 var sfx_special_reflect = sfx_special_reflect_default
-var sfx_super = sfx_super_default
-var sfx_hit = sfx_hit_default
+var sfx_super 
+var sfx_hit 
 
 onready var sfx_attack_old = preload("res://audio/sfx/game/char/darkgoto/old/attack.ogg")
 onready var sfx_attack_down_old = preload("res://audio/sfx/game/char/darkgoto/old/attack_down.ogg")
@@ -55,6 +55,13 @@ onready var sfx_hit_old = preload("res://audio/sfx/game/char/darkgoto/old/hit.og
 onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	sfx_attack = sfx_attack_default
+	sfx_attack_down = sfx_attack_down_default
+	sfx_special = sfx_special_default
+	sfx_special_reflect = sfx_special_reflect_default
+	sfx_super = sfx_super_default
+	sfx_hit = sfx_hit_default
+	shadow_offset = 1
 	match global.darkgoto_voice_type:
 		global.CUSTOM_DARKGOTO_VOICE.basher:
 			sfx_attack = sfx_attack_basher
@@ -89,8 +96,12 @@ func _ready():
 			sfx_special_reflect = sfx_special_reflect_retro
 			sfx_super = sfx_super_retro
 			sfx_hit = sfx_hit_retro
+	match global.darkgoto_skin_type:
+		global.CUSTOM_DARKGOTO_SKIN.none:
+			sprite.visible = false
+			own_shadow.kill()
+	
 	add_to_group(global.GROUP_CAN_REFLECT)
-	shadow_offset = 1
 	if global.mode == global.MODE.arcade and global.arcade_stage == global.max_arcade_stage and player_num == 2:
 		walk_speed = 90
 		air_speed = 160

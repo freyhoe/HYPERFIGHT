@@ -12,6 +12,23 @@ enum CUSTOM_SLIME_VOICE{ default, retro, none }
 enum CUSTOM_SCYTHE_VOICE{ default, retro, none }
 enum CUSTOM_DARKGOTO_VOICE{ default, old, bananaberry, basher, retro, none }
 
+enum CUSTOM_GOTO_MUSIC{ default, fez, none }
+enum CUSTOM_YOYO_MUSIC{ default, fez, none }
+enum CUSTOM_KERO_MUSIC{ default, fez, none }
+enum CUSTOM_TIME_MUSIC{ default, fez, none }
+enum CUSTOM_SWORD_MUSIC{ default, fez, none }
+enum CUSTOM_SLIME_MUSIC{ default, fez, none }
+enum CUSTOM_SCYTHE_MUSIC{ default, fez, none }
+enum CUSTOM_DARKGOTO_MUSIC{ default, fez, none }
+
+enum CUSTOM_GOTO_SKIN{ default, none }
+enum CUSTOM_YOYO_SKIN{ default, lightning, none }
+enum CUSTOM_KERO_SKIN{ default, none }
+enum CUSTOM_TIME_SKIN{ default, xmas, none }
+enum CUSTOM_SWORD_SKIN{ default, none }
+enum CUSTOM_SLIME_SKIN{ default, none }
+enum CUSTOM_SCYTHE_SKIN{ default, none }
+enum CUSTOM_DARKGOTO_SKIN{ default, none }
 
 enum INPUT_TYPE { key, pad, stick }
 enum MODE { versus_player, versus_cpu, online_lobby, online_quickmatch, arcade, training, tutorial }
@@ -58,6 +75,22 @@ const CFG_CUSTOM_SWORD_VOICE = "sword_voice"
 const CFG_CUSTOM_SLIME_VOICE = "slime_voice"
 const CFG_CUSTOM_SCYTHE_VOICE = "scythe_voice"
 const CFG_CUSTOM_DARKGOTO_VOICE = "darkgoto_voice"
+const CFG_CUSTOM_GOTO_MUSIC = "dojo_voice"
+const CFG_CUSTOM_YOYO_MUSIC = "rooftop_voice"
+const CFG_CUSTOM_KERO_MUSIC = "lab_voice"
+const CFG_CUSTOM_TIME_MUSIC = "company_voice"
+const CFG_CUSTOM_SWORD_MUSIC = "bridge_voice"
+const CFG_CUSTOM_SLIME_MUSIC = "factory_voice"
+const CFG_CUSTOM_SCYTHE_MUSIC = "sanctuary_voice"
+const CFG_CUSTOM_DARKGOTO_MUSIC = "blackhole_voice"
+const CFG_CUSTOM_GOTO_SKIN = "goto_skin"
+const CFG_CUSTOM_YOYO_SKIN = "yoyo_skin"
+const CFG_CUSTOM_KERO_SKIN = "kero_skin"
+const CFG_CUSTOM_TIME_SKIN = "time_skin"
+const CFG_CUSTOM_SWORD_SKIN = "sword_skin"
+const CFG_CUSTOM_SLIME_SKIN = "slime_skin"
+const CFG_CUSTOM_SCYTHE_SKIN = "scythe_skin"
+const CFG_CUSTOM_DARKGOTO_SKIN = "darkgoto_skin"
 const CFG_OPTIONS_VSYNC = "vsync"
 const CFG_OPTIONS_MUSVOL = "music_volume"
 const CFG_OPTIONS_SFXVOL = "sfx_volume"
@@ -167,6 +200,22 @@ var sword_voice_type = CUSTOM_SWORD_VOICE.default
 var slime_voice_type = CUSTOM_SLIME_VOICE.default
 var scythe_voice_type = CUSTOM_SCYTHE_VOICE.default
 var darkgoto_voice_type = CUSTOM_DARKGOTO_VOICE.default
+var goto_music_type = CUSTOM_GOTO_MUSIC.default
+var yoyo_music_type = CUSTOM_YOYO_MUSIC.default
+var kero_music_type = CUSTOM_KERO_MUSIC.default
+var time_music_type = CUSTOM_TIME_MUSIC.default
+var sword_music_type = CUSTOM_SWORD_MUSIC.default
+var slime_music_type = CUSTOM_SLIME_MUSIC.default
+var scythe_music_type = CUSTOM_SCYTHE_MUSIC.default
+var darkgoto_music_type = CUSTOM_DARKGOTO_MUSIC.default
+var goto_skin_type = CUSTOM_GOTO_SKIN.default
+var yoyo_skin_type = CUSTOM_YOYO_SKIN.default
+var kero_skin_type = CUSTOM_KERO_SKIN.default
+var time_skin_type = CUSTOM_TIME_SKIN.default
+var sword_skin_type = CUSTOM_SWORD_SKIN.default
+var slime_skin_type = CUSTOM_SLIME_SKIN.default
+var scythe_skin_type = CUSTOM_SCYTHE_SKIN.default
+var darkgoto_skin_type = CUSTOM_DARKGOTO_SKIN.default
 
 
 var fps = 60
@@ -322,7 +371,22 @@ func load_config():
 	slime_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SLIME_VOICE, slime_voice_type)
 	scythe_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SCYTHE_VOICE, scythe_voice_type)
 	darkgoto_voice_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_DARKGOTO_VOICE, darkgoto_voice_type)
-
+	goto_music_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_GOTO_MUSIC, goto_music_type)
+	yoyo_music_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_YOYO_MUSIC, yoyo_music_type)
+	kero_music_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_KERO_MUSIC, kero_music_type)
+	time_music_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_TIME_MUSIC, time_music_type)
+	sword_music_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SWORD_MUSIC, sword_music_type)
+	slime_music_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SLIME_MUSIC, slime_music_type)
+	scythe_music_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SCYTHE_MUSIC, scythe_music_type)
+	darkgoto_music_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_DARKGOTO_MUSIC, darkgoto_music_type)
+	goto_skin_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_GOTO_SKIN, goto_skin_type)
+	yoyo_skin_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_YOYO_SKIN, yoyo_skin_type)
+	kero_skin_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_KERO_SKIN, kero_skin_type)
+	time_skin_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_TIME_SKIN, time_skin_type)
+	sword_skin_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SWORD_SKIN, sword_skin_type)
+	slime_skin_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SLIME_SKIN, slime_skin_type)
+	scythe_skin_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_SCYTHE_SKIN, scythe_skin_type)
+	darkgoto_skin_type = get_config_value(config, CFG_CUSTOMIZE, CFG_CUSTOM_DARKGOTO_SKIN, darkgoto_skin_type)
 	
 	unlock_color4.resize(char_count)
 	if html5_ver:
@@ -356,6 +420,8 @@ func load_config():
 	set_screen_type()
 	set_announcer_type()
 	set_voice_type()
+	set_music_type()
+	set_skin_type()
 	set_vsync()
 	
 	config = ConfigFile.new()
@@ -504,6 +570,26 @@ func set_voice_type():
 	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SLIME_VOICE, slime_voice_type)
 	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SCYTHE_VOICE, scythe_voice_type)
 	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_DARKGOTO_VOICE, darkgoto_voice_type)
+
+func set_music_type():
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_GOTO_MUSIC, goto_music_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_YOYO_MUSIC, yoyo_music_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_KERO_MUSIC, kero_music_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_TIME_MUSIC, time_music_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SWORD_MUSIC, sword_music_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SLIME_MUSIC, slime_music_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SCYTHE_MUSIC, scythe_music_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_DARKGOTO_MUSIC, darkgoto_music_type)
+
+func set_skin_type():
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_GOTO_SKIN, goto_skin_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_YOYO_SKIN, yoyo_skin_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_KERO_SKIN, kero_skin_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_TIME_SKIN, time_skin_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SWORD_SKIN, sword_skin_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SLIME_SKIN, slime_skin_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_SCYTHE_SKIN, scythe_skin_type)
+	save_config_value(CFG_CUSTOMIZE, CFG_CUSTOM_DARKGOTO_SKIN, darkgoto_skin_type)
 
 func set_vsync():
 	OS.set_use_vsync(vsync)
