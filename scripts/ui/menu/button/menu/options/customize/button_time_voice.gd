@@ -32,5 +32,7 @@ func set_label_text():
 			label.text = "Voice:\nNONE"
 		global.CUSTOM_TIME_VOICE.fez:
 			label.text = "Voice:\nTTS"
+		global.CUSTOM_TIME_VOICE.fez3:
+			label.text = "Voice:\nREVERSE"
 		global.CUSTOM_TIME_VOICE.retro:
 			label.text = "Voice:\nRETRO"

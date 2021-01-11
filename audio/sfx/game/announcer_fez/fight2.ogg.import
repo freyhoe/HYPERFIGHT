@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fight2.ogg-d7b39aaa20fdacbce626ca28975902ce.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_fez/fight2.ogg"
+dest_files=[ "res://.import/fight2.ogg-d7b39aaa20fdacbce626ca28975902ce.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

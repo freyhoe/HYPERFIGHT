@@ -281,6 +281,9 @@ custom_constants/line_spacing = -3
 text = "30"
 align = 1
 clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label_player2_ready" type="Label" parent="."]
 margin_left = -32.0
@@ -293,6 +296,9 @@ custom_constants/line_spacing = -3
 text = "30"
 align = 1
 clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="timeout_timer" type="Timer" parent="."]
 wait_time = 15.0

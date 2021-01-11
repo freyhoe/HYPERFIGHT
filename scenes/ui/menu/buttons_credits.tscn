@@ -184,6 +184,7 @@ texture = ExtResource( 4 )
 [node name="2" type="Node2D" parent="button_back" groups=[
 "page",
 ]]
+visible = false
 position = Vector2( -0.108917, -11.6483 )
 
 [node name="label_credits_announcer" type="Label" parent="button_back/2"]
@@ -248,7 +249,6 @@ __meta__ = {
 [node name="3" type="Node2D" parent="button_back" groups=[
 "page",
 ]]
-visible = false
 position = Vector2( -0.108917, -11.6483 )
 
 [node name="label_credits_basher" type="Label" parent="button_back/3"]
@@ -270,11 +270,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="label_credits_fez" type="Label" parent="button_back/3"]
+margin_left = -191.0
+margin_top = -84.0
+margin_right = 36.0
+margin_bottom = -51.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
+custom_constants/shadow_offset_x = -1
+custom_constants/line_spacing = -3
+custom_constants/shadow_offset_y = 1
+text = "fezfan for his don mcron tts
+and sheep stage pack, and the other tts
+and reverse packs"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="label_credits_luc" type="Label" parent="button_back/3"]
 margin_left = -191.0
-margin_top = -59.6636
+margin_top = -51.0
 margin_right = 36.0
-margin_bottom = -40.6636
+margin_bottom = -32.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.968627, 0.776471, 0.45098, 1 )
 custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
@@ -286,28 +304,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="label_credits_fez" type="Label" parent="button_back/3"]
-margin_left = -191.0
-margin_top = -84.0
-margin_right = 36.0
-margin_bottom = -61.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
-custom_constants/shadow_offset_x = -1
-custom_constants/line_spacing = -3
-custom_constants/shadow_offset_y = 1
-text = "fezfan for his don mcron tts
-and sheep stage pack"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="label_credits_petris" type="Label" parent="button_back/3"]
 margin_left = -191.0
-margin_top = -46.0
+margin_top = -37.3364
 margin_right = 41.0
-margin_bottom = -23.0
+margin_bottom = -14.3364
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.639216, 1, 0.533333, 1 )
 custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )
@@ -322,9 +323,9 @@ __meta__ = {
 
 [node name="label_thanks" type="Label" parent="button_back/3"]
 margin_left = -191.0
-margin_top = -23.0
+margin_top = -14.3364
 margin_right = 36.0002
-margin_bottom = 20.0
+margin_bottom = 28.6636
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.129412, 0.0705882, 0.341176, 0.25098 )

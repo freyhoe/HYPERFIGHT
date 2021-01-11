@@ -442,6 +442,15 @@ func broadcast_packet_timer_player2_ready_stop():
 	packet.append(global.P_TYPE.timer_player2_ready_stop)
 	broadcast_lobby_packet(packet)
 
+func kick(player_name):
+	if global.steam_id == global.host_member_id:
+		for player_id in global.lobby_member_ids:
+			if(Steam.getFriendPersonaName(player_id).to_upper()==player_name.to_upper()):
+				var kick_str = global.LOBBY_MSG_TIMEOUT + global.LOBBY_MSG_SEP_CHAR
+				kick_str += str(player_id)
+				Steam.sendLobbyChatMsg(global.curr_lobby_id, kick_str)
+				rotate_members()
+
 func _on_timeout_timer_timeout():
 	if not global.lobby_join and waiting_for_spectators:
 		for spectator_id in global.spectator_member_ids:

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/blackhole-fez.ogg-031b3983d74353c9388a45f707db45c3.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

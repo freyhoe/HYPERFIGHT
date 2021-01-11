@@ -3,11 +3,11 @@ extends Node2D
 var max_players = 8
 var player_banners = []
 
-func init(max_players):
-	self.max_players = max_players
+func init(_max_players):
+	self.max_players = _max_players
 	for i in range(8):
 		var banner = get_node("lobby_player_banner_player" + str(i + 1))
-		if i < max_players:
+		if i < _max_players:
 			player_banners.append(banner)
 		else:
 			player_banners.append(null)

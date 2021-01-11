@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack_down.ogg-3e827568cf33998f8a83f640231e7cfd.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/sword_fez3/attack_down.ogg"
+dest_files=[ "res://.import/attack_down.ogg-3e827568cf33998f8a83f640231e7cfd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

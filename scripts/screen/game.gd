@@ -213,6 +213,26 @@ onready var snd_ko_retro = preload("res://audio/sfx/game/announcer_retro/ko.ogg"
 onready var snd_superko_retro = preload("res://audio/sfx/game/announcer_retro/superko.ogg")
 onready var snd_perfect_retro = preload("res://audio/sfx/game/announcer_retro/perfect.ogg")
 
+onready var snd_ready_fez = preload("res://audio/sfx/game/announcer_fez/ready.ogg")
+onready var snd_fight_fez = preload("res://audio/sfx/game/announcer_fez/fight1.ogg")
+onready var snd_fight2_fez = preload("res://audio/sfx/game/announcer_fez/fight2.ogg")
+onready var snd_fight3_fez = preload("res://audio/sfx/game/announcer_fez/fight3.ogg")
+onready var snd_player1win_fez = preload("res://audio/sfx/game/announcer_fez/p1win.ogg")
+onready var snd_player2win_fez = preload("res://audio/sfx/game/announcer_fez/p2win.ogg")
+onready var snd_ko_fez = preload("res://audio/sfx/game/announcer_fez/ko.ogg")
+onready var snd_superko_fez = preload("res://audio/sfx/game/announcer_fez/superko.ogg")
+onready var snd_perfect_fez = preload("res://audio/sfx/game/announcer_fez/perfect.ogg")
+
+onready var snd_ready_fez2 = preload("res://audio/sfx/game/announcer_fez2/ready.ogg")
+onready var snd_fight_fez2 = preload("res://audio/sfx/game/announcer_fez2/fight1.ogg")
+onready var snd_fight2_fez2 = preload("res://audio/sfx/game/announcer_fez2/fight2.ogg")
+onready var snd_fight3_fez2 = preload("res://audio/sfx/game/announcer_fez2/fight3.ogg")
+onready var snd_player1win_fez2 = preload("res://audio/sfx/game/announcer_fez2/p1win.ogg")
+onready var snd_player2win_fez2 = preload("res://audio/sfx/game/announcer_fez2/p2win.ogg")
+onready var snd_ko_fez2 = preload("res://audio/sfx/game/announcer_fez2/ko.ogg")
+onready var snd_superko_fez2 = preload("res://audio/sfx/game/announcer_fez2/superko.ogg")
+onready var snd_perfect_fez2 = preload("res://audio/sfx/game/announcer_fez2/perfect.ogg")
+
 onready var snd_stronghit = preload("res://audio/sfx/game/char/hit.ogg")
 onready var msc_theme_goto_default = preload("res://audio/music/game/dojo.ogg")
 onready var msc_theme_yoyo_default = preload("res://audio/music/game/rooftop.ogg")
@@ -233,27 +253,46 @@ onready var msc_theme_scythe_fez = preload("res://audio/music/game/sanctuary-fez
 onready var msc_theme_darkgoto_fez = preload("res://audio/music/game/blackhole-fez.ogg")
 
 onready var snd_silence = preload("res://audio/sfx/Silence.ogg")
+onready var snd_egg1 = preload("res://audio/sfx/esvee.ogg")
 
-var snd_ready = snd_ready_default
-var snd_fight = snd_fight_default
-var snd_fight2 = snd_fight2_default
-var snd_fight3 = snd_fight3_default
-var snd_player1win = snd_player1win_default
-var snd_player2win = snd_player2win_default
-var snd_ko = snd_ko_default
-var snd_superko = snd_superko_default
-var snd_perfect = snd_perfect_default
+var snd_ready
+var snd_fight
+var snd_fight2
+var snd_fight3
+var snd_player1win
+var snd_player2win
+var snd_ko
+var snd_superko
+var snd_perfect
 
-var msc_theme_goto = msc_theme_goto_default
-var msc_theme_yoyo = msc_theme_yoyo_default
-var msc_theme_kero = msc_theme_kero_default
-var msc_theme_time = msc_theme_time_default
-var msc_theme_sword = msc_theme_sword_default
-var msc_theme_slime = msc_theme_slime_default
-var msc_theme_scythe = msc_theme_scythe_default
-var msc_theme_darkgoto = msc_theme_darkgoto_default
+var msc_theme_goto
+var msc_theme_yoyo
+var msc_theme_kero
+var msc_theme_time
+var msc_theme_sword
+var msc_theme_slime
+var msc_theme_scythe
+var msc_theme_darkgoto
 
 func _ready():
+	snd_ready = snd_ready_default
+	snd_fight = snd_fight_default
+	snd_fight2 = snd_fight2_default
+	snd_fight3 = snd_fight3_default
+	snd_player1win = snd_player1win_default
+	snd_player2win = snd_player2win_default
+	snd_ko = snd_ko_default
+	snd_superko = snd_superko_default
+	snd_perfect = snd_perfect_default
+	msc_theme_goto = msc_theme_goto_default
+	msc_theme_yoyo = msc_theme_yoyo_default
+	msc_theme_kero = msc_theme_kero_default
+	msc_theme_time = msc_theme_time_default
+	msc_theme_sword = msc_theme_sword_default
+	msc_theme_slime = msc_theme_slime_default
+	msc_theme_scythe = msc_theme_scythe_default
+	msc_theme_darkgoto = msc_theme_darkgoto_default
+
 	if global.announcer_type == global.ANNOUNCER.default:
 		snd_ready = snd_ready_default
 		snd_fight = snd_fight_default
@@ -314,6 +353,26 @@ func _ready():
 		snd_ko = snd_ko_retro
 		snd_superko = snd_superko_retro
 		snd_perfect = snd_perfect_retro
+	elif global.announcer_type == global.ANNOUNCER.fez:
+		snd_ready = snd_ready_fez
+		snd_fight = snd_fight_fez
+		snd_fight2 = snd_fight2_fez
+		snd_fight3 = snd_fight3_fez
+		snd_player1win = snd_player1win_fez
+		snd_player2win = snd_player2win_fez
+		snd_ko = snd_ko_fez
+		snd_superko = snd_superko_fez
+		snd_perfect = snd_perfect_fez
+	elif global.announcer_type == global.ANNOUNCER.fez2:
+		snd_ready = snd_ready_fez2
+		snd_fight = snd_fight_fez2
+		snd_fight2 = snd_fight2_fez2
+		snd_fight3 = snd_fight3_fez2
+		snd_player1win = snd_player1win_fez2
+		snd_player2win = snd_player2win_fez2
+		snd_ko = snd_ko_fez2
+		snd_superko = snd_superko_fez2
+		snd_perfect = snd_perfect_fez2
 		
 	match global.goto_music_type:
 		global.CUSTOM_GOTO_MUSIC.fez:
@@ -364,7 +423,7 @@ func _ready():
 	
 	if global.turbo_mode:
 		Engine.iterations_per_second = 75
-#	Engine.iterations_per_second = 60*10
+	#Engine.iterations_per_second = 60*10
 	if global.online:
 		if global.mode == global.MODE.online_quickmatch:
 			max_option = buttons_quickmatch_max
@@ -1312,7 +1371,11 @@ func win_timer_act():
 			label_center.text = STR_PERFECT
 			state = GAME_STATE.premenu
 			win_timer = 90
-			play_audio(snd_perfect)
+			if (not player1_scored and (player1.egg1 == 2 and player2.egg1 == 1)) or\
+			(not player2_scored and (player2.egg1 == 2 and player1.egg1 == 1)):
+				play_audio(snd_egg1)
+			else:
+				play_audio(snd_perfect)
 		GAME_STATE.premenu:
 			label_center.visible = false
 			win_timer = -1

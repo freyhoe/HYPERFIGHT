@@ -32,6 +32,8 @@ func set_label_text():
 			label.text = "Voice:\nNone"
 		global.CUSTOM_GOTO_VOICE.luc:
 			label.text = "Voice:\nTTS"
+		global.CUSTOM_GOTO_VOICE.fez3:
+			label.text = "Voice:\nREVERSE"
 		global.CUSTOM_GOTO_VOICE.retro:
 			label.text = "Voice:\nRETRO"
 		global.CUSTOM_GOTO_VOICE.old:

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bridge-fez.ogg-3e107c8a401535477f3afb47c2d1f8c4.oggs
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

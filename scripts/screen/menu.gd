@@ -639,6 +639,7 @@ func _process(delta):
 			if global.lobby_join:
 				global.other_member_id = lobby_owner
 				send_packet_lobby_joiner(lobby_owner)
+	#			send_packet_lobby_owner(other_member)
 				global.create_debug_text(STR_DEBUG_SENTJOINER)
 			else:
 				global.other_member_id = other_member

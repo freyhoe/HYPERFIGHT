@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/esvee.ogg-ebb466254f704afd1294648363e6a562.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/esvee.ogg"
+dest_files=[ "res://.import/esvee.ogg-ebb466254f704afd1294648363e6a562.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

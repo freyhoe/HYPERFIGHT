@@ -39,6 +39,13 @@ onready var sfx_hit_luc = preload("res://audio/sfx/game/char/goto_luc/hit.ogg")
 onready var sfx_special_luc = preload("res://audio/sfx/game/char/goto_luc/special.ogg")
 onready var sfx_special_parry_luc = preload("res://audio/sfx/game/char/goto_luc/special_parry.ogg")
 
+onready var sfx_attack_fez3 = preload("res://audio/sfx/game/char/goto_fez3/attack.ogg")
+onready var sfx_attack_down_fez3 = preload("res://audio/sfx/game/char/goto_fez3/attack_down.ogg")
+onready var sfx_super_fez3 = preload("res://audio/sfx/game/char/goto_fez3/super.ogg")
+onready var sfx_hit_fez3 = preload("res://audio/sfx/game/char/goto_fez3/hit.ogg")
+onready var sfx_special_fez3 = preload("res://audio/sfx/game/char/goto_fez3/special.ogg")
+onready var sfx_special_parry_fez3 = preload("res://audio/sfx/game/char/goto_fez3/special_parry.ogg")
+
 onready var sfx_attack_retro = preload("res://audio/sfx/game/char/goto_retro/attack.ogg")
 onready var sfx_attack_down_retro = preload("res://audio/sfx/game/char/goto_retro/attack_down.ogg")
 onready var sfx_super_retro = preload("res://audio/sfx/game/char/goto_retro/super.ogg")
@@ -106,6 +113,13 @@ func _ready():
 			sfx_special_parry = sfx_special_parry_retro
 			sfx_super = sfx_super_retro
 			sfx_hit = sfx_hit_retro
+		global.CUSTOM_GOTO_VOICE.fez3:
+			sfx_attack = sfx_attack_fez3
+			sfx_attack_down = sfx_attack_down_fez3
+			sfx_special = sfx_special_fez3
+			sfx_special_parry = sfx_special_parry_fez3
+			sfx_super = sfx_super_fez3
+			sfx_hit = sfx_hit_fez3
 	match global.goto_skin_type:
 		global.CUSTOM_GOTO_SKIN.none:
 			sprite.visible = false

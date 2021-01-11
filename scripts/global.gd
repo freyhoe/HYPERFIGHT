@@ -1,16 +1,16 @@
 extends Node
 
 enum SCREEN { window, window2x, window3x, window4x, full }
-enum ANNOUNCER{ default, bananaberry, vernomere, skreamnredskull, retro, none }
+enum ANNOUNCER{ default, bananaberry, vernomere, skreamnredskull, retro, fez, fez2, none }
 
-enum CUSTOM_GOTO_VOICE{ default, old, bananaberry, luc, retro, none }
-enum CUSTOM_YOYO_VOICE{ default, bananaberry, retro, none }
-enum CUSTOM_KERO_VOICE{ default, bananaberry, esvee, retro, none }
-enum CUSTOM_TIME_VOICE{ default, bananaberry, fez, retro, none }
-enum CUSTOM_SWORD_VOICE{ default, petris, retro, none }
-enum CUSTOM_SLIME_VOICE{ default, retro, none }
-enum CUSTOM_SCYTHE_VOICE{ default, retro, none }
-enum CUSTOM_DARKGOTO_VOICE{ default, old, bananaberry, basher, retro, none }
+enum CUSTOM_GOTO_VOICE{ default, old, bananaberry, luc, retro, fez3, none }
+enum CUSTOM_YOYO_VOICE{ default, bananaberry, retro, fez2, fez3, none }
+enum CUSTOM_KERO_VOICE{ default, bananaberry, esvee, retro, fez2, fez3, none }
+enum CUSTOM_TIME_VOICE{ default, bananaberry, fez, retro, fez3, none }
+enum CUSTOM_SWORD_VOICE{ default, petris, retro, fez2, fez3, none }
+enum CUSTOM_SLIME_VOICE{ default, retro, fez2, fez3, none }
+enum CUSTOM_SCYTHE_VOICE{ default, retro, fez2, fez3, none }
+enum CUSTOM_DARKGOTO_VOICE{ default, old, bananaberry, basher, retro, fez2, fez3, none }
 
 enum CUSTOM_GOTO_MUSIC{ default, fez, none }
 enum CUSTOM_YOYO_MUSIC{ default, fez, none }

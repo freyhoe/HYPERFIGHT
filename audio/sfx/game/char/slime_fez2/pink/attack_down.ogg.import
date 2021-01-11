@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack_down.ogg-2a1b3a53a4a7a85196c8a70faef0cbce.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/slime_fez2/pink/attack_down.ogg"
+dest_files=[ "res://.import/attack_down.ogg-2a1b3a53a4a7a85196c8a70faef0cbce.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

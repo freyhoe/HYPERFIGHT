@@ -10,8 +10,8 @@ func set_player_id(new_id):
 		player_id = new_id
 		set_ready(global.LOBBY_READY.not_ready)
 
-func set_ready(ready):
-	self.ready = ready
+func set_ready(_ready):
+	self.ready = _ready
 	match ready:
 		global.LOBBY_READY.not_ready:
 			label_ready.text = "Not ready"

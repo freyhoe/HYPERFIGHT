@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack_buffed.ogg-04b1395e019e48cb65b10f1b73c2a8a8.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/sword_fez2/attack_buffed.ogg"
+dest_files=[ "res://.import/attack_buffed.ogg-04b1395e019e48cb65b10f1b73c2a8a8.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special.ogg-d194228fd2efd899bcf725e1614f4ece.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/slime_fez2/blue/special.ogg"
+dest_files=[ "res://.import/special.ogg-d194228fd2efd899bcf725e1614f4ece.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

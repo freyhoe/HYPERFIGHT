@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special_parry.ogg-ae282ec292f8936b31eed58c4ed2aad7.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/goto_fez3/special_parry.ogg"
+dest_files=[ "res://.import/special_parry.ogg-ae282ec292f8936b31eed58c4ed2aad7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

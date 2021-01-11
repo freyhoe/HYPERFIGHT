@@ -41,6 +41,20 @@ onready var sfx_special_reflect_retro = preload("res://audio/sfx/game/char/darkg
 onready var sfx_super_retro = preload("res://audio/sfx/game/char/darkgoto_retro/super.ogg")
 onready var sfx_hit_retro = preload("res://audio/sfx/game/char/darkgoto_retro/hit.ogg")
 
+onready var sfx_attack_fez2= preload("res://audio/sfx/game/char/darkgoto_fez2/attack.ogg")
+onready var sfx_attack_down_fez2 = preload("res://audio/sfx/game/char/darkgoto_fez2/attack_down.ogg")
+onready var sfx_special_fez2 = preload("res://audio/sfx/game/char/darkgoto_fez2/special.ogg")
+onready var sfx_special_reflect_fez2 = preload("res://audio/sfx/game/char/darkgoto_fez2/special_reflect.ogg")
+onready var sfx_super_fez2 = preload("res://audio/sfx/game/char/darkgoto_fez2/super.ogg")
+onready var sfx_hit_fez2 = preload("res://audio/sfx/game/char/darkgoto_fez2/hit.ogg")
+
+onready var sfx_attack_fez3= preload("res://audio/sfx/game/char/darkgoto_fez3/attack.ogg")
+onready var sfx_attack_down_fez3 = preload("res://audio/sfx/game/char/darkgoto_fez3/attack_down.ogg")
+onready var sfx_special_fez3 = preload("res://audio/sfx/game/char/darkgoto_fez3/special.ogg")
+onready var sfx_special_reflect_fez3 = preload("res://audio/sfx/game/char/darkgoto_fez3/special_reflect.ogg")
+onready var sfx_super_fez3 = preload("res://audio/sfx/game/char/darkgoto_fez3/super.ogg")
+onready var sfx_hit_fez3= preload("res://audio/sfx/game/char/darkgoto_fez3/hit.ogg")
+
 var sfx_attack 
 var sfx_attack_down 
 var sfx_special 
@@ -70,6 +84,20 @@ func _ready():
 			sfx_special_reflect = sfx_special_reflect_basher
 			sfx_super = sfx_super_basher
 			sfx_hit = sfx_hit_basher
+		global.CUSTOM_DARKGOTO_VOICE.fez2:
+			sfx_attack = sfx_attack_fez2
+			sfx_attack_down = sfx_attack_down_fez2
+			sfx_special = sfx_special_fez2
+			sfx_special_reflect = sfx_special_reflect_fez2
+			sfx_super = sfx_super_fez2
+			sfx_hit = sfx_hit_fez2
+		global.CUSTOM_DARKGOTO_VOICE.fez3:
+			sfx_attack = sfx_attack_fez3
+			sfx_attack_down = sfx_attack_down_fez3
+			sfx_special = sfx_special_fez3
+			sfx_special_reflect = sfx_special_reflect_fez3
+			sfx_super = sfx_super_fez3
+			sfx_hit = sfx_hit_fez3
 		global.CUSTOM_DARKGOTO_VOICE.old:
 			sfx_attack = sfx_attack_old 
 			sfx_attack_down = sfx_attack_down_old 
@@ -240,9 +268,9 @@ func process_anim():
 	.process_anim()
 
 func process_attack_anim():
-#	if (anim_player.current_animation == "super_upwards" or anim_player.current_animation == "super_downwards") and \
-#	   sprite.frame >= 1:
-#		dash_while_attacking = true
+	if (anim_player.current_animation == "super_upwards" or anim_player.current_animation == "super_downwards") and \
+	   sprite.frame >= 1:
+		dash_while_attacking = true
 	return .process_attack_anim()
 
 func parry(parry_effect_pos = Vector2()):

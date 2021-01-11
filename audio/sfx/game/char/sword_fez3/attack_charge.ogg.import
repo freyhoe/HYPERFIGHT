@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack_charge.ogg-46bfbe52b60b1000ba65120bb22df39b.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/sword_fez3/attack_charge.ogg"
+dest_files=[ "res://.import/attack_charge.ogg-46bfbe52b60b1000ba65120bb22df39b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

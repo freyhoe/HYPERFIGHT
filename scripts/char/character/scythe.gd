@@ -43,6 +43,28 @@ onready var sfx_super_retro = preload("res://audio/sfx/game/char/scythe_retro/su
 onready var sfx_super_charged_retro = preload("res://audio/sfx/game/char/scythe_retro/super_charged.ogg")
 onready var sfx_hit_retro = preload("res://audio/sfx/game/char/scythe_retro/hit.ogg")
 
+onready var sfx_attack_fez2= preload("res://audio/sfx/game/char/scythe_fez2/attack.ogg")
+onready var sfx_attack_down_fez2= preload("res://audio/sfx/game/char/scythe_fez2/attack_down.ogg")
+onready var sfx_attack_down_start_fez2 = preload("res://audio/sfx/game/char/scythe_fez2/attack_down_start.ogg")
+onready var sfx_attack_down_end_fez2 = preload("res://audio/sfx/game/char/scythe_fez2/attack_down_end.ogg")
+onready var sfx_attack_back_fez2 = preload("res://audio/sfx/game/char/scythe_fez2/attack_back.ogg")
+onready var sfx_special_fez2 = preload("res://audio/sfx/game/char/scythe_fez2/special.ogg")
+onready var sfx_special_teleport_fez2 = preload("res://audio/sfx/game/char/scythe_fez2/special_teleport.ogg")
+onready var sfx_super_fez2 = preload("res://audio/sfx/game/char/scythe_fez2/super.ogg")
+onready var sfx_super_charged_fez2 = preload("res://audio/sfx/game/char/scythe_fez2/super_charged.ogg")
+onready var sfx_hit_fez2 = preload("res://audio/sfx/game/char/scythe_fez2/hit.ogg")
+
+onready var sfx_attack_fez3= preload("res://audio/sfx/game/char/scythe_fez3/attack.ogg")
+onready var sfx_attack_down_fez3 = preload("res://audio/sfx/game/char/scythe_fez3/attack_down.ogg")
+onready var sfx_attack_down_start_fez3 = preload("res://audio/sfx/game/char/scythe_fez3/attack_down_start.ogg")
+onready var sfx_attack_down_end_fez3 = preload("res://audio/sfx/game/char/scythe_fez3/attack_down_end.ogg")
+onready var sfx_attack_back_fez3 = preload("res://audio/sfx/game/char/scythe_fez3/attack_back.ogg")
+onready var sfx_special_fez3 = preload("res://audio/sfx/game/char/scythe_fez3/special.ogg")
+onready var sfx_special_teleport_fez3 = preload("res://audio/sfx/game/char/scythe_fez3/special_teleport.ogg")
+onready var sfx_super_fez3 = preload("res://audio/sfx/game/char/scythe_fez3/super.ogg")
+onready var sfx_super_charged_fez3 = preload("res://audio/sfx/game/char/scythe_fez3/super_charged.ogg")
+onready var sfx_hit_fez3 = preload("res://audio/sfx/game/char/scythe_fez3/hit.ogg")
+
 var sfx_attack
 var sfx_attack_down 
 var sfx_attack_down_start 
@@ -90,6 +112,28 @@ func _ready():
 			sfx_super = sfx_super_retro
 			sfx_super_charged = sfx_super_charged_retro
 			sfx_hit = sfx_hit_retro
+		global.CUSTOM_SCYTHE_VOICE.fez2:
+			sfx_attack = sfx_attack_fez2
+			sfx_attack_down = sfx_attack_down_fez2
+			sfx_attack_down_start = sfx_attack_down_start_fez2
+			sfx_attack_down_end = sfx_attack_down_end_fez2
+			sfx_attack_back = sfx_attack_back_fez2
+			sfx_special = sfx_special_fez2
+			sfx_special_teleport = sfx_special_teleport_fez2
+			sfx_super = sfx_super_fez2
+			sfx_super_charged = sfx_super_charged_fez2
+			sfx_hit = sfx_hit_fez2
+		global.CUSTOM_SCYTHE_VOICE.fez3:
+			sfx_attack = sfx_attack_fez3
+			sfx_attack_down = sfx_attack_down_fez3
+			sfx_attack_down_start = sfx_attack_down_start_fez3
+			sfx_attack_down_end = sfx_attack_down_end_fez3
+			sfx_attack_back = sfx_attack_back_fez3
+			sfx_special = sfx_special_fez3
+			sfx_special_teleport = sfx_special_teleport_fez3
+			sfx_super = sfx_super_fez3
+			sfx_super_charged = sfx_super_charged_fez3
+			sfx_hit = sfx_hit_fez3
 	match global.scythe_skin_type:
 		global.CUSTOM_SCYTHE_SKIN.none:
 			sprite.visible = false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super.ogg-b9485af9de76d59b0c879d716724ef77.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/slime_fez3/pink/super.ogg"
+dest_files=[ "res://.import/super.ogg-b9485af9de76d59b0c879d716724ef77.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

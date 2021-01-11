@@ -34,5 +34,9 @@ func set_label_text():
 			label.text = "Voice:\nNONE"
 		global.CUSTOM_DARKGOTO_VOICE.retro:
 			label.text = "Voice:\nRETRO"
+		global.CUSTOM_DARKGOTO_VOICE.fez2:
+			label.text = "Voice:\nTTS"
+		global.CUSTOM_DARKGOTO_VOICE.fez3:
+			label.text = "Voice:\nREVERSE"
 		global.CUSTOM_DARKGOTO_VOICE.bananaberry:
 			label.text = "Voice:\nDARK SHOTO GO TO"

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/dojo-fez.ogg-e2e3025c25cb2078faf6afc7d9017d4f.oggstr
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

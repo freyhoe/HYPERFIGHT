@@ -40,6 +40,14 @@ onready var sfx_super_boom_fez  = preload("res://audio/sfx/game/char/time_fez/su
 onready var sfx_super_boom_end_fez  = preload("res://audio/sfx/game/char/time_fez/super_boom_end.ogg")
 onready var sfx_hit_fez  = preload("res://audio/sfx/game/char/time_fez/hit.ogg")
 
+onready var sfx_attack_fez3 = preload("res://audio/sfx/game/char/time_fez3/attack.ogg")
+onready var sfx_attack_down_fez3  = preload("res://audio/sfx/game/char/time_fez3/attack_down.ogg")
+onready var sfx_special_fez3  = preload("res://audio/sfx/game/char/time_fez3/special.ogg")
+onready var sfx_super_fez3  = preload("res://audio/sfx/game/char/time_fez3/super.ogg")
+onready var sfx_super_boom_fez3  = preload("res://audio/sfx/game/char/time_fez3/super_boom.ogg")
+onready var sfx_super_boom_end_fez3  = preload("res://audio/sfx/game/char/time_fez3/super_boom_end.ogg")
+onready var sfx_hit_fez3  = preload("res://audio/sfx/game/char/time_fez3/hit.ogg")
+
 onready var sfx_attack_retro = preload("res://audio/sfx/game/char/time_retro/attack.ogg")
 onready var sfx_attack_down_retro = preload("res://audio/sfx/game/char/time_retro/attack_down.ogg")
 onready var sfx_special_retro  = preload("res://audio/sfx/game/char/time_retro/special.ogg")
@@ -83,6 +91,14 @@ func _ready():
 			sfx_super_boom_end = sfx_super_boom_end_fez
 			sfx_super = sfx_super_fez
 			sfx_hit = sfx_hit_fez
+		global.CUSTOM_TIME_VOICE.fez3:
+			sfx_attack = sfx_attack_fez3
+			sfx_attack_down = sfx_attack_down_fez3
+			sfx_special = sfx_special_fez3
+			sfx_super_boom = sfx_super_boom_fez3
+			sfx_super_boom_end = sfx_super_boom_end_fez3
+			sfx_super = sfx_super_fez3
+			sfx_hit = sfx_hit_fez3
 		global.CUSTOM_TIME_VOICE.none:
 			sfx_attack = sfx_silence
 			sfx_attack_down = sfx_silence

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hit.ogg-c176cbf50f54de965380448a765d4a1e.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/kero_fez3/hit.ogg"
+dest_files=[ "res://.import/hit.ogg-c176cbf50f54de965380448a765d4a1e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

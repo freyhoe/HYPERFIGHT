@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/screen/game.gd" type="Script" id=1]
 [ext_resource path="res://resources/font/pixel_intv.tres" type="DynamicFont" id=2]
@@ -16,6 +16,24 @@
 [ext_resource path="res://scenes/ui/menu/banner.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/ui/game/move_list.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/ui/game/bg.tscn" type="PackedScene" id=16]
+[ext_resource path="res://graphics/louie.png" type="Texture" id=17]
+[ext_resource path="res://scripts/screen/louie.gd" type="Script" id=18]
+
+[sub_resource type="Animation" id=1]
+resource_name = "walk"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.526039 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -21.5, 25.9 ]
+}
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -420,4 +438,15 @@ wait_time = 30.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="louie" type="Sprite" parent="."]
+position = Vector2( -136.355, 18 )
+rotation = -0.375246
+scale = Vector2( -0.10887, 0.124 )
+z_index = -2
+texture = ExtResource( 17 )
+script = ExtResource( 18 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="louie"]
+anims/walk = SubResource( 1 )
 [connection signal="timeout" from="online_timer" to="." method="_on_online_timer_timeout"]

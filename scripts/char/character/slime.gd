@@ -41,6 +41,28 @@ onready var sfx_blue_super_retro = preload("res://audio/sfx/game/char/slime_retr
 onready var sfx_hit_retro= preload("res://audio/sfx/game/char/slime_retro/pink/hit.ogg")
 onready var sfx_blue_hit_retro = preload("res://audio/sfx/game/char/slime_retro/blue/hit.ogg")
 
+onready var sfx_attack_fez2 = preload("res://audio/sfx/game/char/slime_fez2/pink/attack.ogg")
+onready var sfx_blue_attack_fez2 = preload("res://audio/sfx/game/char/slime_fez2/blue/attack.ogg")
+onready var sfx_attack_down_fez2 = preload("res://audio/sfx/game/char/slime_fez2/pink/attack_down.ogg")
+onready var sfx_blue_attack_down_fez2 = preload("res://audio/sfx/game/char/slime_fez2/blue/attack_down_fused.ogg")
+onready var sfx_special_fez2 = preload("res://audio/sfx/game/char/slime_fez2/pink/special.ogg")
+onready var sfx_special_revive_fez2 = preload("res://audio/sfx/game/char/slime_fez2/pink/special_revive.ogg")
+onready var sfx_super_fez2 = preload("res://audio/sfx/game/char/slime_fez2/pink/super.ogg")
+onready var sfx_blue_super_fez2 = preload("res://audio/sfx/game/char/slime_fez2/blue/super.ogg")
+onready var sfx_hit_fez2 = preload("res://audio/sfx/game/char/slime_fez2/pink/hit.ogg")
+onready var sfx_blue_hit_fez2 = preload("res://audio/sfx/game/char/slime_fez2/blue/hit.ogg")
+
+onready var sfx_attack_fez3 = preload("res://audio/sfx/game/char/slime_fez3/pink/attack.ogg")
+onready var sfx_blue_attack_fez3 = preload("res://audio/sfx/game/char/slime_fez3/blue/attack.ogg")
+onready var sfx_attack_down_fez3 = preload("res://audio/sfx/game/char/slime_fez3/pink/attack_down.ogg")
+onready var sfx_blue_attack_down_fez3 = preload("res://audio/sfx/game/char/slime_fez3/blue/attack_down_fused.ogg")
+onready var sfx_special_fez3 = preload("res://audio/sfx/game/char/slime_fez3/pink/special.ogg")
+onready var sfx_special_revive_fez3 = preload("res://audio/sfx/game/char/slime_fez3/pink/special_revive.ogg")
+onready var sfx_super_fez3 = preload("res://audio/sfx/game/char/slime_fez3/pink/super.ogg")
+onready var sfx_blue_super_fez3 = preload("res://audio/sfx/game/char/slime_fez3/blue/super.ogg")
+onready var sfx_hit_fez3 = preload("res://audio/sfx/game/char/slime_fez3/pink/hit.ogg")
+onready var sfx_blue_hit_fez3 = preload("res://audio/sfx/game/char/slime_fez3/blue/hit.ogg")
+
 var sfx_attack
 var sfx_blue_attack
 var sfx_attack_down
@@ -88,6 +110,28 @@ func _ready():
 			sfx_super = sfx_super_retro
 			sfx_blue_hit = sfx_blue_hit_retro
 			sfx_hit = sfx_hit_retro
+		global.CUSTOM_SLIME_VOICE.fez2:
+			sfx_attack = sfx_attack_fez2
+			sfx_blue_attack = sfx_blue_attack_fez2
+			sfx_attack_down = sfx_attack_down_fez2
+			sfx_blue_attack_down= sfx_blue_attack_down_fez2
+			sfx_special_revive= sfx_special_revive_fez2
+			sfx_special = sfx_special_fez2
+			sfx_blue_super = sfx_blue_super_fez2
+			sfx_super = sfx_super_fez2
+			sfx_blue_hit = sfx_blue_hit_fez2
+			sfx_hit = sfx_hit_fez2
+		global.CUSTOM_SLIME_VOICE.fez3:
+			sfx_attack = sfx_attack_fez3
+			sfx_blue_attack = sfx_blue_attack_fez3
+			sfx_attack_down = sfx_attack_down_fez3
+			sfx_blue_attack_down= sfx_blue_attack_down_fez3
+			sfx_special_revive= sfx_special_revive_fez3
+			sfx_special = sfx_special_fez3
+			sfx_blue_super = sfx_blue_super_fez3
+			sfx_super = sfx_super_fez3
+			sfx_blue_hit = sfx_blue_hit_fez3
+			sfx_hit = sfx_hit_fez3
 	match global.slime_skin_type:
 		global.CUSTOM_SLIME_SKIN.none:
 			sprite.visible = false

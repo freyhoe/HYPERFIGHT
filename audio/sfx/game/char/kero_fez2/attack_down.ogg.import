@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/attack_down.ogg-b08b43c10e80961441b715df265eda34.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/kero_fez2/attack_down.ogg"
+dest_files=[ "res://.import/attack_down.ogg-b08b43c10e80961441b715df265eda34.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

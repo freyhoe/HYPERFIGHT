@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sanctuary-fez.ogg-d3565946dc85a37c416ee38c03517447.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

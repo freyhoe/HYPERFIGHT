@@ -30,3 +30,7 @@ func set_label_text():
 			label.text = "Voice:\nNONE"
 		global.CUSTOM_SCYTHE_VOICE.retro:
 			label.text = "Voice:\nRETRO"
+		global.CUSTOM_SCYTHE_VOICE.fez2:
+			label.text = "Voice:\nTTS"
+		global.CUSTOM_SCYTHE_VOICE.fez3:
+			label.text = "Voice:\nREVERSE"

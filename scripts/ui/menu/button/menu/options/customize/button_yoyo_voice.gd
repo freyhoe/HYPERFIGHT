@@ -30,5 +30,9 @@ func set_label_text():
 			label.text = "Voice:\nSCIENTIFICALLY ACCURATE YO-YONA"
 		global.CUSTOM_YOYO_VOICE.none:
 			label.text = "Voice:\nNONE"
+		global.CUSTOM_YOYO_VOICE.fez2:
+			label.text = "Voice:\nTTS"
+		global.CUSTOM_YOYO_VOICE.fez3:
+			label.text = "Voice:\nREVERSE"
 		global.CUSTOM_YOYO_VOICE.retro:
 			label.text = "Voice:\nRETRO"

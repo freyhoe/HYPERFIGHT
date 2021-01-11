@@ -11,5 +11,5 @@ dest_files=[ "res://.import/factory-fez.ogg-4fcc2160f5111e630f154cdd0e46e855.ogg
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

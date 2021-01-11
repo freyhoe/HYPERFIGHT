@@ -36,3 +36,7 @@ func set_label_text():
 			label.text = "Announcer:\nVERNO"
 		global.ANNOUNCER.retro:
 			label.text = "Announcer:\nRETRO"
+		global.ANNOUNCER.fez:
+			label.text = "Announcer:\nTTS"
+		global.ANNOUNCER.fez2:
+			label.text = "Announcer:\nREVERSE"

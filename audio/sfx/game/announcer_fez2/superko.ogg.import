@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/superko.ogg-470c99625c43c4e3405b9e92c6d2c750.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_fez2/superko.ogg"
+dest_files=[ "res://.import/superko.ogg-470c99625c43c4e3405b9e92c6d2c750.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

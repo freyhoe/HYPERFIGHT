@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/special.ogg-5908af6518b2fa9e3461ec2e228c1744.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/goto_fez3/special.ogg"
+dest_files=[ "res://.import/special.ogg-5908af6518b2fa9e3461ec2e228c1744.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

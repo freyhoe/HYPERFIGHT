@@ -152,13 +152,14 @@ onready var shadow = preload("res://scenes/effect/shadow.tscn")
 onready var sfx_dash = preload("res://audio/sfx/game/char/dash.ogg")
 onready var sfx_parry = preload("res://audio/sfx/game/char/parry.ogg")
 
+var egg1 = 0
+
 func _ready():
 	add_to_group(global.GROUP_CHARACTER)
 	hurtbox.add_to_group(global.GROUP_HITBOX)
 	hurtbox.set_monitoring(true)
 	anim_player.playback_speed = 0
 	play_anim_this_frame("idle")
-	
 	own_shadow = shadow.instance()
 	own_shadow.init(self, shadow_offset, 0)
 	get_parent().add_child(own_shadow)

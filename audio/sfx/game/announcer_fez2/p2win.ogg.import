@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/p2win.ogg-5a39d0d2bcc1da8cbfe4f1622fe7212b.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/announcer_fez2/p2win.ogg"
+dest_files=[ "res://.import/p2win.ogg-5a39d0d2bcc1da8cbfe4f1622fe7212b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

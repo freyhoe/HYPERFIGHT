@@ -34,3 +34,7 @@ func set_label_text():
 			label.text = "Voice:\nRETRO"
 		global.CUSTOM_KERO_VOICE.esvee:
 			label.text = "Voice:\nESVEE"
+		global.CUSTOM_KERO_VOICE.fez2:
+			label.text = "Voice:\nTTS"
+		global.CUSTOM_KERO_VOICE.fez3:
+			label.text = "Voice:\nREVERSE"

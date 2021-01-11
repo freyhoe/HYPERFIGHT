@@ -54,6 +54,22 @@ onready var sfx_super_swallow_retro = preload("res://audio/sfx/game/char/kero_re
 onready var sfx_super_retro = preload("res://audio/sfx/game/char/kero_retro/super.ogg")
 onready var sfx_hit_retro = preload("res://audio/sfx/game/char/kero_retro/hit.ogg")
 
+onready var sfx_attack_fez2 = preload("res://audio/sfx/game/char/kero_fez2/attack.ogg")
+onready var sfx_attack_down_fez2 = preload("res://audio/sfx/game/char/kero_fez2/attack_down.ogg")
+onready var sfx_special_fez2 = preload("res://audio/sfx/game/char/kero_fez2/special.ogg")
+onready var sfx_special_swallow_fez2 = preload("res://audio/sfx/game/char/kero_fez2/special_swallow.ogg")
+onready var sfx_super_swallow_fez2 = preload("res://audio/sfx/game/char/kero_fez2/super_swallow.ogg")
+onready var sfx_super_fez2 = preload("res://audio/sfx/game/char/kero_fez2/super.ogg")
+onready var sfx_hit_fez2 = preload("res://audio/sfx/game/char/kero_fez2/hit.ogg")
+
+onready var sfx_attack_fez3 = preload("res://audio/sfx/game/char/kero_fez3/attack.ogg")
+onready var sfx_attack_down_fez3 = preload("res://audio/sfx/game/char/kero_fez3/attack_down.ogg")
+onready var sfx_special_fez3 = preload("res://audio/sfx/game/char/kero_fez3/special.ogg")
+onready var sfx_special_swallow_fez3 = preload("res://audio/sfx/game/char/kero_fez3/special_swallow.ogg")
+onready var sfx_super_swallow_fez3 = preload("res://audio/sfx/game/char/kero_fez3/super_swallow.ogg")
+onready var sfx_super_fez3 = preload("res://audio/sfx/game/char/kero_fez3/super.ogg")
+onready var sfx_hit_fez3 = preload("res://audio/sfx/game/char/kero_fez3/hit.ogg")
+
 var sfx_attack 
 var sfx_attack_down 
 var sfx_special 
@@ -65,6 +81,7 @@ var sfx_hit
 onready var sfx_silence = preload("res://audio/sfx/Silence.ogg")
 
 func _ready():
+	egg1 = 1
 	sfx_attack = sfx_attack_default
 	sfx_attack_down = sfx_attack_down_default
 	sfx_special = sfx_special_default
@@ -105,6 +122,23 @@ func _ready():
 			sfx_super_swallow = sfx_super_swallow_retro
 			sfx_super = sfx_super_retro
 			sfx_hit = sfx_hit_retro
+		global.CUSTOM_KERO_VOICE.fez2:
+			sfx_attack = sfx_attack_fez2
+			sfx_attack_down = sfx_attack_down_fez2
+			sfx_special = sfx_special_fez2
+			sfx_special_swallow = sfx_special_swallow_fez2
+			sfx_super_swallow = sfx_super_swallow_fez2
+			sfx_super = sfx_super_fez2
+			sfx_hit = sfx_hit_fez2
+		global.CUSTOM_KERO_VOICE.fez3:
+			sfx_attack = sfx_attack_fez3
+			sfx_attack_down = sfx_attack_down_fez3
+			sfx_special = sfx_special_fez3
+			sfx_special_swallow = sfx_special_swallow_fez3
+			sfx_super_swallow = sfx_super_swallow_fez3
+			sfx_super = sfx_super_fez3
+			sfx_hit = sfx_hit_fez3
+
 	match global.kero_skin_type:
 		global.CUSTOM_KERO_SKIN.none:
 			sprite.visible = false

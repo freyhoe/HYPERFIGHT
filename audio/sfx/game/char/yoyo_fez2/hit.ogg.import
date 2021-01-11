@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hit.ogg-fa9651fae08b96f2e90c37bf3436228a.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/game/char/yoyo_fez2/hit.ogg"
+dest_files=[ "res://.import/hit.ogg-fa9651fae08b96f2e90c37bf3436228a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

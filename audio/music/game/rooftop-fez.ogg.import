@@ -11,5 +11,5 @@ dest_files=[ "res://.import/rooftop-fez.ogg-71005da37fc30135d7e89bab11498244.ogg
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

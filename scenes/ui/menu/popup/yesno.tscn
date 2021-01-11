@@ -4,18 +4,6 @@
 [ext_resource path="res://scripts/ui/menu/popup/yesno.gd" type="Script" id=2]
 [ext_resource path="res://resources/font/pixel_intv.tres" type="DynamicFont" id=3]
 
-
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "no"
 length = 0.06

@@ -33,6 +33,18 @@ onready var sfx_special_boom_retro = preload("res://audio/sfx/game/char/yoyo_ret
 onready var sfx_super_retro = preload("res://audio/sfx/game/char/yoyo_retro/super.ogg")
 onready var sfx_hit_retro = preload("res://audio/sfx/game/char/yoyo_retro/hit.ogg")
 
+onready var sfx_attack_fez2 = preload("res://audio/sfx/game/char/yoyo_fez2/attack.ogg")
+onready var sfx_special_fez2 = preload("res://audio/sfx/game/char/yoyo_fez2/special.ogg")
+onready var sfx_special_boom_fez2 = preload("res://audio/sfx/game/char/yoyo_fez2/special_boom.ogg")
+onready var sfx_super_fez2 = preload("res://audio/sfx/game/char/yoyo_fez2/super.ogg")
+onready var sfx_hit_fez2 = preload("res://audio/sfx/game/char/yoyo_fez2/hit.ogg")
+
+onready var sfx_attack_fez3 = preload("res://audio/sfx/game/char/yoyo_fez3/attack.ogg")
+onready var sfx_special_fez3 = preload("res://audio/sfx/game/char/yoyo_fez3/special.ogg")
+onready var sfx_special_boom_fez3 = preload("res://audio/sfx/game/char/yoyo_fez3/special_boom.ogg")
+onready var sfx_super_fez3 = preload("res://audio/sfx/game/char/yoyo_fez3/super.ogg")
+onready var sfx_hit_fez3 = preload("res://audio/sfx/game/char/yoyo_fez3/hit.ogg")
+
 onready var sfx_attack_banana = preload("res://audio/sfx/game/char/yoyo_banana/attack.ogg")
 onready var sfx_special_banana = preload("res://audio/sfx/game/char/yoyo_banana/special.ogg")
 #onready var sfx_special_boom_banana = preload("res://audio/sfx/game/char/yoyo_banana/special_boom.ogg")
@@ -71,6 +83,18 @@ func _ready():
 			sfx_special_boom = sfx_special_boom_retro
 			sfx_super = sfx_super_retro
 			sfx_hit = sfx_hit_retro
+		global.CUSTOM_YOYO_VOICE.fez2:
+			sfx_attack = sfx_attack_fez2
+			sfx_special = sfx_special_fez2
+			sfx_special_boom = sfx_special_boom_fez2
+			sfx_super = sfx_super_fez2
+			sfx_hit = sfx_hit_fez2
+		global.CUSTOM_YOYO_VOICE.fez3:
+			sfx_attack = sfx_attack_fez3
+			sfx_special = sfx_special_fez3
+			sfx_special_boom = sfx_special_boom_fez3
+			sfx_super = sfx_super_fez3
+			sfx_hit = sfx_hit_fez3
 	match global.yoyo_skin_type:
 		global.CUSTOM_YOYO_SKIN.none:
 			sprite.visible = false

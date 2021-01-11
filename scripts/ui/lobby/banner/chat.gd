@@ -20,7 +20,10 @@ func _process(delta):
 			line_edit.grab_focus()
 		else:
 			if not line_edit.text.empty():
-				global.send_lobby_chat_msg(line_edit.text)
+				if line_edit.text.begins_with("!kick"):
+					get_parent().kick(line_edit.text.trim_prefix("!kick "))
+				else:
+					global.send_lobby_chat_msg(line_edit.text)
 				update_text()
 			line_edit.text = ""
 	elif Input.is_action_just_pressed(global.INPUT_PLAYER1 + global.INPUT_ACTION_UP) and visible and not menu_yesno.active:
